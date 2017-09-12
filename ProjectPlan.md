@@ -12,22 +12,22 @@
 - [X] Complete screen design (on paper)
 - [X] Create project structure in IntelliJ
 - [X] Add project to repository
-- [X] Complete project plan. 
+- [X] Complete project plan.
+- [X] Determine independent research topic 
 - [X] Time log entries
 
 ### Week 3
 - [ ] Complete database design
+- [ ] Create database and all tables/columns locally
 - [ ] Begin creating JSPs
 - [ ] Determine possible Web Services or APIs to use
 - [ ] Add in bootstrap
-- [X] Determine independent research topic
 - [X] Create class diagram
 - [X] Set up logging
 - [X] Set up unit testing
 - [ ] Time log entries
 
 ### Week 4
-- [ ] Create database and all tables/columns locally
 - [ ] Complete remaining JSPs
 - [ ] Add Hibernate config
 - [ ] Create DAO for user crud
@@ -39,24 +39,20 @@
 - [ ] Time log entries
 
 ### Week 5
-
-- [ ] Create DAO for trails
-- [ ] Create DAO for trail report
-- [ ] Create display trail report functionality
-- [ ] Create display trail functionality
+- [ ] Create DAO for snags
+- [ ] Create DAO for snag report
 - [ ] Add tests for new functionality
 - [ ] Time log entries
 
 ### Week 6
-- [ ] Integration with google maps api
-- [ ] Create add trail report functionality
-- [ ] Create add trail functionality
+- [ ] Integration with google maps api (would be cool)
+- [ ] Create add summary page for new snag reports
 - [ ] Time log entries
 
 ### Week 7
 - [ ] Add search functionality
 - [ ] Determine how to add paging of search results
-- [ ] Integration with weather service and/or snow depth data
+- [ ] Integration with weather service (maybe rainfall data)
 - [ ] Time log entries
 
 ### Week 8
@@ -70,16 +66,16 @@
 - [ ] Time log entries
 
 ### Week 10
-- [X] Time log entries
+- [ ] Time log entries
 
 ### Week 11
-- [X] Time log entries
+- [ ] Time log entries
 
 ### Week 12
 - [ ] Time log entries
 
 ### Week 13
-- [X] Time log entries
+- [ ] Time log entries
 
 ### Week 14
 - [ ] Create final presentation
