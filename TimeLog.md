@@ -1,11 +1,6 @@
-
-## Week 2 Created git repository for project and added associated documentation files 2 hours
-
 # Time Log
 ## Aaron Briggs
 ## SnagLog Project 
-
-
 
 | Week | Task | Hours | Notes|
 |------|------|-------|------|
