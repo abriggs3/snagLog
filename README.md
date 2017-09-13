@@ -36,7 +36,7 @@ There are many guide books available for paddlers, but none are capable of deliv
 
 **Design**
 
-    Screen Design
+    [Screen Design](https://github.com/abriggs3/snagLog/tree/master/images)
 
     Application Flow
 
