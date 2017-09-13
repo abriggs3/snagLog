@@ -36,11 +36,11 @@ There are many guide books available for paddlers, but none are capable of deliv
 
 **Design**
 
-    [Screen Design](https://github.com/abriggs3/snagLog/tree/master/images)
+[Screen Design](https://github.com/abriggs3/snagLog/tree/master/images)
 
-    Application Flow
+Application Flow
 
-    Database Design
+Database Design
 
 [**Project Plan**](https://github.com/abriggs3/snagLog/blob/master/ProjectPlan.md)
 
