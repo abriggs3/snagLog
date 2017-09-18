@@ -1,24 +1,39 @@
 package edu.matc.entity;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+
 /**
  * Class manages information about users
  * Created on 9/13/17.
  *
  * @author abriggs
  */
+@Entity
+@Table(name = "users")
 
 public class User {
+
+    @Column(name = "first_name")
     private String firstName;
+
+    @Column(name = "last_name")
     private String lastName;
+
+    @Id
+    @Column(name = "user_name")
     private String userName;
-    private String userId;
-    private String role;
-    private String password;
 
+    @Column(name = "user_pass")
+    private String userPassword;
 
-    public String getFirstName() {
-        return firstName;
-    }
+    // no argument constructor, required for java bean
+    public User() {}
+
+    public String getFirstName() {return firstName;}
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
@@ -40,27 +55,11 @@ public class User {
         this.userName = userName;
     }
 
-    public String getUserId() {
-        return userId;
+    public String getUserPassword() {
+        return userPassword;
     }
 
-    public void setUserId(String userId) {
-        this.userId = userId;
-    }
-
-    public String getRole() {
-        return role;
-    }
-
-    public void setRole(String role) {
-        this.role = role;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
+    public void setUserPassword(String userPassword) {
+        this.userPassword = userPassword;
     }
 }

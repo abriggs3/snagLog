@@ -1,0 +1,55 @@
+2017-09-18 08:40:11,084 0    [main] INFO  edu.matc.persistence.UserDao  - this is searchTerm *
+2017-09-18 08:40:11,095 11   [main] INFO  edu.matc.persistence.UserDao  - this is searchType first_name
+2017-09-18 08:40:11,095 11   [main] INFO  edu.matc.persistence.UserDao  - Code reached runQuery(), the sql is SELECT * FROM users where first_name = '*';
+2017-09-18 08:42:37,098 0    [main] INFO  edu.matc.persistence.UserDao  - this is searchTerm adminUser
+2017-09-18 08:42:37,109 11   [main] INFO  edu.matc.persistence.UserDao  - this is searchType first_name
+2017-09-18 08:42:37,109 11   [main] INFO  edu.matc.persistence.UserDao  - Code reached runQuery(), the sql is SELECT * FROM users where first_name = 'adminUser';
+2017-09-18 08:47:34,372 0    [main] INFO  edu.matc.persistence.UserDao  - this is searchTerm adminUser
+2017-09-18 08:47:34,383 11   [main] INFO  edu.matc.persistence.UserDao  - this is searchType first_name
+2017-09-18 08:47:34,383 11   [main] INFO  edu.matc.persistence.UserDao  - Code reached runQuery(), the sql is SELECT * FROM users where first_name = 'adminUser';
+2017-09-18 08:47:35,106 734  [main] INFO  edu.matc.persistence.UserDao  - This is the user list []
+2017-09-18 08:48:20,473 0    [main] INFO  edu.matc.persistence.UserDao  - this is searchTerm Admin
+2017-09-18 08:48:20,483 10   [main] INFO  edu.matc.persistence.UserDao  - this is searchType first_name
+2017-09-18 08:48:20,483 10   [main] INFO  edu.matc.persistence.UserDao  - Code reached runQuery(), the sql is SELECT * FROM users where first_name = 'Admin';
+2017-09-18 08:48:21,360 887  [main] INFO  edu.matc.persistence.UserDao  - This is the user list [edu.matc.entity.User@71c7db30]
+2017-09-18 08:59:17,767 0    [main] INFO  edu.matc.persistence.UserDao  - this is searchTerm Admin
+2017-09-18 08:59:17,776 9    [main] INFO  edu.matc.persistence.UserDao  - this is searchType first_name
+2017-09-18 08:59:17,776 9    [main] INFO  edu.matc.persistence.UserDao  - Code reached runQuery(), the sql is SELECT * FROM users where first_name = 'Admin';
+2017-09-18 08:59:18,497 730  [main] INFO  edu.matc.persistence.UserDao  - This is the user list [edu.matc.entity.User@71c7db30]
+2017-09-18 09:00:11,584 0    [main] INFO  edu.matc.persistence.UserDao  - this is searchTerm Admin
+2017-09-18 09:00:11,587 3    [main] INFO  edu.matc.persistence.UserDao  - this is searchType first_name
+2017-09-18 09:00:11,587 3    [main] INFO  edu.matc.persistence.UserDao  - Code reached runQuery(), the sql is SELECT * FROM users where first_name = 'Admin';
+2017-09-18 09:06:23,251 0    [main] INFO  edu.matc.persistence.UserDao  - this is searchTerm Admin
+2017-09-18 09:06:23,260 9    [main] INFO  edu.matc.persistence.UserDao  - this is searchType first_name
+2017-09-18 09:06:23,260 9    [main] INFO  edu.matc.persistence.UserDao  - Code reached runQuery(), the sql is SELECT * FROM users where first_name = 'Admin';
+2017-09-18 09:07:44,777 0    [main] INFO  edu.matc.persistence.UserDao  - this is searchTerm Admin
+2017-09-18 09:07:44,782 5    [main] INFO  edu.matc.persistence.UserDao  - this is searchType first_name
+2017-09-18 09:07:44,782 5    [main] INFO  edu.matc.persistence.UserDao  - Code reached runQuery(), the sql is SELECT * FROM users where first_name = 'Admin';
+2017-09-18 09:14:05,856 0    [main] INFO  edu.matc.persistence.UserDao  - this is searchTerm 
+2017-09-18 09:14:05,859 3    [main] INFO  edu.matc.persistence.UserDao  - this is searchType All
+2017-09-18 09:14:05,859 3    [main] INFO  edu.matc.persistence.UserDao  - Code reached runQuery(), the sql is SELECT * FROM users where All = '';
+2017-09-18 09:14:06,589 733  [main] ERROR edu.matc.persistence.UserDao  - SearchUser.getUserEntered()...SQL Exception: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'All = ''' at line 1
+2017-09-18 09:16:41,584 0    [main] INFO  edu.matc.persistence.UserDao  - this is searchTerm any thing can go here
+2017-09-18 09:16:41,596 12   [main] INFO  edu.matc.persistence.UserDao  - this is searchType all
+2017-09-18 09:16:41,596 12   [main] INFO  edu.matc.persistence.UserDao  - Code reached runQuery(), the sql is SELECT * FROM users;
+2017-09-18 09:17:59,086 0    [main] INFO  edu.matc.persistence.UserDao  - this is searchTerm any thing can go here
+2017-09-18 09:17:59,088 2    [main] INFO  edu.matc.persistence.UserDao  - this is searchType all
+2017-09-18 09:17:59,088 2    [main] INFO  edu.matc.persistence.UserDao  - Code reached runQuery(), the sql is SELECT * FROM users;
+2017-09-18 09:19:01,887 0    [main] INFO  edu.matc.persistence.UserDao  - this is searchTerm any search term can go here-it is ignored anyway
+2017-09-18 09:19:01,897 10   [main] INFO  edu.matc.persistence.UserDao  - this is searchType all
+2017-09-18 09:19:01,898 11   [main] INFO  edu.matc.persistence.UserDao  - Code reached runQuery(), the sql is SELECT * FROM users;
+2017-09-18 09:31:09,400 0    [main] INFO  edu.matc.persistence.UserDao  - this is searchTerm Admin
+2017-09-18 09:31:09,406 6    [main] INFO  edu.matc.persistence.UserDao  - this is searchType first_name
+2017-09-18 09:31:09,406 6    [main] INFO  edu.matc.persistence.UserDao  - Code reached runQuery(), the sql is SELECT * FROM users where first_name = 'Admin';
+2017-09-18 09:36:56,813 0    [main] INFO  edu.matc.persistence.UserDao  - this is searchTerm Admin
+2017-09-18 09:36:56,822 9    [main] INFO  edu.matc.persistence.UserDao  - this is searchType first_name
+2017-09-18 09:36:56,822 9    [main] INFO  edu.matc.persistence.UserDao  - Code reached runQuery(), the sql is SELECT * FROM users where first_name = 'Admin';
+2017-09-18 09:37:27,526 0    [main] INFO  edu.matc.persistence.UserDao  - this is searchTerm Admin
+2017-09-18 09:37:27,527 1    [main] INFO  edu.matc.persistence.UserDao  - this is searchType first_name
+2017-09-18 09:37:27,527 1    [main] INFO  edu.matc.persistence.UserDao  - Code reached runQuery(), the sql is SELECT * FROM users where first_name = 'Admin';
+2017-09-18 09:40:27,086 0    [main] INFO  edu.matc.persistence.UserDao  - this is searchTerm Admin
+2017-09-18 09:40:27,092 6    [main] INFO  edu.matc.persistence.UserDao  - this is searchType first_name
+2017-09-18 09:40:27,092 6    [main] INFO  edu.matc.persistence.UserDao  - Code reached runQuery(), the sql is SELECT * FROM users where first_name = 'Admin';
+2017-09-18 09:40:27,824 738  [main] INFO  edu.matc.persistence.UserDao  - this is searchTerm any search term can go here-it is ignored anyway
+2017-09-18 09:40:27,831 745  [main] INFO  edu.matc.persistence.UserDao  - this is searchType all
+2017-09-18 09:40:27,831 745  [main] INFO  edu.matc.persistence.UserDao  - Code reached runQuery(), the sql is SELECT * FROM users;
