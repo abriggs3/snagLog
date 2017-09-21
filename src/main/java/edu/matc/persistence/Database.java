@@ -27,7 +27,6 @@ public class Database {
     // private constructor prevents instantiating this class anywhere else
     private Database() {
         loadProperties();
-
     }
 
     private void loadProperties() {
