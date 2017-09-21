@@ -35,14 +35,22 @@ public class UserHibernateDao implements UserDaoInterface {
     }
 
     @Override
-    public void addUser(String firstName, String lastName, String userName, String userPassword) {
-        
-    }
-
-    // TODO
-    @Override
     public User selectUser(String userName) {
-        return null;
+        User user = null;
+        Session session = SessionFactoryProvider.getSessionFactory().openSession();
+        Transaction transaction = null;
+        try{
+            transaction = session.beginTransaction();
+            user = (User)session.get(User.class, userName);
+            session.get(User.class, userName);
+            transaction.commit();
+        }catch (HibernateException e) {
+            if (transaction!=null) transaction.rollback();
+            e.printStackTrace();
+        }finally {
+            session.close();
+        }
+        return user;
     }
 
 
@@ -60,32 +68,14 @@ public class UserHibernateDao implements UserDaoInterface {
             }
         }
     }
-/*
-    @Override
-    public void deleteUser(String userName) {
-        Session session = null;
-        try {
-            session = SessionFactoryProvider.getSessionFactory().openSession();
-            session.delete(userName);
-        } catch (HibernateException he) {
-            log.error("error trying to delete user " + userName, he);
-        } finally {
-            if (session != null) {
-                session.close();
-            }
-        }
-    }
-*/
 
     @Override
     public void deleteUser(String userName){
-        logger.info("running deleteUserTest with userName " + userName);
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
         Transaction transaction = null;
         try{
             transaction = session.beginTransaction();
-            User user=
-                    (User)session.get(User.class, userName);
+            User user = (User)session.get(User.class, userName);
             session.delete(user);
             transaction.commit();
         }catch (HibernateException e) {
@@ -96,4 +86,24 @@ public class UserHibernateDao implements UserDaoInterface {
         }
     }
 
+    @Override
+    public void addUser(String firstName, String lastName, String userName, String userPassword) {
+
+        Session session = SessionFactoryProvider.getSessionFactory().openSession();
+        Transaction transaction = null;
+        try{
+            transaction = session.beginTransaction();
+            User user = new User(firstName, lastName, userName, userPassword);
+            session.save(user);
+            transaction.commit();
+        }catch (HibernateException e) {
+            if (transaction!=null) transaction.rollback();
+            e.printStackTrace();
+        }finally {
+            session.close();
+        }
+
+    }
+
 }
+

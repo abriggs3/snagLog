@@ -13,22 +13,17 @@ public class UserHibernateDaoTest {
     private final Logger logger = Logger.getLogger(this.getClass());
     UserHibernateDao userHibernateDao;
     User user;
+    int listOfUsersInitialSize;
 
     @Before
     public void setUp() throws Exception {
         userHibernateDao = new UserHibernateDao();
-
+        listOfUsersInitialSize = userHibernateDao.getAllUsers().size();
         user = new User();
-        user.setFirstName("Admin");
-        user.setLastName("Person");
-        user.setUserName("adminUser");
-        user.setUserPassword("admin");
-
     }
 
     @Test
     public void getAllUsersTest() throws Exception {
-        logger.info("running deleteUserTest");
         List<User> users = userHibernateDao.getAllUsers();
         assertEquals("Unexpected number of users returned",2, users.size());
         assertEquals("Correct first name returned", "Admin", users.get(0).getFirstName());
@@ -36,15 +31,31 @@ public class UserHibernateDaoTest {
     }
 
     @Test
+    public void selectUserTest() throws Exception {
+        userHibernateDao.selectUser("adminUser");
+        assertNotNull(user);
+        assertEquals("Admin", user.getFirstName());
+    }
+
+//TODO
+    @Test
     public void updateUserTest() throws Exception {
+
     }
 
     @Test
     public void deleteUserTest() throws Exception {
-        logger.info("running deleteUserTest");
+
         userHibernateDao.deleteUser("adminUser");
+        assertEquals("Incorrect size of results", listOfUsersInitialSize - 1, userHibernateDao.getAllUsers().size());
+    }
 
+    @Test
+    public void addUserTest() {
 
+        userHibernateDao.addUser("Admin", "Person", "adminUser", "admin");
+        assertEquals("Incorrect size of results", listOfUsersInitialSize + 1, userHibernateDao.getAllUsers().size());
+//TODO        assertEquals("User not saved correctly", user.toString(), userHibernateDao.getUser(idNewUser).toString());
     }
 
 

@@ -33,6 +33,13 @@ public class User {
     // no argument constructor, required for java bean
     public User() {}
 
+    public User(String firstName, String lastName, String userName, String userPassword) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.userName = userName;
+        this.userPassword = userPassword;
+    }
+
     public String getFirstName() {return firstName;}
 
     public void setFirstName(String firstName) {
