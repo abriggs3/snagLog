@@ -17,17 +17,18 @@ public class UserHibernateDaoTest {
     @Before
     public void setUp() throws Exception {
         userHibernateDao = new UserHibernateDao();
-        /*
+
         user = new User();
         user.setFirstName("Admin");
         user.setLastName("Person");
         user.setUserName("adminUser");
         user.setUserPassword("admin");
-        */
+
     }
 
     @Test
     public void getAllUsersTest() throws Exception {
+        logger.info("running deleteUserTest");
         List<User> users = userHibernateDao.getAllUsers();
         assertEquals("Unexpected number of users returned",2, users.size());
         assertEquals("Correct first name returned", "Admin", users.get(0).getFirstName());
@@ -40,9 +41,13 @@ public class UserHibernateDaoTest {
 
     @Test
     public void deleteUserTest() throws Exception {
-        userHibernateDao.deleteUser(user);
+        logger.info("running deleteUserTest");
+        userHibernateDao.deleteUser("adminUser");
+
 
     }
+
+
 
 }
 
