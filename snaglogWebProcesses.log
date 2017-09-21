@@ -1060,3 +1060,957 @@ org.hibernate.MappingException: Unknown entity: java.lang.String
 2017-09-21 10:57:02,388 1802 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory
 2017-09-21 10:57:03,147 2561 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000227: Running hbm2ddl schema export
 2017-09-21 10:57:03,189 2603 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000230: Schema export complete
+2017-09-21 11:04:58,009 0    [main] INFO  org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2017-09-21 11:04:58,019 10   [main] INFO  org.hibernate.Version  - HHH000412: Hibernate Core {4.3.11.Final}
+2017-09-21 11:04:58,032 23   [main] INFO  org.hibernate.cfg.Environment  - HHH000206: hibernate.properties not found
+2017-09-21 11:04:58,039 30   [main] INFO  org.hibernate.cfg.Environment  - HHH000021: Bytecode provider name : javassist
+2017-09-21 11:04:58,075 66   [main] INFO  org.hibernate.cfg.Configuration  - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2017-09-21 11:04:58,076 67   [main] INFO  org.hibernate.cfg.Configuration  - HHH000040: Configuration resource: /hibernate.cfg.xml
+2017-09-21 11:04:58,320 311  [main] INFO  org.hibernate.cfg.Configuration  - HHH000041: Configured SessionFactory: null
+2017-09-21 11:04:58,574 565  [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-21 11:04:58,597 588  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/snaglog_test]
+2017-09-21 11:04:58,601 592  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000046: Connection properties: {user=root, password=****}
+2017-09-21 11:04:58,601 592  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000006: Autocommit mode: false
+2017-09-21 11:04:58,604 595  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-09-21 11:04:59,425 1416 [main] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2017-09-21 11:04:59,799 1790 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator  - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-09-21 11:04:59,812 1803 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory
+2017-09-21 11:05:00,600 2591 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000227: Running hbm2ddl schema export
+2017-09-21 11:05:00,658 2649 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000388: Unsuccessful: CREATE TABLE `user_roles` (
+2017-09-21 11:05:00,658 2649 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+2017-09-21 11:05:00,658 2649 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000388: Unsuccessful: `user_name` char(30) NOT NULL,
+2017-09-21 11:05:00,658 2649 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '`user_name` char(30) NOT NULL,' at line 1
+2017-09-21 11:05:00,663 2654 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000388: Unsuccessful: `role_name` char(30) NOT NULL,
+2017-09-21 11:05:00,663 2654 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '`role_name` char(30) NOT NULL,' at line 1
+2017-09-21 11:05:00,663 2654 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000388: Unsuccessful: PRIMARY KEY (`user_name`,`role_name`)
+2017-09-21 11:05:00,663 2654 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'PRIMARY KEY (`user_name`,`role_name`)' at line 1
+2017-09-21 11:05:00,666 2657 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000388: Unsuccessful: ) ENGINE=InnoDB DEFAULT CHARSET=latin1
+2017-09-21 11:05:00,666 2657 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') ENGINE=InnoDB DEFAULT CHARSET=latin1' at line 1
+2017-09-21 11:05:00,667 2658 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000388: Unsuccessful: LOCK TABLES `user_roles` WRITE
+2017-09-21 11:05:00,667 2658 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - Table 'snaglog_test.user_roles' doesn't exist
+2017-09-21 11:05:00,670 2661 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000388: Unsuccessful: INSERT INTO `user_roles` VALUES ('adminUser','admin'),('contributorUser','contributor')
+2017-09-21 11:05:00,670 2661 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - Table 'snaglog_test.user_roles' doesn't exist
+2017-09-21 11:05:00,684 2675 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000388: Unsuccessful: CREATE TABLE `users` (
+2017-09-21 11:05:00,685 2676 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+2017-09-21 11:05:00,685 2676 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000388: Unsuccessful: `first_name` char(30) NOT NULL,
+2017-09-21 11:05:00,686 2677 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '`first_name` char(30) NOT NULL,' at line 1
+2017-09-21 11:05:00,686 2677 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000388: Unsuccessful: `last_name` char(30) NOT NULL,
+2017-09-21 11:05:00,686 2677 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '`last_name` char(30) NOT NULL,' at line 1
+2017-09-21 11:05:00,686 2677 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000388: Unsuccessful: `user_name` char(30) NOT NULL,
+2017-09-21 11:05:00,686 2677 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '`user_name` char(30) NOT NULL,' at line 1
+2017-09-21 11:05:00,690 2681 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000388: Unsuccessful: `user_pass` char(30) NOT NULL,
+2017-09-21 11:05:00,691 2682 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '`user_pass` char(30) NOT NULL,' at line 1
+2017-09-21 11:05:00,694 2685 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000388: Unsuccessful: PRIMARY KEY (`user_name`)
+2017-09-21 11:05:00,694 2685 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'PRIMARY KEY (`user_name`)' at line 1
+2017-09-21 11:05:00,694 2685 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000388: Unsuccessful: ) ENGINE=InnoDB DEFAULT CHARSET=latin1
+2017-09-21 11:05:00,694 2685 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') ENGINE=InnoDB DEFAULT CHARSET=latin1' at line 1
+2017-09-21 11:05:00,695 2686 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000388: Unsuccessful: LOCK TABLES `users` WRITE
+2017-09-21 11:05:00,695 2686 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - Table 'snaglog_test.users' doesn't exist
+2017-09-21 11:05:00,696 2687 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000388: Unsuccessful: INSERT INTO `users` VALUES ('Admin','Person','adminUser','admin'),('Contributor','Person','contributorUser','contributor')
+2017-09-21 11:05:00,696 2687 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - Table 'snaglog_test.users' doesn't exist
+2017-09-21 11:05:00,701 2692 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000230: Schema export complete
+2017-09-21 11:05:00,917 2908 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - SQL Error: 1146, SQLState: 42S02
+2017-09-21 11:05:00,918 2909 [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - Table 'snaglog_test.users' doesn't exist
+2017-09-21 11:05:00,920 2911 [main] ERROR edu.matc.persistence.UserHibernateDao  - Error getting all users
+org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+	at org.hibernate.exception.internal.SQLExceptionTypeDelegate.convert(SQLExceptionTypeDelegate.java:80)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:49)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:126)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:112)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.extract(ResultSetReturnImpl.java:91)
+	at org.hibernate.loader.Loader.getResultSet(Loader.java:2066)
+	at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:1863)
+	at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:1839)
+	at org.hibernate.loader.Loader.doQuery(Loader.java:910)
+	at org.hibernate.loader.Loader.doQueryAndInitializeNonLazyCollections(Loader.java:355)
+	at org.hibernate.loader.Loader.doList(Loader.java:2554)
+	at org.hibernate.loader.Loader.doList(Loader.java:2540)
+	at org.hibernate.loader.Loader.listIgnoreQueryCache(Loader.java:2370)
+	at org.hibernate.loader.Loader.list(Loader.java:2365)
+	at org.hibernate.loader.criteria.CriteriaLoader.list(CriteriaLoader.java:126)
+	at org.hibernate.internal.SessionImpl.list(SessionImpl.java:1718)
+	at org.hibernate.internal.CriteriaImpl.list(CriteriaImpl.java:380)
+	at edu.matc.persistence.UserHibernateDao.getAllUsers(UserHibernateDao.java:26)
+	at edu.matc.persistence.UserHibernateDaoTest.setUp(UserHibernateDaoTest.java:21)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47)
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242)
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'snaglog_test.users' doesn't exist
+	at sun.reflect.GeneratedConstructorAccessor2.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:404)
+	at com.mysql.jdbc.Util.getInstance(Util.java:387)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:942)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3966)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3902)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2526)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2673)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2549)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1861)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:1962)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.extract(ResultSetReturnImpl.java:82)
+	... 36 more
+2017-09-21 11:05:00,930 2921 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - SQL Warning Code: 1146, SQLState: 42S02
+2017-09-21 11:05:00,930 2921 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - Table 'snaglog_test.users' doesn't exist
+2017-09-21 11:05:00,935 2926 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - SQL Error: 1146, SQLState: 42S02
+2017-09-21 11:05:00,935 2926 [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - Table 'snaglog_test.users' doesn't exist
+2017-09-21 11:05:00,935 2926 [main] ERROR edu.matc.persistence.UserHibernateDao  - Error getting all users
+org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+	at org.hibernate.exception.internal.SQLExceptionTypeDelegate.convert(SQLExceptionTypeDelegate.java:80)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:49)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:126)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:112)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.extract(ResultSetReturnImpl.java:91)
+	at org.hibernate.loader.Loader.getResultSet(Loader.java:2066)
+	at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:1863)
+	at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:1839)
+	at org.hibernate.loader.Loader.doQuery(Loader.java:910)
+	at org.hibernate.loader.Loader.doQueryAndInitializeNonLazyCollections(Loader.java:355)
+	at org.hibernate.loader.Loader.doList(Loader.java:2554)
+	at org.hibernate.loader.Loader.doList(Loader.java:2540)
+	at org.hibernate.loader.Loader.listIgnoreQueryCache(Loader.java:2370)
+	at org.hibernate.loader.Loader.list(Loader.java:2365)
+	at org.hibernate.loader.criteria.CriteriaLoader.list(CriteriaLoader.java:126)
+	at org.hibernate.internal.SessionImpl.list(SessionImpl.java:1718)
+	at org.hibernate.internal.CriteriaImpl.list(CriteriaImpl.java:380)
+	at edu.matc.persistence.UserHibernateDao.getAllUsers(UserHibernateDao.java:26)
+	at edu.matc.persistence.UserHibernateDaoTest.getAllUsersTest(UserHibernateDaoTest.java:27)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47)
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242)
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'snaglog_test.users' doesn't exist
+	at sun.reflect.GeneratedConstructorAccessor2.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:404)
+	at com.mysql.jdbc.Util.getInstance(Util.java:387)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:942)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3966)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3902)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2526)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2673)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2549)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1861)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:1962)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.extract(ResultSetReturnImpl.java:82)
+	... 37 more
+2017-09-21 11:05:00,947 2938 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - SQL Warning Code: 1146, SQLState: 42S02
+2017-09-21 11:05:00,947 2938 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - Table 'snaglog_test.users' doesn't exist
+2017-09-21 11:05:42,095 0    [main] INFO  org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2017-09-21 11:05:42,120 25   [main] INFO  org.hibernate.Version  - HHH000412: Hibernate Core {4.3.11.Final}
+2017-09-21 11:05:42,125 30   [main] INFO  org.hibernate.cfg.Environment  - HHH000206: hibernate.properties not found
+2017-09-21 11:05:42,130 35   [main] INFO  org.hibernate.cfg.Environment  - HHH000021: Bytecode provider name : javassist
+2017-09-21 11:05:42,169 74   [main] INFO  org.hibernate.cfg.Configuration  - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2017-09-21 11:05:42,171 76   [main] INFO  org.hibernate.cfg.Configuration  - HHH000040: Configuration resource: /hibernate.cfg.xml
+2017-09-21 11:05:42,378 283  [main] INFO  org.hibernate.cfg.Configuration  - HHH000041: Configured SessionFactory: null
+2017-09-21 11:05:42,638 543  [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-21 11:05:42,658 563  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/snaglog_test]
+2017-09-21 11:05:42,662 567  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000046: Connection properties: {user=root, password=****}
+2017-09-21 11:05:42,662 567  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000006: Autocommit mode: false
+2017-09-21 11:05:42,668 573  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-09-21 11:05:43,508 1413 [main] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2017-09-21 11:05:43,856 1761 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator  - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-09-21 11:05:43,876 1781 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory
+2017-09-21 11:05:44,643 2548 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000227: Running hbm2ddl schema export
+2017-09-21 11:05:44,686 2591 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000388: Unsuccessful: CREATE TABLE `user_roles` (
+2017-09-21 11:05:44,686 2591 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+2017-09-21 11:05:44,687 2592 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000388: Unsuccessful: `user_name` char(30) NOT NULL,
+2017-09-21 11:05:44,687 2592 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '`user_name` char(30) NOT NULL,' at line 1
+2017-09-21 11:05:44,690 2595 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000388: Unsuccessful: `role_name` char(30) NOT NULL,
+2017-09-21 11:05:44,690 2595 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '`role_name` char(30) NOT NULL,' at line 1
+2017-09-21 11:05:44,690 2595 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000388: Unsuccessful: PRIMARY KEY (`user_name`,`role_name`)
+2017-09-21 11:05:44,691 2596 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'PRIMARY KEY (`user_name`,`role_name`)' at line 1
+2017-09-21 11:05:44,691 2596 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000388: Unsuccessful: ) ENGINE=InnoDB DEFAULT CHARSET=latin1
+2017-09-21 11:05:44,691 2596 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') ENGINE=InnoDB DEFAULT CHARSET=latin1' at line 1
+2017-09-21 11:05:44,691 2596 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000388: Unsuccessful: LOCK TABLES `user_roles` WRITE
+2017-09-21 11:05:44,691 2596 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - Table 'snaglog_test.user_roles' doesn't exist
+2017-09-21 11:05:44,691 2596 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000388: Unsuccessful: INSERT INTO `user_roles` VALUES ('adminUser','admin'),('contributorUser','contributor')
+2017-09-21 11:05:44,691 2596 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - Table 'snaglog_test.user_roles' doesn't exist
+2017-09-21 11:05:44,706 2611 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000388: Unsuccessful: CREATE TABLE `users` (
+2017-09-21 11:05:44,706 2611 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+2017-09-21 11:05:44,706 2611 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000388: Unsuccessful: `first_name` char(30) NOT NULL,
+2017-09-21 11:05:44,706 2611 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '`first_name` char(30) NOT NULL,' at line 1
+2017-09-21 11:05:44,706 2611 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000388: Unsuccessful: `last_name` char(30) NOT NULL,
+2017-09-21 11:05:44,706 2611 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '`last_name` char(30) NOT NULL,' at line 1
+2017-09-21 11:05:44,708 2613 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000388: Unsuccessful: `user_name` char(30) NOT NULL,
+2017-09-21 11:05:44,708 2613 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '`user_name` char(30) NOT NULL,' at line 1
+2017-09-21 11:05:44,711 2616 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000388: Unsuccessful: `user_pass` char(30) NOT NULL,
+2017-09-21 11:05:44,711 2616 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '`user_pass` char(30) NOT NULL,' at line 1
+2017-09-21 11:05:44,713 2618 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000388: Unsuccessful: PRIMARY KEY (`user_name`)
+2017-09-21 11:05:44,714 2619 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'PRIMARY KEY (`user_name`)' at line 1
+2017-09-21 11:05:44,714 2619 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000388: Unsuccessful: ) ENGINE=InnoDB DEFAULT CHARSET=latin1
+2017-09-21 11:05:44,714 2619 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') ENGINE=InnoDB DEFAULT CHARSET=latin1' at line 1
+2017-09-21 11:05:44,715 2620 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000388: Unsuccessful: LOCK TABLES `users` WRITE
+2017-09-21 11:05:44,715 2620 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - Table 'snaglog_test.users' doesn't exist
+2017-09-21 11:05:44,716 2621 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000388: Unsuccessful: INSERT INTO `users` VALUES ('Admin','Person','adminUser','admin'),('Contributor','Person','contributorUser','contributor')
+2017-09-21 11:05:44,716 2621 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - Table 'snaglog_test.users' doesn't exist
+2017-09-21 11:05:44,721 2626 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000230: Schema export complete
+2017-09-21 11:05:44,811 2716 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - SQL Error: 1146, SQLState: 42S02
+2017-09-21 11:05:44,815 2720 [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - Table 'snaglog_test.users' doesn't exist
+2017-09-21 11:05:44,817 2722 [main] ERROR edu.matc.persistence.UserHibernateDao  - Error getting all users
+org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+	at org.hibernate.exception.internal.SQLExceptionTypeDelegate.convert(SQLExceptionTypeDelegate.java:80)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:49)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:126)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:112)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.extract(ResultSetReturnImpl.java:91)
+	at org.hibernate.loader.Loader.getResultSet(Loader.java:2066)
+	at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:1863)
+	at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:1839)
+	at org.hibernate.loader.Loader.doQuery(Loader.java:910)
+	at org.hibernate.loader.Loader.doQueryAndInitializeNonLazyCollections(Loader.java:355)
+	at org.hibernate.loader.Loader.doList(Loader.java:2554)
+	at org.hibernate.loader.Loader.doList(Loader.java:2540)
+	at org.hibernate.loader.Loader.listIgnoreQueryCache(Loader.java:2370)
+	at org.hibernate.loader.Loader.list(Loader.java:2365)
+	at org.hibernate.loader.criteria.CriteriaLoader.list(CriteriaLoader.java:126)
+	at org.hibernate.internal.SessionImpl.list(SessionImpl.java:1718)
+	at org.hibernate.internal.CriteriaImpl.list(CriteriaImpl.java:380)
+	at edu.matc.persistence.UserHibernateDao.getAllUsers(UserHibernateDao.java:26)
+	at edu.matc.persistence.UserHibernateDaoTest.setUp(UserHibernateDaoTest.java:21)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47)
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242)
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'snaglog_test.users' doesn't exist
+	at sun.reflect.GeneratedConstructorAccessor2.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:404)
+	at com.mysql.jdbc.Util.getInstance(Util.java:387)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:942)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3966)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3902)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2526)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2673)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2549)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1861)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:1962)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.extract(ResultSetReturnImpl.java:82)
+	... 36 more
+2017-09-21 11:05:44,821 2726 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - SQL Warning Code: 1146, SQLState: 42S02
+2017-09-21 11:05:44,821 2726 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - Table 'snaglog_test.users' doesn't exist
+2017-09-21 11:05:45,013 2918 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - SQL Error: 1146, SQLState: 42S02
+2017-09-21 11:05:45,013 2918 [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - Table 'snaglog_test.users' doesn't exist
+2017-09-21 11:05:45,013 2918 [main] INFO  org.hibernate.engine.jdbc.batch.internal.AbstractBatchImpl  - HHH000010: On release of batch it still contained JDBC statements
+2017-09-21 11:05:45,014 2919 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - SQL Warning Code: 1146, SQLState: 42S02
+2017-09-21 11:05:45,014 2919 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - Table 'snaglog_test.users' doesn't exist
+2017-09-21 11:05:45,026 2931 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - SQL Error: 1146, SQLState: 42S02
+2017-09-21 11:05:45,026 2931 [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - Table 'snaglog_test.users' doesn't exist
+2017-09-21 11:05:45,030 2935 [main] ERROR edu.matc.persistence.UserHibernateDao  - Error getting all users
+org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+	at org.hibernate.exception.internal.SQLExceptionTypeDelegate.convert(SQLExceptionTypeDelegate.java:80)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:49)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:126)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:112)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.extract(ResultSetReturnImpl.java:91)
+	at org.hibernate.loader.Loader.getResultSet(Loader.java:2066)
+	at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:1863)
+	at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:1839)
+	at org.hibernate.loader.Loader.doQuery(Loader.java:910)
+	at org.hibernate.loader.Loader.doQueryAndInitializeNonLazyCollections(Loader.java:355)
+	at org.hibernate.loader.Loader.doList(Loader.java:2554)
+	at org.hibernate.loader.Loader.doList(Loader.java:2540)
+	at org.hibernate.loader.Loader.listIgnoreQueryCache(Loader.java:2370)
+	at org.hibernate.loader.Loader.list(Loader.java:2365)
+	at org.hibernate.loader.criteria.CriteriaLoader.list(CriteriaLoader.java:126)
+	at org.hibernate.internal.SessionImpl.list(SessionImpl.java:1718)
+	at org.hibernate.internal.CriteriaImpl.list(CriteriaImpl.java:380)
+	at edu.matc.persistence.UserHibernateDao.getAllUsers(UserHibernateDao.java:26)
+	at edu.matc.persistence.UserHibernateDaoTest.addUserTest(UserHibernateDaoTest.java:57)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47)
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242)
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'snaglog_test.users' doesn't exist
+	at sun.reflect.GeneratedConstructorAccessor2.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:404)
+	at com.mysql.jdbc.Util.getInstance(Util.java:387)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:942)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3966)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3902)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2526)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2673)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2549)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1861)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:1962)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.extract(ResultSetReturnImpl.java:82)
+	... 37 more
+2017-09-21 11:05:45,042 2947 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - SQL Warning Code: 1146, SQLState: 42S02
+2017-09-21 11:05:45,042 2947 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - Table 'snaglog_test.users' doesn't exist
+2017-09-21 11:10:53,130 0    [main] INFO  org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2017-09-21 11:10:53,143 13   [main] INFO  org.hibernate.Version  - HHH000412: Hibernate Core {4.3.11.Final}
+2017-09-21 11:10:53,147 17   [main] INFO  org.hibernate.cfg.Environment  - HHH000206: hibernate.properties not found
+2017-09-21 11:10:53,150 20   [main] INFO  org.hibernate.cfg.Environment  - HHH000021: Bytecode provider name : javassist
+2017-09-21 11:10:53,212 82   [main] INFO  org.hibernate.cfg.Configuration  - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2017-09-21 11:10:53,212 82   [main] INFO  org.hibernate.cfg.Configuration  - HHH000040: Configuration resource: /hibernate.cfg.xml
+2017-09-21 11:10:53,386 256  [main] INFO  org.hibernate.cfg.Configuration  - HHH000041: Configured SessionFactory: null
+2017-09-21 11:10:53,630 500  [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-21 11:10:53,643 513  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/snaglog_test]
+2017-09-21 11:10:53,648 518  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000046: Connection properties: {user=root, password=****}
+2017-09-21 11:10:53,648 518  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000006: Autocommit mode: false
+2017-09-21 11:10:53,649 519  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-09-21 11:10:54,497 1367 [main] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2017-09-21 11:10:54,862 1732 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator  - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-09-21 11:10:54,877 1747 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory
+2017-09-21 11:10:55,824 2694 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000227: Running hbm2ddl schema export
+2017-09-21 11:10:55,877 2747 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000388: Unsuccessful: CREATE TABLE `user_roles` (
+2017-09-21 11:10:55,880 2750 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+2017-09-21 11:10:55,881 2751 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000388: Unsuccessful: `user_name` char(30) NOT NULL,
+2017-09-21 11:10:55,882 2752 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '`user_name` char(30) NOT NULL,' at line 1
+2017-09-21 11:10:55,887 2757 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000388: Unsuccessful: `role_name` char(30) NOT NULL,
+2017-09-21 11:10:55,887 2757 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '`role_name` char(30) NOT NULL,' at line 1
+2017-09-21 11:10:55,888 2758 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000388: Unsuccessful: PRIMARY KEY (`user_name`,`role_name`)
+2017-09-21 11:10:55,888 2758 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'PRIMARY KEY (`user_name`,`role_name`)' at line 1
+2017-09-21 11:10:55,888 2758 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000388: Unsuccessful: ) ENGINE=InnoDB DEFAULT CHARSET=latin1
+2017-09-21 11:10:55,888 2758 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') ENGINE=InnoDB DEFAULT CHARSET=latin1' at line 1
+2017-09-21 11:10:55,890 2760 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000388: Unsuccessful: LOCK TABLES `user_roles` WRITE
+2017-09-21 11:10:55,891 2761 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - Table 'snaglog_test.user_roles' doesn't exist
+2017-09-21 11:10:55,910 2780 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000388: Unsuccessful: INSERT INTO `user_roles` VALUES ('adminUser','admin'),('contributorUser','contributor')
+2017-09-21 11:10:55,914 2784 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - Table 'snaglog_test.user_roles' doesn't exist
+2017-09-21 11:10:55,927 2797 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000388: Unsuccessful: CREATE TABLE `users` (
+2017-09-21 11:10:55,927 2797 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+2017-09-21 11:10:55,929 2799 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000388: Unsuccessful: `first_name` char(30) NOT NULL,
+2017-09-21 11:10:55,929 2799 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '`first_name` char(30) NOT NULL,' at line 1
+2017-09-21 11:10:55,930 2800 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000388: Unsuccessful: `last_name` char(30) NOT NULL,
+2017-09-21 11:10:55,930 2800 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '`last_name` char(30) NOT NULL,' at line 1
+2017-09-21 11:10:55,930 2800 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000388: Unsuccessful: `user_name` char(30) NOT NULL,
+2017-09-21 11:10:55,930 2800 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '`user_name` char(30) NOT NULL,' at line 1
+2017-09-21 11:10:55,930 2800 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000388: Unsuccessful: `user_pass` char(30) NOT NULL,
+2017-09-21 11:10:55,930 2800 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '`user_pass` char(30) NOT NULL,' at line 1
+2017-09-21 11:10:55,932 2802 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000388: Unsuccessful: PRIMARY KEY (`user_name`)
+2017-09-21 11:10:55,932 2802 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'PRIMARY KEY (`user_name`)' at line 1
+2017-09-21 11:10:55,934 2804 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000388: Unsuccessful: ) ENGINE=InnoDB DEFAULT CHARSET=latin1
+2017-09-21 11:10:55,934 2804 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') ENGINE=InnoDB DEFAULT CHARSET=latin1' at line 1
+2017-09-21 11:10:55,935 2805 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000388: Unsuccessful: LOCK TABLES `users` WRITE
+2017-09-21 11:10:55,935 2805 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - Table 'snaglog_test.users' doesn't exist
+2017-09-21 11:10:55,935 2805 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000388: Unsuccessful: INSERT INTO `users` VALUES ('Admin','Person','adminUser','admin'),('Contributor','Person','contributorUser','contributor')
+2017-09-21 11:10:55,935 2805 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - Table 'snaglog_test.users' doesn't exist
+2017-09-21 11:10:55,938 2808 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000230: Schema export complete
+2017-09-21 11:10:56,187 3057 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - SQL Error: 1146, SQLState: 42S02
+2017-09-21 11:10:56,188 3058 [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - Table 'snaglog_test.users' doesn't exist
+2017-09-21 11:10:56,189 3059 [main] ERROR edu.matc.persistence.UserHibernateDao  - Error getting all users
+org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+	at org.hibernate.exception.internal.SQLExceptionTypeDelegate.convert(SQLExceptionTypeDelegate.java:80)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:49)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:126)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:112)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.extract(ResultSetReturnImpl.java:91)
+	at org.hibernate.loader.Loader.getResultSet(Loader.java:2066)
+	at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:1863)
+	at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:1839)
+	at org.hibernate.loader.Loader.doQuery(Loader.java:910)
+	at org.hibernate.loader.Loader.doQueryAndInitializeNonLazyCollections(Loader.java:355)
+	at org.hibernate.loader.Loader.doList(Loader.java:2554)
+	at org.hibernate.loader.Loader.doList(Loader.java:2540)
+	at org.hibernate.loader.Loader.listIgnoreQueryCache(Loader.java:2370)
+	at org.hibernate.loader.Loader.list(Loader.java:2365)
+	at org.hibernate.loader.criteria.CriteriaLoader.list(CriteriaLoader.java:126)
+	at org.hibernate.internal.SessionImpl.list(SessionImpl.java:1718)
+	at org.hibernate.internal.CriteriaImpl.list(CriteriaImpl.java:380)
+	at edu.matc.persistence.UserHibernateDao.getAllUsers(UserHibernateDao.java:26)
+	at edu.matc.persistence.UserHibernateDaoTest.setUp(UserHibernateDaoTest.java:21)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47)
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242)
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'snaglog_test.users' doesn't exist
+	at sun.reflect.GeneratedConstructorAccessor2.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:404)
+	at com.mysql.jdbc.Util.getInstance(Util.java:387)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:942)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3966)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3902)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2526)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2673)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2549)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1861)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:1962)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.extract(ResultSetReturnImpl.java:82)
+	... 36 more
+2017-09-21 11:10:56,199 3069 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - SQL Warning Code: 1146, SQLState: 42S02
+2017-09-21 11:10:56,199 3069 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - Table 'snaglog_test.users' doesn't exist
+2017-09-21 11:10:56,216 3086 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - SQL Error: 1146, SQLState: 42S02
+2017-09-21 11:10:56,218 3088 [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - Table 'snaglog_test.users' doesn't exist
+2017-09-21 11:10:56,218 3088 [main] ERROR edu.matc.persistence.UserHibernateDao  - Error getting all users
+org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+	at org.hibernate.exception.internal.SQLExceptionTypeDelegate.convert(SQLExceptionTypeDelegate.java:80)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:49)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:126)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:112)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.extract(ResultSetReturnImpl.java:91)
+	at org.hibernate.loader.Loader.getResultSet(Loader.java:2066)
+	at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:1863)
+	at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:1839)
+	at org.hibernate.loader.Loader.doQuery(Loader.java:910)
+	at org.hibernate.loader.Loader.doQueryAndInitializeNonLazyCollections(Loader.java:355)
+	at org.hibernate.loader.Loader.doList(Loader.java:2554)
+	at org.hibernate.loader.Loader.doList(Loader.java:2540)
+	at org.hibernate.loader.Loader.listIgnoreQueryCache(Loader.java:2370)
+	at org.hibernate.loader.Loader.list(Loader.java:2365)
+	at org.hibernate.loader.criteria.CriteriaLoader.list(CriteriaLoader.java:126)
+	at org.hibernate.internal.SessionImpl.list(SessionImpl.java:1718)
+	at org.hibernate.internal.CriteriaImpl.list(CriteriaImpl.java:380)
+	at edu.matc.persistence.UserHibernateDao.getAllUsers(UserHibernateDao.java:26)
+	at edu.matc.persistence.UserHibernateDaoTest.getAllUsersTest(UserHibernateDaoTest.java:27)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47)
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242)
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'snaglog_test.users' doesn't exist
+	at sun.reflect.GeneratedConstructorAccessor2.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:404)
+	at com.mysql.jdbc.Util.getInstance(Util.java:387)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:942)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3966)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3902)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2526)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2673)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2549)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1861)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:1962)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.extract(ResultSetReturnImpl.java:82)
+	... 37 more
+2017-09-21 11:10:56,224 3094 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - SQL Warning Code: 1146, SQLState: 42S02
+2017-09-21 11:10:56,224 3094 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - Table 'snaglog_test.users' doesn't exist
+2017-09-21 11:16:33,270 0    [main] INFO  org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2017-09-21 11:16:33,291 21   [main] INFO  org.hibernate.Version  - HHH000412: Hibernate Core {4.3.11.Final}
+2017-09-21 11:16:33,293 23   [main] INFO  org.hibernate.cfg.Environment  - HHH000206: hibernate.properties not found
+2017-09-21 11:16:33,297 27   [main] INFO  org.hibernate.cfg.Environment  - HHH000021: Bytecode provider name : javassist
+2017-09-21 11:16:33,341 71   [main] INFO  org.hibernate.cfg.Configuration  - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2017-09-21 11:16:33,342 72   [main] INFO  org.hibernate.cfg.Configuration  - HHH000040: Configuration resource: /hibernate.cfg.xml
+2017-09-21 11:16:33,524 254  [main] INFO  org.hibernate.cfg.Configuration  - HHH000041: Configured SessionFactory: null
+2017-09-21 11:16:33,759 489  [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-21 11:16:33,776 506  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/snaglog_test]
+2017-09-21 11:16:33,777 507  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000046: Connection properties: {user=root, password=****}
+2017-09-21 11:16:33,777 507  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000006: Autocommit mode: false
+2017-09-21 11:16:33,779 509  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-09-21 11:16:34,595 1325 [main] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2017-09-21 11:16:34,954 1684 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator  - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-09-21 11:16:34,964 1694 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory
+2017-09-21 11:16:35,775 2505 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000227: Running hbm2ddl schema export
+2017-09-21 11:16:35,831 2561 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000388: Unsuccessful: CREATE TABLE `user_roles` (
+2017-09-21 11:16:35,831 2561 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+2017-09-21 11:16:35,831 2561 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000388: Unsuccessful: `user_name` char(30) NOT NULL,
+2017-09-21 11:16:35,831 2561 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '`user_name` char(30) NOT NULL,' at line 1
+2017-09-21 11:16:35,831 2561 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000388: Unsuccessful: `role_name` char(30) NOT NULL,
+2017-09-21 11:16:35,831 2561 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '`role_name` char(30) NOT NULL,' at line 1
+2017-09-21 11:16:35,833 2563 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000388: Unsuccessful: PRIMARY KEY (`user_name`,`role_name`)
+2017-09-21 11:16:35,833 2563 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'PRIMARY KEY (`user_name`,`role_name`)' at line 1
+2017-09-21 11:16:35,835 2565 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000388: Unsuccessful: ) ENGINE=InnoDB DEFAULT CHARSET=latin1
+2017-09-21 11:16:35,835 2565 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') ENGINE=InnoDB DEFAULT CHARSET=latin1' at line 1
+2017-09-21 11:16:35,835 2565 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000388: Unsuccessful: LOCK TABLES `user_roles` WRITE
+2017-09-21 11:16:35,835 2565 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - Table 'snaglog_test.user_roles' doesn't exist
+2017-09-21 11:16:35,848 2578 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000388: Unsuccessful: INSERT INTO `user_roles` VALUES ('adminUser','admin'),('contributorUser','contributor')
+2017-09-21 11:16:35,848 2578 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - Table 'snaglog_test.user_roles' doesn't exist
+2017-09-21 11:16:35,861 2591 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000388: Unsuccessful: CREATE TABLE `users` (
+2017-09-21 11:16:35,862 2592 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+2017-09-21 11:16:35,865 2595 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000388: Unsuccessful: `first_name` char(30) NOT NULL,
+2017-09-21 11:16:35,865 2595 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '`first_name` char(30) NOT NULL,' at line 1
+2017-09-21 11:16:35,865 2595 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000388: Unsuccessful: `last_name` char(30) NOT NULL,
+2017-09-21 11:16:35,865 2595 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '`last_name` char(30) NOT NULL,' at line 1
+2017-09-21 11:16:35,866 2596 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000388: Unsuccessful: `user_name` char(30) NOT NULL,
+2017-09-21 11:16:35,866 2596 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '`user_name` char(30) NOT NULL,' at line 1
+2017-09-21 11:16:35,868 2598 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000388: Unsuccessful: `user_pass` char(30) NOT NULL,
+2017-09-21 11:16:35,869 2599 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '`user_pass` char(30) NOT NULL,' at line 1
+2017-09-21 11:16:35,873 2603 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000388: Unsuccessful: PRIMARY KEY (`user_name`)
+2017-09-21 11:16:35,873 2603 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'PRIMARY KEY (`user_name`)' at line 1
+2017-09-21 11:16:35,873 2603 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000388: Unsuccessful: ) ENGINE=InnoDB DEFAULT CHARSET=latin1
+2017-09-21 11:16:35,873 2603 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') ENGINE=InnoDB DEFAULT CHARSET=latin1' at line 1
+2017-09-21 11:16:35,878 2608 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000388: Unsuccessful: LOCK TABLES `users` WRITE
+2017-09-21 11:16:35,878 2608 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - Table 'snaglog_test.users' doesn't exist
+2017-09-21 11:16:35,883 2613 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000388: Unsuccessful: INSERT INTO `users` VALUES ('Admin','Person','adminUser','admin'),('Contributor','Person','contributorUser','contributor')
+2017-09-21 11:16:35,883 2613 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - Table 'snaglog_test.users' doesn't exist
+2017-09-21 11:16:35,888 2618 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000230: Schema export complete
+2017-09-21 11:16:36,104 2834 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - SQL Error: 1146, SQLState: 42S02
+2017-09-21 11:16:36,107 2837 [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - Table 'snaglog_test.users' doesn't exist
+2017-09-21 11:16:36,108 2838 [main] ERROR edu.matc.persistence.UserHibernateDao  - Error getting all users
+org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+	at org.hibernate.exception.internal.SQLExceptionTypeDelegate.convert(SQLExceptionTypeDelegate.java:80)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:49)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:126)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:112)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.extract(ResultSetReturnImpl.java:91)
+	at org.hibernate.loader.Loader.getResultSet(Loader.java:2066)
+	at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:1863)
+	at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:1839)
+	at org.hibernate.loader.Loader.doQuery(Loader.java:910)
+	at org.hibernate.loader.Loader.doQueryAndInitializeNonLazyCollections(Loader.java:355)
+	at org.hibernate.loader.Loader.doList(Loader.java:2554)
+	at org.hibernate.loader.Loader.doList(Loader.java:2540)
+	at org.hibernate.loader.Loader.listIgnoreQueryCache(Loader.java:2370)
+	at org.hibernate.loader.Loader.list(Loader.java:2365)
+	at org.hibernate.loader.criteria.CriteriaLoader.list(CriteriaLoader.java:126)
+	at org.hibernate.internal.SessionImpl.list(SessionImpl.java:1718)
+	at org.hibernate.internal.CriteriaImpl.list(CriteriaImpl.java:380)
+	at edu.matc.persistence.UserHibernateDao.getAllUsers(UserHibernateDao.java:26)
+	at edu.matc.persistence.UserHibernateDaoTest.setUp(UserHibernateDaoTest.java:21)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47)
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242)
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'snaglog_test.users' doesn't exist
+	at sun.reflect.GeneratedConstructorAccessor2.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:404)
+	at com.mysql.jdbc.Util.getInstance(Util.java:387)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:942)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3966)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3902)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2526)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2673)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2549)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1861)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:1962)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.extract(ResultSetReturnImpl.java:82)
+	... 36 more
+2017-09-21 11:16:36,115 2845 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - SQL Warning Code: 1146, SQLState: 42S02
+2017-09-21 11:16:36,115 2845 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - Table 'snaglog_test.users' doesn't exist
+2017-09-21 11:16:36,222 2952 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - SQL Error: 1146, SQLState: 42S02
+2017-09-21 11:16:36,222 2952 [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - Table 'snaglog_test.users' doesn't exist
+2017-09-21 11:16:36,222 2952 [main] INFO  org.hibernate.engine.jdbc.batch.internal.AbstractBatchImpl  - HHH000010: On release of batch it still contained JDBC statements
+2017-09-21 11:16:36,225 2955 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - SQL Warning Code: 1146, SQLState: 42S02
+2017-09-21 11:16:36,225 2955 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - Table 'snaglog_test.users' doesn't exist
+2017-09-21 11:16:36,231 2961 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - SQL Error: 1146, SQLState: 42S02
+2017-09-21 11:16:36,231 2961 [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - Table 'snaglog_test.users' doesn't exist
+2017-09-21 11:16:36,239 2969 [main] ERROR edu.matc.persistence.UserHibernateDao  - Error getting all users
+org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+	at org.hibernate.exception.internal.SQLExceptionTypeDelegate.convert(SQLExceptionTypeDelegate.java:80)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:49)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:126)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:112)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.extract(ResultSetReturnImpl.java:91)
+	at org.hibernate.loader.Loader.getResultSet(Loader.java:2066)
+	at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:1863)
+	at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:1839)
+	at org.hibernate.loader.Loader.doQuery(Loader.java:910)
+	at org.hibernate.loader.Loader.doQueryAndInitializeNonLazyCollections(Loader.java:355)
+	at org.hibernate.loader.Loader.doList(Loader.java:2554)
+	at org.hibernate.loader.Loader.doList(Loader.java:2540)
+	at org.hibernate.loader.Loader.listIgnoreQueryCache(Loader.java:2370)
+	at org.hibernate.loader.Loader.list(Loader.java:2365)
+	at org.hibernate.loader.criteria.CriteriaLoader.list(CriteriaLoader.java:126)
+	at org.hibernate.internal.SessionImpl.list(SessionImpl.java:1718)
+	at org.hibernate.internal.CriteriaImpl.list(CriteriaImpl.java:380)
+	at edu.matc.persistence.UserHibernateDao.getAllUsers(UserHibernateDao.java:26)
+	at edu.matc.persistence.UserHibernateDaoTest.addUserTest(UserHibernateDaoTest.java:57)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:68)
+	at com.intellij.rt.execution.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:47)
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:242)
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'snaglog_test.users' doesn't exist
+	at sun.reflect.GeneratedConstructorAccessor2.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:404)
+	at com.mysql.jdbc.Util.getInstance(Util.java:387)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:942)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3966)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3902)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2526)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2673)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2549)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1861)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:1962)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.extract(ResultSetReturnImpl.java:82)
+	... 37 more
+2017-09-21 11:16:36,247 2977 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - SQL Warning Code: 1146, SQLState: 42S02
+2017-09-21 11:16:36,248 2978 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - Table 'snaglog_test.users' doesn't exist
+2017-09-21 11:20:26,331 0    [main] INFO  org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2017-09-21 11:20:26,353 22   [main] INFO  org.hibernate.Version  - HHH000412: Hibernate Core {4.3.11.Final}
+2017-09-21 11:20:26,358 27   [main] INFO  org.hibernate.cfg.Environment  - HHH000206: hibernate.properties not found
+2017-09-21 11:20:26,360 29   [main] INFO  org.hibernate.cfg.Environment  - HHH000021: Bytecode provider name : javassist
+2017-09-21 11:20:26,408 77   [main] INFO  org.hibernate.cfg.Configuration  - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2017-09-21 11:20:26,409 78   [main] INFO  org.hibernate.cfg.Configuration  - HHH000040: Configuration resource: /hibernate.cfg.xml
+2017-09-21 11:20:26,585 254  [main] INFO  org.hibernate.cfg.Configuration  - HHH000041: Configured SessionFactory: null
+2017-09-21 11:20:26,823 492  [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-21 11:20:26,841 510  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/snaglog_test]
+2017-09-21 11:20:26,845 514  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000046: Connection properties: {user=root, password=****}
+2017-09-21 11:20:26,845 514  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000006: Autocommit mode: false
+2017-09-21 11:20:26,849 518  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-09-21 11:20:27,698 1367 [main] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2017-09-21 11:20:28,051 1720 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator  - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-09-21 11:20:28,057 1726 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory
+2017-09-21 11:22:20,717 0    [main] INFO  org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2017-09-21 11:22:20,732 15   [main] INFO  org.hibernate.Version  - HHH000412: Hibernate Core {4.3.11.Final}
+2017-09-21 11:22:20,739 22   [main] INFO  org.hibernate.cfg.Environment  - HHH000206: hibernate.properties not found
+2017-09-21 11:22:20,742 25   [main] INFO  org.hibernate.cfg.Environment  - HHH000021: Bytecode provider name : javassist
+2017-09-21 11:22:20,788 71   [main] INFO  org.hibernate.cfg.Configuration  - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2017-09-21 11:22:20,788 71   [main] INFO  org.hibernate.cfg.Configuration  - HHH000040: Configuration resource: /hibernate.cfg.xml
+2017-09-21 11:22:20,980 263  [main] INFO  org.hibernate.cfg.Configuration  - HHH000041: Configured SessionFactory: null
+2017-09-21 11:22:21,219 502  [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-21 11:22:21,232 515  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/snaglog_test]
+2017-09-21 11:22:21,236 519  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000046: Connection properties: {user=root, password=****}
+2017-09-21 11:22:21,236 519  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000006: Autocommit mode: false
+2017-09-21 11:22:21,239 522  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-09-21 11:22:22,064 1347 [main] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2017-09-21 11:22:22,437 1720 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator  - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-09-21 11:22:22,452 1735 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory
+2017-09-21 11:22:23,492 2775 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - SQL Error: 1062, SQLState: 23000
+2017-09-21 11:22:23,492 2775 [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - Duplicate entry 'JJQ' for key 'PRIMARY'
+2017-09-21 11:22:23,493 2776 [main] INFO  org.hibernate.engine.jdbc.batch.internal.AbstractBatchImpl  - HHH000010: On release of batch it still contained JDBC statements
+2017-09-21 11:22:23,499 2782 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - SQL Warning Code: 1062, SQLState: 23000
+2017-09-21 11:22:23,499 2782 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - Duplicate entry 'JJQ' for key 'PRIMARY'
+2017-09-21 11:24:47,072 0    [main] INFO  org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2017-09-21 11:24:47,092 20   [main] INFO  org.hibernate.Version  - HHH000412: Hibernate Core {4.3.11.Final}
+2017-09-21 11:24:47,097 25   [main] INFO  org.hibernate.cfg.Environment  - HHH000206: hibernate.properties not found
+2017-09-21 11:24:47,102 30   [main] INFO  org.hibernate.cfg.Environment  - HHH000021: Bytecode provider name : javassist
+2017-09-21 11:24:47,160 88   [main] INFO  org.hibernate.cfg.Configuration  - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2017-09-21 11:24:47,161 89   [main] INFO  org.hibernate.cfg.Configuration  - HHH000040: Configuration resource: /hibernate.cfg.xml
+2017-09-21 11:24:47,335 263  [main] INFO  org.hibernate.cfg.Configuration  - HHH000041: Configured SessionFactory: null
+2017-09-21 11:24:47,574 502  [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-21 11:24:47,592 520  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/snaglog_test]
+2017-09-21 11:24:47,593 521  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000046: Connection properties: {user=root, password=****}
+2017-09-21 11:24:47,593 521  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000006: Autocommit mode: false
+2017-09-21 11:24:47,598 526  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-09-21 11:24:48,457 1385 [main] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2017-09-21 11:24:48,847 1775 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator  - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-09-21 11:24:48,854 1782 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory
+2017-09-21 11:24:49,844 2772 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - SQL Error: 1062, SQLState: 23000
+2017-09-21 11:24:49,844 2772 [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - Duplicate entry 'JJQ' for key 'PRIMARY'
+2017-09-21 11:24:49,845 2773 [main] INFO  org.hibernate.engine.jdbc.batch.internal.AbstractBatchImpl  - HHH000010: On release of batch it still contained JDBC statements
+2017-09-21 11:24:49,851 2779 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - SQL Warning Code: 1062, SQLState: 23000
+2017-09-21 11:24:49,851 2779 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - Duplicate entry 'JJQ' for key 'PRIMARY'
+2017-09-21 11:30:48,998 0    [main] INFO  org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2017-09-21 11:30:49,019 21   [main] INFO  org.hibernate.Version  - HHH000412: Hibernate Core {4.3.11.Final}
+2017-09-21 11:30:49,023 25   [main] INFO  org.hibernate.cfg.Environment  - HHH000206: hibernate.properties not found
+2017-09-21 11:30:49,026 28   [main] INFO  org.hibernate.cfg.Environment  - HHH000021: Bytecode provider name : javassist
+2017-09-21 11:30:49,065 67   [main] INFO  org.hibernate.cfg.Configuration  - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2017-09-21 11:30:49,066 68   [main] INFO  org.hibernate.cfg.Configuration  - HHH000040: Configuration resource: /hibernate.cfg.xml
+2017-09-21 11:30:49,235 237  [main] INFO  org.hibernate.cfg.Configuration  - HHH000041: Configured SessionFactory: null
+2017-09-21 11:30:49,482 484  [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-21 11:30:49,500 502  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/snaglog_test]
+2017-09-21 11:30:49,502 504  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000046: Connection properties: {user=root, password=****}
+2017-09-21 11:30:49,503 505  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000006: Autocommit mode: false
+2017-09-21 11:30:49,504 506  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-09-21 11:30:50,336 1338 [main] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2017-09-21 11:30:50,734 1736 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator  - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-09-21 11:30:50,748 1750 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory
+2017-09-21 11:30:51,757 2759 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - SQL Error: 1062, SQLState: 23000
+2017-09-21 11:30:51,758 2760 [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - Duplicate entry 'JJQ' for key 'PRIMARY'
+2017-09-21 11:30:51,758 2760 [main] INFO  org.hibernate.engine.jdbc.batch.internal.AbstractBatchImpl  - HHH000010: On release of batch it still contained JDBC statements
+2017-09-21 11:30:51,762 2764 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - SQL Warning Code: 1062, SQLState: 23000
+2017-09-21 11:30:51,762 2764 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - Duplicate entry 'JJQ' for key 'PRIMARY'
+2017-09-21 11:32:42,868 0    [main] INFO  org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2017-09-21 11:32:42,891 23   [main] INFO  org.hibernate.Version  - HHH000412: Hibernate Core {4.3.11.Final}
+2017-09-21 11:32:42,896 28   [main] INFO  org.hibernate.cfg.Environment  - HHH000206: hibernate.properties not found
+2017-09-21 11:32:42,900 32   [main] INFO  org.hibernate.cfg.Environment  - HHH000021: Bytecode provider name : javassist
+2017-09-21 11:32:42,946 78   [main] INFO  org.hibernate.cfg.Configuration  - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2017-09-21 11:32:42,946 78   [main] INFO  org.hibernate.cfg.Configuration  - HHH000040: Configuration resource: /hibernate.cfg.xml
+2017-09-21 11:32:43,108 240  [main] INFO  org.hibernate.cfg.Configuration  - HHH000041: Configured SessionFactory: null
+2017-09-21 11:32:43,352 484  [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-21 11:32:43,376 508  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/snaglog_test]
+2017-09-21 11:32:43,376 508  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000046: Connection properties: {user=root, password=****}
+2017-09-21 11:32:43,376 508  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000006: Autocommit mode: false
+2017-09-21 11:32:43,378 510  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-09-21 11:32:44,215 1347 [main] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2017-09-21 11:32:44,579 1711 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator  - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-09-21 11:32:44,597 1729 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory
+2017-09-21 11:33:58,002 0    [main] INFO  org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2017-09-21 11:33:58,018 16   [main] INFO  org.hibernate.Version  - HHH000412: Hibernate Core {4.3.11.Final}
+2017-09-21 11:33:58,022 20   [main] INFO  org.hibernate.cfg.Environment  - HHH000206: hibernate.properties not found
+2017-09-21 11:33:58,028 26   [main] INFO  org.hibernate.cfg.Environment  - HHH000021: Bytecode provider name : javassist
+2017-09-21 11:33:58,099 97   [main] INFO  org.hibernate.cfg.Configuration  - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2017-09-21 11:33:58,100 98   [main] INFO  org.hibernate.cfg.Configuration  - HHH000040: Configuration resource: /hibernate.cfg.xml
+2017-09-21 11:33:58,238 236  [main] INFO  org.hibernate.cfg.Configuration  - HHH000041: Configured SessionFactory: null
+2017-09-21 11:33:58,518 516  [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-21 11:33:58,529 527  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/snaglog_test]
+2017-09-21 11:33:58,533 531  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000046: Connection properties: {user=root, password=****}
+2017-09-21 11:33:58,536 534  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000006: Autocommit mode: false
+2017-09-21 11:33:58,539 537  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-09-21 11:33:59,347 1345 [main] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2017-09-21 11:33:59,726 1724 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator  - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-09-21 11:33:59,729 1727 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory
+2017-09-21 11:34:27,423 0    [main] INFO  org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2017-09-21 11:34:27,430 7    [main] INFO  org.hibernate.Version  - HHH000412: Hibernate Core {4.3.11.Final}
+2017-09-21 11:34:27,439 16   [main] INFO  org.hibernate.cfg.Environment  - HHH000206: hibernate.properties not found
+2017-09-21 11:34:27,442 19   [main] INFO  org.hibernate.cfg.Environment  - HHH000021: Bytecode provider name : javassist
+2017-09-21 11:34:27,500 77   [main] INFO  org.hibernate.cfg.Configuration  - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2017-09-21 11:34:27,502 79   [main] INFO  org.hibernate.cfg.Configuration  - HHH000040: Configuration resource: /hibernate.cfg.xml
+2017-09-21 11:34:27,661 238  [main] INFO  org.hibernate.cfg.Configuration  - HHH000041: Configured SessionFactory: null
+2017-09-21 11:34:27,901 478  [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-21 11:34:27,921 498  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/snaglog_test]
+2017-09-21 11:34:27,922 499  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000046: Connection properties: {user=root, password=****}
+2017-09-21 11:34:27,922 499  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000006: Autocommit mode: false
+2017-09-21 11:34:27,934 511  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-09-21 11:34:28,804 1381 [main] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2017-09-21 11:34:29,168 1745 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator  - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-09-21 11:34:29,183 1760 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory
+2017-09-21 11:36:43,213 0    [main] INFO  org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2017-09-21 11:36:43,225 12   [main] INFO  org.hibernate.Version  - HHH000412: Hibernate Core {4.3.11.Final}
+2017-09-21 11:36:43,233 20   [main] INFO  org.hibernate.cfg.Environment  - HHH000206: hibernate.properties not found
+2017-09-21 11:36:43,247 34   [main] INFO  org.hibernate.cfg.Environment  - HHH000021: Bytecode provider name : javassist
+2017-09-21 11:36:43,283 70   [main] INFO  org.hibernate.cfg.Configuration  - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2017-09-21 11:36:43,284 71   [main] INFO  org.hibernate.cfg.Configuration  - HHH000040: Configuration resource: /hibernate.cfg.xml
+2017-09-21 11:36:43,454 241  [main] INFO  org.hibernate.cfg.Configuration  - HHH000041: Configured SessionFactory: null
+2017-09-21 11:36:43,706 493  [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-21 11:36:43,724 511  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/snaglog_test]
+2017-09-21 11:36:43,729 516  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000046: Connection properties: {user=root, password=****}
+2017-09-21 11:36:43,729 516  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000006: Autocommit mode: false
+2017-09-21 11:36:43,735 522  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-09-21 11:36:44,646 1433 [main] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2017-09-21 11:36:45,015 1802 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator  - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-09-21 11:36:45,031 1818 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory
+2017-09-21 11:38:30,506 0    [main] INFO  org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2017-09-21 11:38:30,521 15   [main] INFO  org.hibernate.Version  - HHH000412: Hibernate Core {4.3.11.Final}
+2017-09-21 11:38:30,526 20   [main] INFO  org.hibernate.cfg.Environment  - HHH000206: hibernate.properties not found
+2017-09-21 11:38:30,528 22   [main] INFO  org.hibernate.cfg.Environment  - HHH000021: Bytecode provider name : javassist
+2017-09-21 11:38:30,579 73   [main] INFO  org.hibernate.cfg.Configuration  - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2017-09-21 11:38:30,580 74   [main] INFO  org.hibernate.cfg.Configuration  - HHH000040: Configuration resource: /hibernate.cfg.xml
+2017-09-21 11:38:30,739 233  [main] INFO  org.hibernate.cfg.Configuration  - HHH000041: Configured SessionFactory: null
+2017-09-21 11:38:30,975 469  [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-21 11:38:30,999 493  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/snaglog_test]
+2017-09-21 11:38:31,000 494  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000046: Connection properties: {user=root, password=****}
+2017-09-21 11:38:31,000 494  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000006: Autocommit mode: false
+2017-09-21 11:38:31,003 497  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-09-21 11:38:31,848 1342 [main] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2017-09-21 11:38:32,237 1731 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator  - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-09-21 11:38:32,248 1742 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory
+2017-09-21 11:51:13,134 0    [main] INFO  org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2017-09-21 11:51:13,153 19   [main] INFO  org.hibernate.Version  - HHH000412: Hibernate Core {4.3.11.Final}
+2017-09-21 11:51:13,159 25   [main] INFO  org.hibernate.cfg.Environment  - HHH000206: hibernate.properties not found
+2017-09-21 11:51:13,161 27   [main] INFO  org.hibernate.cfg.Environment  - HHH000021: Bytecode provider name : javassist
+2017-09-21 11:51:13,205 71   [main] INFO  org.hibernate.cfg.Configuration  - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2017-09-21 11:51:13,205 71   [main] INFO  org.hibernate.cfg.Configuration  - HHH000040: Configuration resource: /hibernate.cfg.xml
+2017-09-21 11:51:13,388 254  [main] INFO  org.hibernate.cfg.Configuration  - HHH000041: Configured SessionFactory: null
+2017-09-21 11:51:13,626 492  [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-21 11:51:13,645 511  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/snaglog_test]
+2017-09-21 11:51:13,651 517  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000046: Connection properties: {user=root, password=****}
+2017-09-21 11:51:13,651 517  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000006: Autocommit mode: false
+2017-09-21 11:51:13,653 519  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-09-21 11:51:14,506 1372 [main] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2017-09-21 11:51:14,896 1762 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator  - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-09-21 11:51:14,906 1772 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory
+2017-09-21 11:52:10,573 0    [main] INFO  org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2017-09-21 11:52:10,596 23   [main] INFO  org.hibernate.Version  - HHH000412: Hibernate Core {4.3.11.Final}
+2017-09-21 11:52:10,599 26   [main] INFO  org.hibernate.cfg.Environment  - HHH000206: hibernate.properties not found
+2017-09-21 11:52:10,604 31   [main] INFO  org.hibernate.cfg.Environment  - HHH000021: Bytecode provider name : javassist
+2017-09-21 11:52:10,655 82   [main] INFO  org.hibernate.cfg.Configuration  - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2017-09-21 11:52:10,659 86   [main] INFO  org.hibernate.cfg.Configuration  - HHH000040: Configuration resource: /hibernate.cfg.xml
+2017-09-21 11:52:10,817 244  [main] INFO  org.hibernate.cfg.Configuration  - HHH000041: Configured SessionFactory: null
+2017-09-21 11:52:11,072 499  [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-21 11:52:11,088 515  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/snaglog_test]
+2017-09-21 11:52:11,090 517  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000046: Connection properties: {user=root, password=****}
+2017-09-21 11:52:11,090 517  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000006: Autocommit mode: false
+2017-09-21 11:52:11,094 521  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-09-21 11:52:11,997 1424 [main] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2017-09-21 11:52:12,379 1806 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator  - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-09-21 11:52:12,388 1815 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory
+2017-09-21 11:52:57,562 0    [main] INFO  org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2017-09-21 11:52:57,584 22   [main] INFO  org.hibernate.Version  - HHH000412: Hibernate Core {4.3.11.Final}
+2017-09-21 11:52:57,589 27   [main] INFO  org.hibernate.cfg.Environment  - HHH000206: hibernate.properties not found
+2017-09-21 11:52:57,594 32   [main] INFO  org.hibernate.cfg.Environment  - HHH000021: Bytecode provider name : javassist
+2017-09-21 11:52:57,638 76   [main] INFO  org.hibernate.cfg.Configuration  - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2017-09-21 11:52:57,639 77   [main] INFO  org.hibernate.cfg.Configuration  - HHH000040: Configuration resource: /hibernate.cfg.xml
+2017-09-21 11:52:57,831 269  [main] INFO  org.hibernate.cfg.Configuration  - HHH000041: Configured SessionFactory: null
+2017-09-21 11:52:58,077 515  [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-21 11:52:58,089 527  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/snaglog_test]
+2017-09-21 11:52:58,092 530  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000046: Connection properties: {user=root, password=****}
+2017-09-21 11:52:58,092 530  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000006: Autocommit mode: false
+2017-09-21 11:52:58,097 535  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-09-21 11:52:58,959 1397 [main] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2017-09-21 11:52:59,339 1777 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator  - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-09-21 11:52:59,355 1793 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory
+2017-09-21 11:59:17,871 0    [main] INFO  org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2017-09-21 11:59:17,879 8    [main] INFO  org.hibernate.Version  - HHH000412: Hibernate Core {4.3.11.Final}
+2017-09-21 11:59:17,887 16   [main] INFO  org.hibernate.cfg.Environment  - HHH000206: hibernate.properties not found
+2017-09-21 11:59:17,893 22   [main] INFO  org.hibernate.cfg.Environment  - HHH000021: Bytecode provider name : javassist
+2017-09-21 11:59:17,938 67   [main] INFO  org.hibernate.cfg.Configuration  - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2017-09-21 11:59:17,942 71   [main] INFO  org.hibernate.cfg.Configuration  - HHH000040: Configuration resource: /hibernate.cfg.xml
+2017-09-21 11:59:18,109 238  [main] INFO  org.hibernate.cfg.Configuration  - HHH000041: Configured SessionFactory: null
+2017-09-21 11:59:18,344 473  [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-21 11:59:18,364 493  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/snaglog_test]
+2017-09-21 11:59:18,367 496  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000046: Connection properties: {user=root, password=****}
+2017-09-21 11:59:18,367 496  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000006: Autocommit mode: false
+2017-09-21 11:59:18,370 499  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-09-21 11:59:19,169 1298 [main] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2017-09-21 11:59:19,527 1656 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator  - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-09-21 11:59:19,534 1663 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory
+2017-09-21 12:00:26,933 2    [main] INFO  org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2017-09-21 12:00:26,945 14   [main] INFO  org.hibernate.Version  - HHH000412: Hibernate Core {4.3.11.Final}
+2017-09-21 12:00:26,957 26   [main] INFO  org.hibernate.cfg.Environment  - HHH000206: hibernate.properties not found
+2017-09-21 12:00:26,960 29   [main] INFO  org.hibernate.cfg.Environment  - HHH000021: Bytecode provider name : javassist
+2017-09-21 12:00:27,018 87   [main] INFO  org.hibernate.cfg.Configuration  - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2017-09-21 12:00:27,018 87   [main] INFO  org.hibernate.cfg.Configuration  - HHH000040: Configuration resource: /hibernate.cfg.xml
+2017-09-21 12:00:27,186 255  [main] INFO  org.hibernate.cfg.Configuration  - HHH000041: Configured SessionFactory: null
+2017-09-21 12:00:27,422 491  [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-21 12:00:27,444 513  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/snaglog_test]
+2017-09-21 12:00:27,445 514  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000046: Connection properties: {user=root, password=****}
+2017-09-21 12:00:27,445 514  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000006: Autocommit mode: false
+2017-09-21 12:00:27,451 520  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-09-21 12:00:28,283 1352 [main] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2017-09-21 12:00:28,670 1739 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator  - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-09-21 12:00:28,684 1753 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory
+2017-09-21 12:03:34,486 0    [main] INFO  org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2017-09-21 12:03:34,509 23   [main] INFO  org.hibernate.Version  - HHH000412: Hibernate Core {4.3.11.Final}
+2017-09-21 12:03:34,511 25   [main] INFO  org.hibernate.cfg.Environment  - HHH000206: hibernate.properties not found
+2017-09-21 12:03:34,514 28   [main] INFO  org.hibernate.cfg.Environment  - HHH000021: Bytecode provider name : javassist
+2017-09-21 12:03:34,553 67   [main] INFO  org.hibernate.cfg.Configuration  - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2017-09-21 12:03:34,554 68   [main] INFO  org.hibernate.cfg.Configuration  - HHH000040: Configuration resource: /hibernate.cfg.xml
+2017-09-21 12:03:34,726 240  [main] INFO  org.hibernate.cfg.Configuration  - HHH000041: Configured SessionFactory: null
+2017-09-21 12:03:34,961 475  [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-09-21 12:03:34,980 494  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/snaglog_test]
+2017-09-21 12:03:34,984 498  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000046: Connection properties: {user=root, password=****}
+2017-09-21 12:03:34,984 498  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000006: Autocommit mode: false
+2017-09-21 12:03:34,988 502  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-09-21 12:03:35,848 1362 [main] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2017-09-21 12:03:36,211 1725 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator  - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-09-21 12:03:36,223 1737 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory

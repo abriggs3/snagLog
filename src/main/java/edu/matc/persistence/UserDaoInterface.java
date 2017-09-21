@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface UserDaoInterface {
     public List<User> getAllUsers();
-    public void addUser(String firstName, String lastName, String userName, String userPassword);
+    public User addUser(User user);
     public User selectUser(String userName);
     public void updateUser(User user);
     public void deleteUser(String userName);

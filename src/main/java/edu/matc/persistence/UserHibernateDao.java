@@ -56,12 +56,21 @@ public class UserHibernateDao implements UserDaoInterface {
 
     @Override
     public void updateUser(User user) {
+        Transaction transaction = null;
         Session session = null;
         try {
             session = SessionFactoryProvider.getSessionFactory().openSession();
-            session.update(user);
-        } catch (HibernateException he) {
-            logger.error("error updating user " + user.getUserName(), he);
+            transaction = session.beginTransaction();
+            session.saveOrUpdate(user);
+            transaction.commit();
+        } catch (HibernateException he){
+            if (transaction != null) {
+                try {
+                    transaction.rollback();
+                } catch (HibernateException he2) {
+                    logger.error("Error rolling back update of user: " + user, he2);
+                }
+            }
         } finally {
             if (session != null) {
                 session.close();
@@ -87,13 +96,13 @@ public class UserHibernateDao implements UserDaoInterface {
     }
 
     @Override
-    public void addUser(String firstName, String lastName, String userName, String userPassword) {
+    public User addUser(User user) {
 
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
         Transaction transaction = null;
         try{
             transaction = session.beginTransaction();
-            User user = new User(firstName, lastName, userName, userPassword);
+            user = new User(user.getFirstName(), user.getLastName(), user.getUserName(), user.getUserPassword());
             session.save(user);
             transaction.commit();
         }catch (HibernateException e) {
@@ -102,6 +111,7 @@ public class UserHibernateDao implements UserDaoInterface {
         }finally {
             session.close();
         }
+        return user;
 
     }
 

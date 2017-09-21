@@ -25,9 +25,8 @@ public class UserHibernateDaoTest {
     @Test
     public void getAllUsersTest() throws Exception {
         List<User> users = userHibernateDao.getAllUsers();
-        assertEquals("Unexpected number of users returned",2, users.size());
+        assertEquals("Unexpected number of users returned", listOfUsersInitialSize, users.size());
         assertEquals("Correct first name returned", "Admin", users.get(0).getFirstName());
-
     }
 
     @Test
@@ -37,9 +36,15 @@ public class UserHibernateDaoTest {
         assertEquals("Admin", user.getFirstName());
     }
 
-//TODO
     @Test
     public void updateUserTest() throws Exception {
+        listOfUsersInitialSize = userHibernateDao.getAllUsers().size();
+        String userName = "adminUser";
+        user = userHibernateDao.selectUser(userName);
+        user.setFirstName("ElFabaloso");
+        userHibernateDao.updateUser(user);
+        assertEquals("List size has changed", listOfUsersInitialSize, userHibernateDao.getAllUsers().size());
+        assertEquals("Update changes failed to save", user.toString(), userHibernateDao.selectUser(userName).toString());
 
     }
 
@@ -52,10 +57,11 @@ public class UserHibernateDaoTest {
 
     @Test
     public void addUserTest() {
+        user = new User("James", "Kirk", "JTK", "tribblesRule");
 
-        userHibernateDao.addUser("Admin", "Person", "adminUser", "admin");
+        userHibernateDao.addUser(user);
         assertEquals("Incorrect size of results", listOfUsersInitialSize + 1, userHibernateDao.getAllUsers().size());
-//TODO        assertEquals("User not saved correctly", user.toString(), userHibernateDao.getUser(idNewUser).toString());
+        assertEquals("User not saved correctly", user.toString(), userHibernateDao.selectUser("JJQ").toString());
     }
 
 
