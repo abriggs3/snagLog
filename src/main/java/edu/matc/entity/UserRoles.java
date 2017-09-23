@@ -1,36 +1,34 @@
 package edu.matc.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import edu.matc.utility.UserRolesKey;
 
+import javax.persistence.*;
+
+/*
 @Entity
 @Table (name = "user_roles")
-
+*/
 public class UserRoles {
-    @Id
-    @Column (name = "user_name")
-    String userName;
+    //@EmbeddedId
+    private UserRolesKey userName;
 
-    @Id
-    @Column (name = "role_name")
-    String userRoles;
+    //@EmbeddedId
+    private UserRolesKey userRole;
 
-    public String getUserName() {
+    public UserRolesKey getUserName() {
         return userName;
     }
 
-    public void setUserName(String userName) {
+    public void setUserName(UserRolesKey userName) {
         this.userName = userName;
     }
 
-    public String getUserRoles() {
-        return userRoles;
+    public UserRolesKey getUserRole() {
+        return userRole;
     }
 
-    public void setUserRoles(String userRoles) {
-        this.userRoles = userRoles;
+    public void setUserRole(UserRolesKey userRole) {
+        this.userRole = userRole;
     }
 
 }

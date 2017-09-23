@@ -1,20 +1,25 @@
+<!DOCTYPE html>
 <%@include file="tagLibrary.jsp"%>
-<c:set var="title" value="SnagLog Search User" />
-<%@include file="head.jsp"%>
-<html>
-<body>
-<h2>Search SnagLog Users</h2>
-<form action="/searchUser">
-    <label for="searchTerm">Search by </label>
-    <input type="text" name="searchTerm" id="searchTerm"><br>
-    <input type="radio" name="searchType" value="last_name" checked> Last Name
-    <input type="radio" name="searchType" value="first_name"> First Name
-    <input type="radio" name="searchType" value="id"> Employee ID
-    <input type="radio" name="searchType" value="all"> See All<br>
+<html lang="en">
+<c:set var="title" value="SnagLog Search Results" />
 
-    <input type="submit" value="search">
-</form>
+<c:import url="page_sections/head/head_standard.jsp" />
+
+<body>
+
+    <c:import url="page_sections/topNavBar/topNavBar_standard.jsp" />
+
+<div class="container-fluid text-center">
+    <div class="row content">
+
+        <c:import url="page_sections/sidebar_left/sidebar_left_standard.jsp"/>
+        <c:import url="page_sections/body/body_index.jsp" />
+        <c:import url="page_sections/sidebar_right/sidebar_right_standard.jsp" />
+
+    </div>
+</div>
+
+    <c:import url="page_sections/footer/footer_standard.jsp" />
 
 </body>
 </html>
-

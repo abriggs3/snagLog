@@ -6,6 +6,7 @@ import static org.junit.Assert.*;
 
 
 public class DatabaseTest {
+ /*
     @Test
     public void getInstance() throws Exception {
     }
@@ -21,5 +22,5 @@ public class DatabaseTest {
     @Test
     public void disconnect() throws Exception {
     }
-
+*/
 }

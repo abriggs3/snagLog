@@ -26,14 +26,14 @@ public class UserHibernateDaoTest {
     public void getAllUsersTest() throws Exception {
         List<User> users = userHibernateDao.getAllUsers();
         assertEquals("Unexpected number of users returned", listOfUsersInitialSize, users.size());
-        assertEquals("Correct first name returned", "Admin", users.get(0).getFirstName());
+        assertEquals("incorrect first name returned", "Admin", users.get(0).getFirstName());
     }
 
     @Test
     public void selectUserTest() throws Exception {
-        userHibernateDao.selectUser("adminUser");
+        user = userHibernateDao.selectUser("adminUser");
         assertNotNull(user);
-        assertEquals("Admin", user.getFirstName());
+        assertEquals("incorrect last name returned", "Person", user.getLastName());
     }
 
     @Test
@@ -61,10 +61,8 @@ public class UserHibernateDaoTest {
 
         userHibernateDao.addUser(user);
         assertEquals("Incorrect size of results", listOfUsersInitialSize + 1, userHibernateDao.getAllUsers().size());
-        assertEquals("User not saved correctly", user.toString(), userHibernateDao.selectUser("JJQ").toString());
+        assertEquals("User not saved correctly", user.toString(), userHibernateDao.selectUser("JTK").toString());
     }
-
-
 
 }
 
