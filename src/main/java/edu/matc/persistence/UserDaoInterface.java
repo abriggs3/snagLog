@@ -10,4 +10,5 @@ public interface UserDaoInterface {
     public User selectUser(String userName);
     public void updateUser(User user);
     public void deleteUser(String userName);
+    public List<User> getUserBySearchType(String searchTerm, String searchType);
 }

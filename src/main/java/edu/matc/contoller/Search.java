@@ -22,10 +22,21 @@ public class Search extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         response.setContentType("text/html");
+        String searchTerm = request.getParameter("searchTerm");
+        String searchType = request.getParameter("searchType");
 
         UserHibernateDao userHibernateDao = new UserHibernateDao();
 
-        request.setAttribute("users", userHibernateDao.getAllUsers());
+        if (searchType.equalsIgnoreCase("all")) {
+            request.setAttribute("users", userHibernateDao.getAllUsers());
+        }
+
+        if (searchType.equalsIgnoreCase("lastName") ||
+                    searchType.equalsIgnoreCase("firstName") ||
+                    searchType.equalsIgnoreCase("userName")) {
+            request.setAttribute("users", userHibernateDao.getUserBySearchType(searchTerm, searchType));
+        }
+
         RequestDispatcher dispatcher = request.getRequestDispatcher("pages/results.jsp");
         dispatcher.forward(request, response);
     }

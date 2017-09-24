@@ -4,15 +4,18 @@
             <p><a href="#">Recent Snag Log 3</a></p>
             <hr>
             <hr>
-            <h3>Search SnagLog</h3>
-            <form action="/search">
-                <label for="searchTerm">Search by </label>
-                <input type="text" name="searchTerm" id="searchTerm"><br>
-                <input type="radio" name="searchType" value="last_name" checked> last name<br>
-                <input type="radio" name="searchType" value="first_name"> first name<br>
-                <input type="radio" name="searchType" value="user_name"> username<br>
-                <input type="radio" name="searchType" value="all"> all users<br>
+            <h5>user search</h5>
+            <form action="search" accept-charset="utf-8">
 
-                <input type="submit" value="search">
+                <input type="text" name="searchTerm"><br>
+
+                <span>by </span><select name="searchType">
+                    <option value="userName">username</option>
+                    <option value="lastName">last name</option>
+                    <option value="firstName">first name</option>
+                    <option value="all">all</option>
+                </select>
+
+                <input type="submit" class="invisibleButton">
             </form>
         </div>

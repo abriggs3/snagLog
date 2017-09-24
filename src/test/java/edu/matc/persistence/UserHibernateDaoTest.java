@@ -30,6 +30,12 @@ public class UserHibernateDaoTest {
     }
 
     @Test
+    public void getUserBySearchTypeTest() {
+        List<User> users = userHibernateDao.getUserBySearchType("contributorUser", "userName");
+        assertEquals("Incorrect size of results", 1, users.size());
+    }
+
+    @Test
     public void selectUserTest() throws Exception {
         user = userHibernateDao.selectUser("adminUser");
         assertNotNull(user);

@@ -30,3 +30,7 @@ footer {
     }
     .row.content {height:auto;}
 }
+
+.invisibleButton{
+    visibility: hidden;
+}

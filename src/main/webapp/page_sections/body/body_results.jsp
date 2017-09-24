@@ -12,6 +12,7 @@
         </tr>
         </thead>
         <tbody>
+
         <c:forEach items="${users}" var="user">
             <tr>
                 <td>${user.firstName}</td>
@@ -19,6 +20,7 @@
                 <td>${user.userName}</td>
             </tr>
         </c:forEach>
+
         </tbody>
     </table>
 

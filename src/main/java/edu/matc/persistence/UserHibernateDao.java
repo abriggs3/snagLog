@@ -2,9 +2,11 @@ package edu.matc.persistence;
 
 import edu.matc.entity.User;
 import org.apache.log4j.Logger;
+import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.criterion.Restrictions;
 
 
 import java.util.ArrayList;
@@ -34,6 +36,24 @@ public class UserHibernateDao implements UserDaoInterface {
         return users;
     }
 
+    public List<User> getUserBySearchType(String searchTerm, String searchType) {
+        List<User> users = new ArrayList<User>();
+        Session session = null;
+        try {
+            session = SessionFactoryProvider.getSessionFactory().openSession();
+            Criteria criteria = session.createCriteria(User.class);
+            criteria.add(Restrictions.eq(searchType, searchTerm));
+            users = criteria.list();
+        } catch (HibernateException he) {
+            logger.error("Error getting all users with term " +  searchTerm + " and type " + searchType, he);
+        } finally {
+            if (session != null) {
+                session.close();
+            }
+        }
+        return users;
+    }
+
     @Override
     public User selectUser(String userName) {
         User user = null;
@@ -48,7 +68,9 @@ public class UserHibernateDao implements UserDaoInterface {
             if (transaction!=null) transaction.rollback();
             e.printStackTrace();
         }finally {
-            session.close();
+            if (session != null) {
+                session.close();
+            }
         }
         return user;
     }
@@ -91,9 +113,12 @@ public class UserHibernateDao implements UserDaoInterface {
             if (transaction!=null) transaction.rollback();
             e.printStackTrace();
         }finally {
-            session.close();
+            if (session != null) {
+                session.close();
+            }
         }
     }
+
 
     @Override
     public User addUser(User user) {
@@ -109,7 +134,9 @@ public class UserHibernateDao implements UserDaoInterface {
             if (transaction!=null) transaction.rollback();
             e.printStackTrace();
         }finally {
-            session.close();
+            if (session != null) {
+                session.close();
+            }
         }
         return user;
 

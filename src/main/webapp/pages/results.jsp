@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <%@include file="../tagLibrary.jsp"%>
-<html lang="en">
-<c:set var="title" value="SnagLog Search Results" />
-
+<html xmlns="http://www.w3.org/1999/xhtml">
+<c:set var="title" value="SnagLog User Search Results" scope="session" />
 <c:import url="../page_sections/head/head_standard.jsp" />
 
 <body>
