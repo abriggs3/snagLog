@@ -22,6 +22,7 @@ DESC users;
 /* create some test users */
 INSERT INTO users (first_name, last_name, user_name, user_pass) VALUES ('Admin', 'Person', 'adminUser', 'admin');
 INSERT INTO users (first_name, last_name, user_name, user_pass) VALUES ('Contributor', 'Person', 'contributorUser', 'contributor');
+INSERT INTO users (first_name, last_name, user_name, user_pass) VALUES ('John', 'Carter', 'BigJohn', 'contributor');
 
 /* use a 'select' to test if it worked */
 SELECT * FROM users;
@@ -39,6 +40,8 @@ DESC user_roles;
 /* create some test roles for the previously added users */
 INSERT INTO user_roles (user_name, role_name) VALUES ('adminUser', 'admin');
 INSERT INTO user_roles (user_name, role_name) VALUES ('contributorUser', 'contributor');
+INSERT INTO user_roles (user_name, role_name) VALUES ('BigJohn', 'contributor');
+
 
 /* use a 'select' to test if it worked */
 SELECT * FROM user_roles;
@@ -50,12 +53,18 @@ CREATE TABLE log (
   state CHAR(2) NOT NULL,
   county CHAR(30),
   nearest_city CHAR(30),
-  put_in_location CHAR(30),
-  takeout_location CHAR(30),
+  put_in_location VARCHAR(256),
+  takeout_location VARCHAR(256),
   PRIMARY KEY (log_id)
 );
 
 DESC log;
+
+INSERT INTO log (log_id, user_name, river_name, state, county, nearest_city, put_in_location, takeout_location) VALUES (NULL, 'BigJohn', 'Yahara', 'WI', 'Dane', 'DeForest', 'Veterans Park, Deforest', 'Windsor Park, Windsor');
+INSERT INTO log (log_id, user_name, river_name, state, county, nearest_city, put_in_location, takeout_location) VALUES (NULL, 'contributorUser', 'Crayfish', 'WI', 'Jefferson', 'Lake Mills', 'County A Bridge, Milford, Wisconsin', 'Riverview Drive, Jefferson, Wisconsin');
+
+/* use a 'select' to test if it worked */
+SELECT * FROM log;
 
 CREATE TABLE snag (
   snag_id int NOT NULL AUTO_INCREMENT,
@@ -66,6 +75,12 @@ CREATE TABLE snag (
   estimated_delay int,
   PRIMARY KEY (snag_id)
 );
+
+INSERT INTO snag (snag_id, log_id, location, type, blockage_amount, estimated_delay) VALUES (NULL, '1', 'gps coordinates', 'low water', 'total', '5');
+INSERT INTO snag (snag_id, log_id, location, type, blockage_amount, estimated_delay) VALUES (NULL, '2', 'gps coordinates', 'tree fall', 'half', '1');
+
+/* use a 'select' to test if it worked */
+SELECT * FROM snag;
 
 DESC snag;
 
