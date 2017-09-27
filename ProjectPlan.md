@@ -17,26 +17,26 @@
 - [X] Time log entries
 
 ### Week 3
-- [ ] Complete database design
+- [x] Complete database design
 - [ ] Create database and all tables/columns locally
-- [ ] Begin creating JSPs
+- [x] Begin creating JSPs
 - [ ] Determine possible Web Services or APIs to use
-- [ ] Add in bootstrap
+- [x] Add in bootstrap
 - [X] Create class diagram
 - [X] Set up logging
 - [X] Set up unit testing
-- [ ] Time log entries
+- [x] Time log entries
 
 ### Week 4
 - [ ] Complete remaining JSPs
-- [ ] Add Hibernate config
-- [ ] Create DAO for user crud
-- [ ] Add unit tests for DAO
+- [x] Add Hibernate config
+- [x] Create DAO for user crud
+- [x] Add unit tests for DAO
 - [ ] Add user login  
 - [ ] Add user registration
-- [ ] Add Maven for building
+- [x] Add Maven for building
 - [ ] Add entities for remaining tables
-- [ ] Time log entries
+- [x] Time log entries
 
 ### Week 5
 - [ ] Create DAO for snags

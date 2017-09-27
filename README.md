@@ -6,7 +6,10 @@ This repository holds files related to the SnagLog project
 
 The paddlers of small rivers are all too familiar with treefalls and snags which block navigation and force time consuming portaging. Increased trip duration due to unplanned portages can be more than mere inconvenience if longer travel times push voyages into the evening hours in areas where daylight is required for safe navigation.
 
-There are many guide books available for paddlers, but none are capable of delivering the timely information required to plan for treefall related delays. The creation of a web application allowing users to log current treefall locations and resulting paddling time increases would be of great benefit to the paddling community.
+There are many guide books available for paddlers, but none are capable of delivering the timely information required to plan for tree fall related delays. The creation of a web application allowing users to log current tree fall locations and resulting paddling time increases would be of great benefit to the paddling community.
+
+The SnagLog Project seeks to provide paddlers with the ability to log the location of tree falls and retrieve current information
+and updated paddling times.  
 
 **Project Technologies/Techniques**
 
