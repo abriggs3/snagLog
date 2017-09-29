@@ -1,67 +1,160 @@
 package edu.matc.persistence;
 
+import edu.matc.entity.Storable;
 import edu.matc.entity.User;
 import org.apache.log4j.Logger;
+import org.hibernate.Criteria;
+import org.hibernate.HibernateException;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+import org.hibernate.criterion.Restrictions;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserDao {
-
+public class UserDao implements DataCRUDable {
     private final Logger logger = Logger.getLogger(this.getClass());
 
-    public List<User> getUserEntered(String searchTerm, String searchType) {
-        List<User> users = new ArrayList<User>();
-        Database database = Database.getInstance();
-        logger.info("this is searchTerm " + searchTerm);
-        logger.info("this is searchType " + searchType);
+    @Override
+    public List<Storable> retrieveAllRecords(String tableName) {
 
-        String sql = "";
-        if(searchType.equals("all")) {
-            sql = "SELECT * FROM users;";
-        } else {
-            sql = "SELECT * FROM users where " + searchType + " = '" + searchTerm +"';";
-        }
-
-        runQuery(users, database, sql);
-        return users;
-    }
-
-    private void runQuery(List<User> users, Database database, String sql) {
-        logger.info("Code reached runQuery(), the sql is " + sql);
-        Connection connection;
+        List<Storable> objectTypeFromTable = new ArrayList<Storable>();
+        Session session = null;
         try {
-            database.connect();
-            connection = database.getConnection();
-            Statement selectStatement = connection.createStatement();
-            ResultSet results = selectStatement.executeQuery(sql);
-            runWhileLoopToCreateUserList(users, results);
-            database.disconnect();
-        } catch (SQLException e) {
-            logger.error("SearchUser.getUserEntered()...SQL Exception: " + e);
-        } catch (Exception e) {
-            logger.error("SearchUser.getUserEntered()...Exception: " + e);
+            session = SessionFactoryProvider.getSessionFactory().openSession();
+            if (tableName.equalsIgnoreCase("users")) {
+                objectTypeFromTable = session.createCriteria(User.class).list();
+            }
+
+        } catch (HibernateException he) {
+            logger.error("Error getting all users", he);
+        } finally {
+            if (session != null) {
+                session.close();
+            }
         }
+        return objectTypeFromTable;
     }
 
-    private void runWhileLoopToCreateUserList(List<User> users, ResultSet results) throws SQLException {
-        while (results.next()) {
-            User employee = createUserFromResults(results);
-            users.add(employee);
-        }
-    }
 
-    private User createUserFromResults(ResultSet results) throws SQLException {
-        User user = new User();
-        user.setLastName(results.getString("last_name"));
-        user.setFirstName(results.getString("first_name"));
-        user.setUserName(results.getString("user_name"));
-        user.setUserPassword(results.getString("user_pass"));
+    @Override
+    public Storable addRecord(Storable recordToAdd) {
+        User user = (User)recordToAdd;
+
+        Session session = SessionFactoryProvider.getSessionFactory().openSession();
+        Transaction transaction = null;
+        try{
+            transaction = session.beginTransaction();
+            user = new User(user.getFirstName(), user.getLastName(), user.getUserName(), user.getUserPassword());
+            session.save(user);
+            transaction.commit();
+        }catch (HibernateException e) {
+            if (transaction!=null) transaction.rollback();
+            logger.error("Error adding user " + user, e);
+        }finally {
+            if (session != null) {
+                session.close();
+            }
+        }
         return user;
     }
 
+    @Override
+    public Storable selectSingleRecord(String PKOfRecord) {
+        String userName = PKOfRecord;
+        User user = null;
+        Session session = SessionFactoryProvider.getSessionFactory().openSession();
+        Transaction transaction = null;
+        try{
+            transaction = session.beginTransaction();
+            user = (User)session.get(User.class, userName);
+            session.get(User.class, userName);
+            transaction.commit();
+        }catch (HibernateException e) {
+            if (transaction!=null) transaction.rollback();
+            e.printStackTrace();
+        }finally {
+            if (session != null) {
+                session.close();
+            }
+        }
+        return user;
+    }
+
+    @Override
+    public void updateRecord(Storable recordToUpdate) {
+        User user = (User)recordToUpdate;
+        Transaction transaction = null;
+        Session session = null;
+        try {
+            session = SessionFactoryProvider.getSessionFactory().openSession();
+            transaction = session.beginTransaction();
+            session.saveOrUpdate(user);
+            transaction.commit();
+        } catch (HibernateException he){
+            if (transaction != null) {
+                try {
+                    transaction.rollback();
+                } catch (HibernateException he2) {
+                    logger.error("Error rolling back update of user: " + user, he2);
+                }
+            }
+        } finally {
+            if (session != null) {
+                session.close();
+            }
+        }
+    }
+
+
+    @Override
+    public void deleteRecord(String PKOfRecord) {
+        String userName = PKOfRecord;
+        Session session = SessionFactoryProvider.getSessionFactory().openSession();
+        Transaction transaction = null;
+        try{
+            transaction = session.beginTransaction();
+            User user = (User)session.get(User.class, userName);
+            session.delete(user);
+            transaction.commit();
+        }catch (HibernateException e) {
+            if (transaction!=null) transaction.rollback();
+            e.printStackTrace();
+        }finally {
+            if (session != null) {
+                session.close();
+            }
+        }
+    }
+
+    @Override
+    public List<Storable> getRecordBySearchType(String searchTerm, String searchType){
+
+        List<Storable> users = new ArrayList<Storable>();
+        Session session = null;
+        try {
+            session = SessionFactoryProvider.getSessionFactory().openSession();
+            Criteria criteria = session.createCriteria(User.class);
+            criteria.add(Restrictions.eq(searchType, searchTerm));
+            users = criteria.list();
+        } catch (HibernateException he) {
+            logger.error("Error getting all users with term " +  searchTerm + " and type " + searchType, he);
+        } finally {
+            if (session != null) {
+                session.close();
+            }
+        }
+        return users;
+    }
+
+
+
+
+
+
+
+
+
+
 }
+

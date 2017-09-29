@@ -24,8 +24,7 @@
         <mapping class="edu.matc.entity.User"/>
         <mapping class="edu.matc.entity.Log"/>
         <mapping class="edu.matc.entity.Snag"/>
-
-
+        <mapping class="edu.matc.entity.UserRoles"/>
 
     </session-factory>
 

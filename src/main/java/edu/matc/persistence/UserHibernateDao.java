@@ -119,10 +119,9 @@ public class UserHibernateDao implements UserDaoInterface {
         }
     }
 
-
     @Override
     public User addUser(User user) {
-
+/*
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
         Transaction transaction = null;
         try{
@@ -137,7 +136,7 @@ public class UserHibernateDao implements UserDaoInterface {
             if (session != null) {
                 session.close();
             }
-        }
+        }*/
         return user;
 
     }

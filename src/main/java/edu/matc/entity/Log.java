@@ -1,44 +1,24 @@
 package edu.matc.entity;
 
-
-import org.hibernate.annotations.GenericGenerator;
-
-import javax.persistence.*;
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
-@Table(name = "log")
 public class Log {
-
-    @Id
-    @GeneratedValue(generator="increment")
-    @GenericGenerator(name="increment", strategy = "increment")
-    @Column(name = "log_id")
     private int logId;
-
-    @Column(name = "user_name")
     private String userName;
-
-    @Column(name = "river_name")
     private String riverName;
-
-    @Column(name = "state")
     private String state;
-
-    @Column(name = "county")
     private String county;
-
-    @Column(name = "nearest_city")
     private String nearestCity;
-
-    @Column(name = "put_in_location")
     private String putInLocation;
+    private String takeoutLocation;
 
-    @Column(name = "takeout_location")
-    private String takeOutLocation;
+    public Log() { }
 
-    public Log() {    }
-
-    public Log(int logId, String userName, String riverName, String state, String county, String nearestCity, String putInLocation, String takeOutLocation) {
+    public Log(int logId, String userName, String riverName, String state, String county, String nearestCity, String putInLocation, String takeoutLocation) {
         this.logId = logId;
         this.userName = userName;
         this.riverName = riverName;
@@ -46,9 +26,11 @@ public class Log {
         this.county = county;
         this.nearestCity = nearestCity;
         this.putInLocation = putInLocation;
-        this.takeOutLocation = takeOutLocation;
+        this.takeoutLocation = takeoutLocation;
     }
 
+    @Id
+    @Column(name = "log_id", nullable = false)
     public int getLogId() {
         return logId;
     }
@@ -57,6 +39,8 @@ public class Log {
         this.logId = logId;
     }
 
+    @Basic
+    @Column(name = "user_name", nullable = false, length = 30)
     public String getUserName() {
         return userName;
     }
@@ -65,6 +49,8 @@ public class Log {
         this.userName = userName;
     }
 
+    @Basic
+    @Column(name = "river_name", nullable = false, length = 30)
     public String getRiverName() {
         return riverName;
     }
@@ -73,6 +59,8 @@ public class Log {
         this.riverName = riverName;
     }
 
+    @Basic
+    @Column(name = "state", nullable = false, length = 2)
     public String getState() {
         return state;
     }
@@ -81,6 +69,8 @@ public class Log {
         this.state = state;
     }
 
+    @Basic
+    @Column(name = "county", nullable = true, length = 30)
     public String getCounty() {
         return county;
     }
@@ -89,6 +79,8 @@ public class Log {
         this.county = county;
     }
 
+    @Basic
+    @Column(name = "nearest_city", nullable = true, length = 30)
     public String getNearestCity() {
         return nearestCity;
     }
@@ -97,6 +89,8 @@ public class Log {
         this.nearestCity = nearestCity;
     }
 
+    @Basic
+    @Column(name = "put_in_location", nullable = true, length = 256)
     public String getPutInLocation() {
         return putInLocation;
     }
@@ -105,17 +99,52 @@ public class Log {
         this.putInLocation = putInLocation;
     }
 
-    public String getTakeOutLocation() {
-        return takeOutLocation;
+    @Basic
+    @Column(name = "takeout_location", nullable = true, length = 256)
+    public String getTakeoutLocation() {
+        return takeoutLocation;
     }
 
-    public void setTakeOutLocation(String takeOutLocation) {
-        this.takeOutLocation = takeOutLocation;
+    public void setTakeoutLocation(String takeoutLocation) {
+        this.takeoutLocation = takeoutLocation;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Log log = (Log) o;
+
+        if (logId != log.logId) return false;
+        if (userName != null ? !userName.equals(log.userName) : log.userName != null) return false;
+        if (riverName != null ? !riverName.equals(log.riverName) : log.riverName != null) return false;
+        if (state != null ? !state.equals(log.state) : log.state != null) return false;
+        if (county != null ? !county.equals(log.county) : log.county != null) return false;
+        if (nearestCity != null ? !nearestCity.equals(log.nearestCity) : log.nearestCity != null) return false;
+        if (putInLocation != null ? !putInLocation.equals(log.putInLocation) : log.putInLocation != null) return false;
+        if (takeoutLocation != null ? !takeoutLocation.equals(log.takeoutLocation) : log.takeoutLocation != null)
+            return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = logId;
+        result = 31 * result + (userName != null ? userName.hashCode() : 0);
+        result = 31 * result + (riverName != null ? riverName.hashCode() : 0);
+        result = 31 * result + (state != null ? state.hashCode() : 0);
+        result = 31 * result + (county != null ? county.hashCode() : 0);
+        result = 31 * result + (nearestCity != null ? nearestCity.hashCode() : 0);
+        result = 31 * result + (putInLocation != null ? putInLocation.hashCode() : 0);
+        result = 31 * result + (takeoutLocation != null ? takeoutLocation.hashCode() : 0);
+        return result;
     }
 
     @Override
     public String toString() {
-        return "log{" +
+        return "Log{" +
                 "logId=" + logId +
                 ", userName='" + userName + '\'' +
                 ", riverName='" + riverName + '\'' +
@@ -123,7 +152,7 @@ public class Log {
                 ", county='" + county + '\'' +
                 ", nearestCity='" + nearestCity + '\'' +
                 ", putInLocation='" + putInLocation + '\'' +
-                ", takeOutLocation='" + takeOutLocation + '\'' +
+                ", takeoutLocation='" + takeoutLocation + '\'' +
                 '}';
     }
 }

@@ -1,9 +1,6 @@
 package edu.matc.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 
 /**
@@ -15,19 +12,10 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "users")
 
-public class User {
-
-    @Column(name = "first_name")
+public class User implements Storable{
     private String firstName;
-
-    @Column(name = "last_name")
     private String lastName;
-
-    @Id
-    @Column(name = "user_name")
     private String userName;
-
-    @Column(name = "user_pass")
     private String userPassword;
 
     // no argument constructor, required for java bean
@@ -40,12 +28,18 @@ public class User {
         this.userPassword = userPassword;
     }
 
-    public String getFirstName() {return firstName;}
+    @Basic
+    @Column(name = "first_name", nullable = false, length = 30)
+    public String getFirstName() {
+        return firstName;
+    }
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
 
+    @Basic
+    @Column(name = "last_name", nullable = false, length = 30)
     public String getLastName() {
         return lastName;
     }
@@ -54,6 +48,8 @@ public class User {
         this.lastName = lastName;
     }
 
+    @Id
+    @Column(name = "user_name", nullable = false, length = 30)
     public String getUserName() {
         return userName;
     }
@@ -62,12 +58,38 @@ public class User {
         this.userName = userName;
     }
 
+    @Basic
+    @Column(name = "user_pass", nullable = false, length = 30)
     public String getUserPassword() {
         return userPassword;
     }
 
-    public void setUserPassword(String userPassword) {
-        this.userPassword = userPassword;
+    public void setUserPassword(String userPass) {
+        this.userPassword = userPass;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        User users = (User) o;
+
+        if (firstName != null ? !firstName.equals(users.firstName) : users.firstName != null) return false;
+        if (lastName != null ? !lastName.equals(users.lastName) : users.lastName != null) return false;
+        if (userName != null ? !userName.equals(users.userName) : users.userName != null) return false;
+        if (userPassword != null ? !userPassword.equals(users.userPassword) : users.userPassword != null) return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = firstName != null ? firstName.hashCode() : 0;
+        result = 31 * result + (lastName != null ? lastName.hashCode() : 0);
+        result = 31 * result + (userName != null ? userName.hashCode() : 0);
+        result = 31 * result + (userPassword != null ? userPassword.hashCode() : 0);
+        return result;
     }
 
     @Override

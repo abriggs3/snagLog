@@ -1,50 +1,32 @@
 package edu.matc.entity;
 
-
-import org.hibernate.annotations.GenericGenerator;
+import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.Table;
-
-import javax.persistence.*;
 
 @Entity
-@Table(name = "snag")
 public class Snag {
-
-    @Id
-    @GeneratedValue(generator="increment")
-    @GenericGenerator(name="increment", strategy = "increment")
-    @Column(name = "log_id")
     private int snagId;
-
-    @Column(name = "log_id")
     private int logId;
-
-    @Column(name = "location")
-    private String locationOfSnag;
-
-    @Column(name = "type")
-    private String typeOfSnag;
-
-    @Column(name = "blockage_amount")
+    private String location;
+    private String type;
     private String blockageAmount;
+    private Integer estimatedDelay;
 
-    @Column(name = "estimated_delay")
-    private int estimatedDelay;
+    public Snag() { }
 
-    public Snag() {    }
-
-    public Snag(int snagId, int logId, String locationOfSnag, String typeOfSnag, String blockage_amount, int estimatedDelay) {
+    public Snag(int snagId, int logId, String location, String type, String blockageAmount, Integer estimatedDelay) {
         this.snagId = snagId;
         this.logId = logId;
-        this.locationOfSnag = locationOfSnag;
-        this.typeOfSnag = typeOfSnag;
-        this.blockageAmount = blockage_amount;
+        this.location = location;
+        this.type = type;
+        this.blockageAmount = blockageAmount;
         this.estimatedDelay = estimatedDelay;
     }
 
+    @Id
+    @Column(name = "snag_id", nullable = false)
     public int getSnagId() {
         return snagId;
     }
@@ -53,6 +35,8 @@ public class Snag {
         this.snagId = snagId;
     }
 
+    @Basic
+    @Column(name = "log_id", nullable = false)
     public int getLogId() {
         return logId;
     }
@@ -61,48 +45,85 @@ public class Snag {
         this.logId = logId;
     }
 
-    public String getLocationOfSnag() {
-        return locationOfSnag;
+    @Basic
+    @Column(name = "location", nullable = true, length = 30)
+    public String getLocation() {
+        return location;
     }
 
-    public void setLocationOfSnag(String locationOfSnag) {
-        this.locationOfSnag = locationOfSnag;
+    public void setLocation(String location) {
+        this.location = location;
     }
 
-    public String getTypeOfSnag() {
-        return typeOfSnag;
+    @Basic
+    @Column(name = "type", nullable = true, length = 30)
+    public String getType() {
+        return type;
     }
 
-    public void setTypeOfSnag(String typeOfSnag) {
-        this.typeOfSnag = typeOfSnag;
+    public void setType(String type) {
+        this.type = type;
     }
 
-    public String getBlockage_amount() {
+    @Basic
+    @Column(name = "blockage_amount", nullable = true, length = 20)
+    public String getBlockageAmount() {
         return blockageAmount;
     }
 
-    public void setBlockage_amount(String blockage_amount) {
-        this.blockageAmount = blockage_amount;
+    public void setBlockageAmount(String blockageAmount) {
+        this.blockageAmount = blockageAmount;
     }
 
-    public int getEstimatedDelay() {
+    @Basic
+    @Column(name = "estimated_delay", nullable = true)
+    public Integer getEstimatedDelay() {
         return estimatedDelay;
     }
 
-    public void setEstimatedDelay(int estimatedDelay) {
+    public void setEstimatedDelay(Integer estimatedDelay) {
         this.estimatedDelay = estimatedDelay;
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Snag snag = (Snag) o;
+
+        if (snagId != snag.snagId) return false;
+        if (logId != snag.logId) return false;
+        if (location != null ? !location.equals(snag.location) : snag.location != null) return false;
+        if (type != null ? !type.equals(snag.type) : snag.type != null) return false;
+        if (blockageAmount != null ? !blockageAmount.equals(snag.blockageAmount) : snag.blockageAmount != null)
+            return false;
+        if (estimatedDelay != null ? !estimatedDelay.equals(snag.estimatedDelay) : snag.estimatedDelay != null)
+            return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = snagId;
+        result = 31 * result + logId;
+        result = 31 * result + (location != null ? location.hashCode() : 0);
+        result = 31 * result + (type != null ? type.hashCode() : 0);
+        result = 31 * result + (blockageAmount != null ? blockageAmount.hashCode() : 0);
+        result = 31 * result + (estimatedDelay != null ? estimatedDelay.hashCode() : 0);
+        return result;
+    }
+
+    @Override
     public String toString() {
-        return "snag{" +
+        return "Snag{" +
                 "snagId=" + snagId +
                 ", logId=" + logId +
-                ", locationOfSnag='" + locationOfSnag + '\'' +
-                ", typeOfSnag='" + typeOfSnag + '\'' +
-                ", blockage_amount='" + blockageAmount + '\'' +
+                ", location='" + location + '\'' +
+                ", type='" + type + '\'' +
+                ", blockageAmount='" + blockageAmount + '\'' +
                 ", estimatedDelay=" + estimatedDelay +
                 '}';
     }
 }
-
