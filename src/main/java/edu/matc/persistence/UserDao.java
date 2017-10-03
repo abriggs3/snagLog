@@ -38,7 +38,7 @@ public class UserDao implements DataCRUDable {
 
 
     @Override
-    public Storable addRecord(Storable recordToAdd) {
+    public Storable addRecord(Storable recordToAdd, String tableName) {
         User user = (User)recordToAdd;
 
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
@@ -60,7 +60,7 @@ public class UserDao implements DataCRUDable {
     }
 
     @Override
-    public Storable selectSingleRecord(String PKOfRecord) {
+    public Storable selectSingleRecord(String PKOfRecord, String tableName) {
         String userName = PKOfRecord;
         User user = null;
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
@@ -82,7 +82,7 @@ public class UserDao implements DataCRUDable {
     }
 
     @Override
-    public void updateRecord(Storable recordToUpdate) {
+    public void updateRecord(Storable recordToUpdate, String tableName) {
         User user = (User)recordToUpdate;
         Transaction transaction = null;
         Session session = null;
@@ -108,7 +108,7 @@ public class UserDao implements DataCRUDable {
 
 
     @Override
-    public void deleteRecord(String PKOfRecord) {
+    public void deleteRecord(String PKOfRecord, String tableName) {
         String userName = PKOfRecord;
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
         Transaction transaction = null;
@@ -128,7 +128,7 @@ public class UserDao implements DataCRUDable {
     }
 
     @Override
-    public List<Storable> getRecordBySearchType(String searchTerm, String searchType){
+    public List<Storable> getRecordBySearchType(String searchTerm, String searchType, String tableName){
 
         List<Storable> users = new ArrayList<Storable>();
         Session session = null;

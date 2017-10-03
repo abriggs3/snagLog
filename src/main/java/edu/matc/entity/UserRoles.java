@@ -3,7 +3,7 @@ package edu.matc.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "user_roles", schema = "snaglog", catalog = "")
+@Table(name = "user_roles")
 @IdClass(UserRolesPK.class)
 public class UserRoles {
     private String userName;

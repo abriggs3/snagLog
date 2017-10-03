@@ -6,7 +6,7 @@
             <hr>
             <h5>user search</h5>
             <form action="search" accept-charset="utf-8">
-
+                <input type="hidden" name="tableToSearch" value="users" />
                 <input type="text" name="searchTerm"><br>
 
                 <span>by </span><select name="searchType">
@@ -18,4 +18,5 @@
 
                 <input type="submit" class="invisibleButton">
             </form>
+            <h5><a href="adminMain.jsp">admin page</a></h5>
         </div>

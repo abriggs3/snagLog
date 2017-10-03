@@ -1,0 +1,8 @@
+<Context docBase="snagLog" path="/snagLog" reloadable="true">
+    <Realm className="org.apache.catalina.realm.JDBCRealm"
+           driverName="com.mysql.jdbc.Driver"
+           connectionURL="jdbc:mysql://localhost:3306/snaglog?user=tomcat&amp;password=test"
+           userTable="users" userNameCol="user_name" userCredCol="user_pass"
+           userRoleTable="user_roles" roleNameCol="role_name" >
+    </Realm>
+</Context>

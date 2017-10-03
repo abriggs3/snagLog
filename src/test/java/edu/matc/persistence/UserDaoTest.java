@@ -38,13 +38,13 @@ public class UserDaoTest{
 
     @Test
     public void getRecordBySearchTypeTest() {
-        List<Storable> users = userDao.getRecordBySearchType("contributorUser", "userName");
+        List<Storable> users = userDao.getRecordBySearchType("contributorUser", "userName", tableName);
         assertEquals("Incorrect size of results", 1, users.size());
     }
 
     @Test
     public void selectSingleRecordTest() throws Exception {
-        user = (User) userDao.selectSingleRecord("adminUser");
+        user = (User) userDao.selectSingleRecord("adminUser", tableName);
         assertNotNull(user);
         assertEquals("incorrect last name returned", "Person", user.getLastName());
     }
@@ -53,16 +53,16 @@ public class UserDaoTest{
     public void updateRecordTest() throws Exception {
         listOfUsersInitialSize = userDao.retrieveAllRecords(tableName).size();
         String userName = "contributorUser";
-        user = (User) userDao.selectSingleRecord(userName);
+        user = (User) userDao.selectSingleRecord(userName, tableName);
         user.setFirstName("ElFabaloso");
-        userDao.updateRecord(user);
+        userDao.updateRecord(user, tableName);
         assertEquals("List size has changed", listOfUsersInitialSize, userDao.retrieveAllRecords(tableName).size());
-        assertEquals("Update changes failed to save", user.toString(), userDao.selectSingleRecord(userName).toString());
+        assertEquals("Update changes failed to save", user.toString(), userDao.selectSingleRecord(userName, tableName).toString());
     }
 
     @Test
     public void deleteRecordTest() throws Exception {
-        userDao.deleteRecord("deleteThisUser");
+        userDao.deleteRecord("deleteThisUser", tableName);
         assertEquals("Incorrect size of results", listOfUsersInitialSize - 1, userDao.retrieveAllRecords(tableName).size());
     }
 
@@ -70,9 +70,9 @@ public class UserDaoTest{
     public void addRecordTest() {
         user = new User("James", "Kirk", "JTK", "tribblesRule");
 
-        userDao.addRecord(user);
+        userDao.addRecord(user, tableName);
         assertEquals("Incorrect size of results", listOfUsersInitialSize + 1, userDao.retrieveAllRecords(tableName).size());
-        assertEquals("User not saved correctly", user.toString(), userDao.selectSingleRecord("JTK").toString());
+        assertEquals("User not saved correctly", user.toString(), userDao.selectSingleRecord("JTK", tableName).toString());
     }
 }
 

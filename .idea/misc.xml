@@ -11,7 +11,7 @@
     </option>
   </component>
   <component name="ProjectPlainTextFileTypeManager">
-    <file url="file://$PROJECT_DIR$/src/main/webapp/page_sections/sidebar_right/sidebar_right_standard.jsp" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/page_sections/sidebar_right/sidebar_right_standard_old.jsp" />
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />

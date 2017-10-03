@@ -1,6 +1,7 @@
 package edu.matc.contoller;
 
 
+import edu.matc.persistence.UserDao;
 import edu.matc.persistence.UserHibernateDao;
 
 
@@ -24,17 +25,19 @@ public class Search extends HttpServlet {
         response.setContentType("text/html");
         String searchTerm = request.getParameter("searchTerm");
         String searchType = request.getParameter("searchType");
-
+        String tableToSearch = request.getParameter("tableToSearch");
         UserHibernateDao userHibernateDao = new UserHibernateDao();
+        UserDao userDao = new UserDao();
 
         if (searchType.equalsIgnoreCase("all")) {
-            request.setAttribute("users", userHibernateDao.getAllUsers());
+            request.setAttribute("users", userDao.retrieveAllRecords(tableToSearch));
+
         }
 
         if (searchType.equalsIgnoreCase("lastName") ||
                     searchType.equalsIgnoreCase("firstName") ||
                     searchType.equalsIgnoreCase("userName")) {
-            request.setAttribute("users", userHibernateDao.getUserBySearchType(searchTerm, searchType));
+            request.setAttribute("users", userDao.getRecordBySearchType(searchTerm, searchType, tableToSearch));
         }
 
         RequestDispatcher dispatcher = request.getRequestDispatcher("pages/results.jsp");

@@ -20,7 +20,7 @@ CREATE TABLE users (
 DESC users;
 
 /* create some test users */
-INSERT INTO users (first_name, last_name, user_name, user_pass) VALUES ('Admin', 'Person', 'adminUser', 'admin');
+INSERT INTO users (first_name, last_name, user_name, user_pass) VALUES ('Admin', 'Person', 'admin', 'admin');
 INSERT INTO users (first_name, last_name, user_name, user_pass) VALUES ('Contributor', 'Person', 'contributorUser', 'contributor');
 INSERT INTO users (first_name, last_name, user_name, user_pass) VALUES ('John', 'Carter', 'BigJohn', 'contributor');
 
@@ -38,7 +38,7 @@ create table user_roles (
 DESC user_roles;
 
 /* create some test roles for the previously added users */
-INSERT INTO user_roles (user_name, role_name) VALUES ('adminUser', 'admin');
+INSERT INTO user_roles (user_name, role_name) VALUES ('adminUser', 'administrator');
 INSERT INTO user_roles (user_name, role_name) VALUES ('contributorUser', 'contributor');
 INSERT INTO user_roles (user_name, role_name) VALUES ('BigJohn', 'contributor');
 

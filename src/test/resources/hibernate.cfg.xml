@@ -21,7 +21,6 @@
 
         <!-- instruction to rebuild the database after each test -->
         <property name="hbm2ddl.auto">create-drop</property>
-
         <!-- List the annotated entity class/es -->
         <mapping class="edu.matc.entity.User"/>
         <mapping class="edu.matc.entity.Log"/>
