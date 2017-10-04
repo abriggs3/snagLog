@@ -38,7 +38,7 @@ create table user_roles (
 DESC user_roles;
 
 /* create some test roles for the previously added users */
-INSERT INTO user_roles (user_name, role_name) VALUES ('adminUser', 'administrator');
+INSERT INTO user_roles (user_name, role_name) VALUES ('admin', 'administrator');
 INSERT INTO user_roles (user_name, role_name) VALUES ('contributorUser', 'contributor');
 INSERT INTO user_roles (user_name, role_name) VALUES ('BigJohn', 'contributor');
 

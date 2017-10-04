@@ -38,7 +38,7 @@
             </div>
 
 
-
+                <li><a href="pages/logout.jsp"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
 
 
 

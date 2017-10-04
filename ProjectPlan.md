@@ -18,7 +18,7 @@
 
 ### Week 3
 - [x] Complete database design
-- [ ] Create database and all tables/columns locally
+- [x ] Create database and all tables/columns locally
 - [x] Begin creating JSPs
 - [ ] Determine possible Web Services or APIs to use
 - [x] Add in bootstrap
@@ -28,21 +28,22 @@
 - [x] Time log entries
 
 ### Week 4
-- [ ] Complete remaining JSPs
+- [x] Complete remaining JSPs
 - [x] Add Hibernate config
 - [x] Create DAO for user crud
 - [x] Add unit tests for DAO
 - [ ] Add user login  
 - [ ] Add user registration
 - [x] Add Maven for building
-- [ ] Add entities for remaining tables
+- [x] Add entities for remaining tables
 - [x] Time log entries
 
-### Week 5
+### Week 5\
+- [x] Deploy to AWS
 - [ ] Create DAO for snags
 - [ ] Create DAO for snag report
 - [ ] Add tests for new functionality
-- [ ] Time log entries
+- [x] Time log entries
 
 ### Week 6
 - [ ] Integration with google maps api (would be cool)

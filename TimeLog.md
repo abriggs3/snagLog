@@ -9,7 +9,7 @@
 |Week 2| Set up project repository and associated material, completed assigned material| 6 | |
 |Week 3| Exercise for week 3, diagrammed project layout, sql scripts for tables  | 9  |   | 
 |Week 4| ProfDev presentation, hibernate, AWS deploy, JSP creation | 17  |   | 
-|Week 5| TODO | 1  |   | 
+|Week 5| Hibernate entity generate, fixed AWS deploy, finished basic db | 10  |   | 
 |Week 6| TODO | 1  |   | 
 |Week 7| TODO | 1  |   | 
 |Week 8| TODO | 1  |   | 
