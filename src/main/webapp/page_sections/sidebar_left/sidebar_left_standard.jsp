@@ -18,7 +18,7 @@
 
                 <input type="submit" class="invisibleButton">
             </form>
-            <h5><a href="pages_secure_admin/admin_main.jsp">admin page</a></h5>
+            <h5><a href="/admin">admin page</a></h5>
             <h5><a href="pages_secure_admin/test.jsp">admin authentication test page</a></h5>
             <h5><a href="pages_secure/test.jsp">contributor authentication test page</a></h5>
         </div>

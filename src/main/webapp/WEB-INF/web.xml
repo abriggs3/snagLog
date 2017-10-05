@@ -26,6 +26,7 @@
       <role-name>contributor</role-name>
     </auth-constraint>
   </security-constraint>
+
   <security-constraint>
     <web-resource-collection>
       <web-resource-name>pages_secure_admin</web-resource-name>
@@ -35,6 +36,18 @@
       <role-name>administrator</role-name>
     </auth-constraint>
   </security-constraint>
+
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>pages_secure</web-resource-name>
+      <url-pattern>/adminMain</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>administrator</role-name>
+      <role-name>contributor</role-name>
+    </auth-constraint>
+  </security-constraint>
+
 
   <security-role>
     <role-name>contributor</role-name>
