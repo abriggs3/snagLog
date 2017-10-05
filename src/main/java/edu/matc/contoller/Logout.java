@@ -9,16 +9,16 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet(
-        urlPatterns = {"/loginSuccess"}
+        urlPatterns = {"/logout"}
 )
 
-public class LoginSuccess extends HttpServlet {
+public class Logout extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         response.setContentType("text/html");
 
-        RequestDispatcher dispatcher = request.getRequestDispatcher("pages/login_success.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("pages/logout.jsp");
         dispatcher.forward(request, response);
     }
 }

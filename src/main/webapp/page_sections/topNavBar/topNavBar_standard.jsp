@@ -12,11 +12,11 @@
             <ul class="nav navbar-nav">
                 <li class="active"><a href="index">Home</a></li>
                 <li><a href="#">About</a></li>
-                <li><a href="pages_secure/post_a_log">Post a Snag Log</a></li>
+                <li><a href="postASnagLog">Post a Snag Log</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#" data-toggle="modal" data-target="#login-modal"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                <li><a href="login" data-toggle="modal" data-target="#login-modal"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
 
 
 
@@ -38,7 +38,7 @@
             </div>
 
 
-                <li><a href="pages/logout.jsp"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                <li><a href="logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
 
 
 

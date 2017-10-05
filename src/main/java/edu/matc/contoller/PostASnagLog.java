@@ -18,7 +18,7 @@ public class PostASnagLog extends HttpServlet {
 
         response.setContentType("text/html");
 
-        RequestDispatcher dispatcher = request.getRequestDispatcher("pages_secure/post_a_log.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("pages/post_a_log.jsp");
         dispatcher.forward(request, response);
     }
 }

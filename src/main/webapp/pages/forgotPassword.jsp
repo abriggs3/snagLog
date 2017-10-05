@@ -2,7 +2,7 @@
 <%@include file="../tagLibrary.jsp"%>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <c:set var="title" value="SnagLog Forgot Password" scope="session" />
-<c:import url="../page_sections/head/head_standard.jsp" />
+<c:import url="../page_sections/head/head.jsp" />
 
 <body>
 
