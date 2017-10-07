@@ -2,7 +2,7 @@ package edu.matc.contoller;
 
 
 import edu.matc.persistence.UserDao;
-import edu.matc.persistence.UserHibernateDao;
+
 
 
 import javax.servlet.RequestDispatcher;
@@ -26,7 +26,6 @@ public class Search extends HttpServlet {
         String searchTerm = request.getParameter("searchTerm");
         String searchType = request.getParameter("searchType");
         String tableToSearch = request.getParameter("tableToSearch");
-        UserHibernateDao userHibernateDao = new UserHibernateDao();
         UserDao userDao = new UserDao();
 
         if (searchType.equalsIgnoreCase("all")) {

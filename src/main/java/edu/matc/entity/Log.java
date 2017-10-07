@@ -1,24 +1,53 @@
 package edu.matc.entity;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 
 @Entity
-@Table(name = "log")
-public class Log {
+@Table(name = "Log")
+public class Log implements Storable {
+
+    @Id
+    @Column(name = "log_id", nullable = false)
+    @GeneratedValue(generator="increment")
+    @GenericGenerator(name="increment", strategy = "increment")
     private int logId;
-    private String userName;
+
+    @Basic
+    @Column(name = "river_name", nullable = false)
     private String riverName;
+
+    @Basic
+    @Column(name = "state", nullable = false, length = 2)
     private String state;
+
+    @Basic
+    @Column(name = "county", nullable = true, length = 30)
     private String county;
+
+    @Basic
+    @Column(name = "nearest_city", nullable = true, length = 30)
     private String nearestCity;
+
+    @Basic
+    @Column(name = "put_in_location", nullable = true, length = 256)
     private String putInLocation;
+
+    @Basic
+    @Column(name = "takeout_location", nullable = true, length = 256)
     private String takeoutLocation;
 
-    public Log() { }
+    @ManyToOne
+    @JoinColumn(name = "users_id", referencedColumnName = "users_id", nullable = false)
+    private User userByUserId;
 
-    public Log(int logId, String userName, String riverName, String state, String county, String nearestCity, String putInLocation, String takeoutLocation) {
-        this.logId = logId;
-        this.userName = userName;
+    // required empty constructor
+    public Log() {
+    }
+
+    // partial constructor
+    public Log(String riverName, String state, String county, String nearestCity, String putInLocation, String takeoutLocation, User userByUserId) {
         this.riverName = riverName;
         this.state = state;
         this.county = county;
@@ -27,28 +56,13 @@ public class Log {
         this.takeoutLocation = takeoutLocation;
     }
 
-    @Id
-    @Column(name = "log_id", nullable = false)
     public int getLogId() {
         return logId;
     }
-
     public void setLogId(int logId) {
         this.logId = logId;
     }
 
-    @Basic
-    @Column(name = "user_name", nullable = false, length = 30)
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    @Basic
-    @Column(name = "river_name", nullable = false, length = 30)
     public String getRiverName() {
         return riverName;
     }
@@ -57,8 +71,6 @@ public class Log {
         this.riverName = riverName;
     }
 
-    @Basic
-    @Column(name = "state", nullable = false, length = 2)
     public String getState() {
         return state;
     }
@@ -67,8 +79,6 @@ public class Log {
         this.state = state;
     }
 
-    @Basic
-    @Column(name = "county", nullable = true, length = 30)
     public String getCounty() {
         return county;
     }
@@ -77,8 +87,6 @@ public class Log {
         this.county = county;
     }
 
-    @Basic
-    @Column(name = "nearest_city", nullable = true, length = 30)
     public String getNearestCity() {
         return nearestCity;
     }
@@ -87,8 +95,6 @@ public class Log {
         this.nearestCity = nearestCity;
     }
 
-    @Basic
-    @Column(name = "put_in_location", nullable = true, length = 256)
     public String getPutInLocation() {
         return putInLocation;
     }
@@ -97,14 +103,20 @@ public class Log {
         this.putInLocation = putInLocation;
     }
 
-    @Basic
-    @Column(name = "takeout_location", nullable = true, length = 256)
     public String getTakeoutLocation() {
         return takeoutLocation;
     }
 
     public void setTakeoutLocation(String takeoutLocation) {
         this.takeoutLocation = takeoutLocation;
+    }
+
+    public User getUserByUserId() {
+        return userByUserId;
+    }
+
+    public void setUserByUserId(User userByUserId) {
+        this.userByUserId = userByUserId;
     }
 
     @Override
@@ -115,7 +127,6 @@ public class Log {
         Log log = (Log) o;
 
         if (logId != log.logId) return false;
-        if (userName != null ? !userName.equals(log.userName) : log.userName != null) return false;
         if (riverName != null ? !riverName.equals(log.riverName) : log.riverName != null) return false;
         if (state != null ? !state.equals(log.state) : log.state != null) return false;
         if (county != null ? !county.equals(log.county) : log.county != null) return false;
@@ -130,7 +141,6 @@ public class Log {
     @Override
     public int hashCode() {
         int result = logId;
-        result = 31 * result + (userName != null ? userName.hashCode() : 0);
         result = 31 * result + (riverName != null ? riverName.hashCode() : 0);
         result = 31 * result + (state != null ? state.hashCode() : 0);
         result = 31 * result + (county != null ? county.hashCode() : 0);
@@ -144,7 +154,6 @@ public class Log {
     public String toString() {
         return "Log{" +
                 "logId=" + logId +
-                ", userName='" + userName + '\'' +
                 ", riverName='" + riverName + '\'' +
                 ", state='" + state + '\'' +
                 ", county='" + county + '\'' +

@@ -1,22 +1,24 @@
 package edu.matc.entity;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 
 @Entity
-@Table(name = "snag")
-public class Snag {
+@Table(name = "Snag")
+public class Snag implements Storable {
     private int snagId;
-    private int logId;
     private String location;
     private String type;
     private String blockageAmount;
     private Integer estimatedDelay;
+    private Log logByLogId;
 
-    public Snag() { }
+    public Snag() {
+    }
 
-    public Snag(int snagId, int logId, String location, String type, String blockageAmount, Integer estimatedDelay) {
+    public Snag(int snagId, String location, String type, String blockageAmount, Integer estimatedDelay, Log logByLogId) {
         this.snagId = snagId;
-        this.logId = logId;
         this.location = location;
         this.type = type;
         this.blockageAmount = blockageAmount;
@@ -25,22 +27,14 @@ public class Snag {
 
     @Id
     @Column(name = "snag_id", nullable = false)
+    @GeneratedValue(generator="increment")
+    @GenericGenerator(name="increment", strategy = "increment")
     public int getSnagId() {
         return snagId;
     }
 
     public void setSnagId(int snagId) {
         this.snagId = snagId;
-    }
-
-    @Basic
-    @Column(name = "log_id", nullable = false)
-    public int getLogId() {
-        return logId;
-    }
-
-    public void setLogId(int logId) {
-        this.logId = logId;
     }
 
     @Basic
@@ -91,7 +85,6 @@ public class Snag {
         Snag snag = (Snag) o;
 
         if (snagId != snag.snagId) return false;
-        if (logId != snag.logId) return false;
         if (location != null ? !location.equals(snag.location) : snag.location != null) return false;
         if (type != null ? !type.equals(snag.type) : snag.type != null) return false;
         if (blockageAmount != null ? !blockageAmount.equals(snag.blockageAmount) : snag.blockageAmount != null)
@@ -105,7 +98,6 @@ public class Snag {
     @Override
     public int hashCode() {
         int result = snagId;
-        result = 31 * result + logId;
         result = 31 * result + (location != null ? location.hashCode() : 0);
         result = 31 * result + (type != null ? type.hashCode() : 0);
         result = 31 * result + (blockageAmount != null ? blockageAmount.hashCode() : 0);
@@ -113,15 +105,25 @@ public class Snag {
         return result;
     }
 
+    @ManyToOne
+    @JoinColumn(name = "log_id", referencedColumnName = "log_id", nullable = false)
+    public Log getLogByLogId() {
+        return logByLogId;
+    }
+
+    public void setLogByLogId(Log logByLogId) {
+        this.logByLogId = logByLogId;
+    }
+
     @Override
     public String toString() {
         return "Snag{" +
                 "snagId=" + snagId +
-                ", logId=" + logId +
                 ", location='" + location + '\'' +
                 ", type='" + type + '\'' +
                 ", blockageAmount='" + blockageAmount + '\'' +
                 ", estimatedDelay=" + estimatedDelay +
+                ", logByLogId=" + logByLogId +
                 '}';
     }
 }

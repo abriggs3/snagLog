@@ -44,7 +44,7 @@ public class UserDaoTest{
 
     @Test
     public void selectSingleRecordTest() throws Exception {
-        user = (User) userDao.selectSingleRecord("adminUser", tableName);
+        user = (User) userDao.selectSingleRecord(1, tableName);
         assertNotNull(user);
         assertEquals("incorrect last name returned", "Person", user.getLastName());
     }
@@ -52,27 +52,27 @@ public class UserDaoTest{
     @Test
     public void updateRecordTest() throws Exception {
         listOfUsersInitialSize = userDao.retrieveAllRecords(tableName).size();
-        String userName = "contributorUser";
-        user = (User) userDao.selectSingleRecord(userName, tableName);
+        int userId = 2;
+        user = (User) userDao.selectSingleRecord(userId, tableName);
         user.setFirstName("ElFabaloso");
         userDao.updateRecord(user, tableName);
         assertEquals("List size has changed", listOfUsersInitialSize, userDao.retrieveAllRecords(tableName).size());
-        assertEquals("Update changes failed to save", user.toString(), userDao.selectSingleRecord(userName, tableName).toString());
+        assertEquals("Update changes failed to save", user.toString(), userDao.selectSingleRecord(userId, tableName).toString());
     }
 
     @Test
     public void deleteRecordTest() throws Exception {
-        userDao.deleteRecord("deleteThisUser", tableName);
+        userDao.deleteRecord(4, tableName);
         assertEquals("Incorrect size of results", listOfUsersInitialSize - 1, userDao.retrieveAllRecords(tableName).size());
     }
 
     @Test
     public void addRecordTest() {
-        user = new User("James", "Kirk", "JTK", "tribblesRule");
+        user = new User(4, "James", "Kirk", "JTK", "tribblesRule");
 
         userDao.addRecord(user, tableName);
         assertEquals("Incorrect size of results", listOfUsersInitialSize + 1, userDao.retrieveAllRecords(tableName).size());
-        assertEquals("User not saved correctly", user.toString(), userDao.selectSingleRecord("JTK", tableName).toString());
+        assertEquals("User not saved correctly", user.toString(), userDao.selectSingleRecord(4, tableName).toString());
     }
 }
 

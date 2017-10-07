@@ -26,6 +26,7 @@
         <mapping class="edu.matc.entity.Snag"/>
         <mapping class="edu.matc.entity.UserRoles"/>
 
+
     </session-factory>
 
 </hibernate-configuration>

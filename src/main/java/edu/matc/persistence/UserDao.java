@@ -60,15 +60,15 @@ public class UserDao implements DataCRUDable {
     }
 
     @Override
-    public Storable selectSingleRecord(String PKOfRecord, String tableName) {
-        String userName = PKOfRecord;
+    public Storable selectSingleRecord(int primaryKeyOfRecord, String tableName) {
+        int userId = primaryKeyOfRecord;
         User user = null;
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
         Transaction transaction = null;
         try{
             transaction = session.beginTransaction();
-            user = (User)session.get(User.class, userName);
-            session.get(User.class, userName);
+            user = (User)session.get(User.class, userId);
+            session.get(User.class, userId);
             transaction.commit();
         }catch (HibernateException e) {
             if (transaction!=null) transaction.rollback();
@@ -108,13 +108,13 @@ public class UserDao implements DataCRUDable {
 
 
     @Override
-    public void deleteRecord(String PKOfRecord, String tableName) {
-        String userName = PKOfRecord;
+    public void deleteRecord(int primaryKeyOfRecord, String tableName) {
+        int userId = primaryKeyOfRecord;
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
         Transaction transaction = null;
         try{
             transaction = session.beginTransaction();
-            User user = (User)session.get(User.class, userName);
+            User user = (User)session.get(User.class, userId);
             session.delete(user);
             transaction.commit();
         }catch (HibernateException e) {
