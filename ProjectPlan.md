@@ -32,7 +32,7 @@
 - [x] Add Hibernate config
 - [x] Create DAO for user crud
 - [x] Add unit tests for DAO
-- [ ] Add user login  
+- [x] Add user login  
 - [ ] Add user registration
 - [x] Add Maven for building
 - [x] Add entities for remaining tables
@@ -46,11 +46,14 @@
 - [x] Time log entries
 
 ### Week 6
-- [ ] Integration with google maps api (would be cool)
+- [ ] Integration with google maps api 
+- [ ] Add web service for current weather
+- [ ] Create DOAs for remaining tables
 - [ ] Create add summary page for new snag reports
 - [ ] Time log entries
 
 ### Week 7
+- [ ] Add Admin section with GUI for CRUD on all tables
 - [ ] Add search functionality
 - [ ] Determine how to add paging of search results
 - [ ] Integration with weather service (maybe rainfall data)
