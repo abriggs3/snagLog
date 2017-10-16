@@ -6,6 +6,7 @@ import org.apache.log4j.Logger;
 import org.junit.Before;
 import org.junit.Test;
 
+import javax.persistence.EntityManager;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -74,5 +75,8 @@ public class UserDaoTest{
         assertEquals("Incorrect size of results", listOfUsersInitialSize + 1, userDao.retrieveAllRecords(tableName).size());
         assertEquals("User not saved correctly", user.toString(), userDao.selectSingleRecord(4, tableName).toString());
     }
+
+
+
 }
 
