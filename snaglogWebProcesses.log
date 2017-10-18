@@ -4942,3 +4942,61 @@ org.hibernate.MappingException: Unknown entity: edu.matc.entity.User_old
 2017-10-18 11:32:46,564 1147 [http-nio-8080-exec-10] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory
 2017-10-18 11:32:47,017 1600 [http-nio-8080-exec-10] INFO  edu.matc.entity.UserGenericDAO  - STARTED - query
 2017-10-18 11:32:47,331 1914 [http-nio-8080-exec-10] INFO  edu.matc.entity.UserGenericDAO  - FINISHED - query. Result size=4
+2017-10-18 13:21:31,137 0    [main] INFO  org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2017-10-18 13:21:31,149 12   [main] INFO  org.hibernate.Version  - HHH000412: Hibernate Core {4.3.11.Final}
+2017-10-18 13:21:31,153 16   [main] INFO  org.hibernate.cfg.Environment  - HHH000206: hibernate.properties not found
+2017-10-18 13:21:31,158 21   [main] INFO  org.hibernate.cfg.Environment  - HHH000021: Bytecode provider name : javassist
+2017-10-18 13:21:31,183 46   [main] INFO  org.hibernate.cfg.Configuration  - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2017-10-18 13:21:31,184 47   [main] INFO  org.hibernate.cfg.Configuration  - HHH000040: Configuration resource: /hibernate.cfg.xml
+2017-10-18 13:21:31,305 168  [main] INFO  org.hibernate.cfg.Configuration  - HHH000041: Configured SessionFactory: null
+2017-10-18 13:21:31,506 369  [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-10-18 13:21:31,510 373  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/snaglog_test]
+2017-10-18 13:21:31,511 374  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000046: Connection properties: {user=abriggs3, password=****}
+2017-10-18 13:21:31,514 377  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000006: Autocommit mode: false
+2017-10-18 13:21:31,515 378  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-10-18 13:21:31,931 794  [main] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2017-10-18 13:21:31,938 801  [main] INFO  org.hibernate.engine.jdbc.internal.LobCreatorBuilder  - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+2017-10-18 13:21:32,126 989  [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator  - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-10-18 13:21:32,151 1014 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory
+2017-10-18 13:21:32,620 1483 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000227: Running hbm2ddl schema export
+2017-10-18 13:21:32,690 1553 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000389: Unsuccessful: alter table Log drop foreign key FK_f132q3b5wga9iq22o7pci4cjv
+2017-10-18 13:21:32,691 1554 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - Can't DROP 'FK_f132q3b5wga9iq22o7pci4cjv'; check that column/key exists
+2017-10-18 13:21:32,700 1563 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000389: Unsuccessful: alter table Snag drop foreign key FK_kuus7js4bp5ry0alnwowmgm8j
+2017-10-18 13:21:32,700 1563 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - Can't DROP 'FK_kuus7js4bp5ry0alnwowmgm8j'; check that column/key exists
+2017-10-18 13:21:32,706 1569 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000389: Unsuccessful: alter table User_roles drop foreign key FK_l2p3xdjif1s8jt03iwwthvliw
+2017-10-18 13:21:32,706 1569 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - Can't DROP 'FK_l2p3xdjif1s8jt03iwwthvliw'; check that column/key exists
+2017-10-18 13:21:32,727 1590 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000389: Unsuccessful: drop table if exists Log
+2017-10-18 13:21:32,728 1591 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - Cannot delete or update a parent row: a foreign key constraint fails
+2017-10-18 13:21:32,761 1624 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000389: Unsuccessful: drop table if exists Users
+2017-10-18 13:21:32,761 1624 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - Cannot delete or update a parent row: a foreign key constraint fails
+2017-10-18 13:21:32,766 1629 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000389: Unsuccessful: create table Log (log_id integer not null, county varchar(30), nearest_city varchar(30), put_in_location varchar(256), river_name varchar(255) not null, state varchar(2) not null, takeout_location varchar(256), users_id integer not null, primary key (log_id))
+2017-10-18 13:21:32,766 1629 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - Table 'Log' already exists
+2017-10-18 13:21:32,784 1647 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000389: Unsuccessful: create table Users (users_id integer not null, first_name varchar(30) not null, last_name varchar(30) not null, user_name varchar(30) not null, user_pass varchar(30) not null, primary key (users_id))
+2017-10-18 13:21:32,784 1647 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - Table 'Users' already exists
+2017-10-18 13:21:32,973 1836 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000230: Schema export complete
+2017-10-18 13:22:04,568 0    [http-nio-8080-exec-1] INFO  org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2017-10-18 13:22:04,583 15   [http-nio-8080-exec-1] INFO  org.hibernate.Version  - HHH000412: Hibernate Core {4.3.11.Final}
+2017-10-18 13:22:04,587 19   [http-nio-8080-exec-1] INFO  org.hibernate.cfg.Environment  - HHH000206: hibernate.properties not found
+2017-10-18 13:22:04,590 22   [http-nio-8080-exec-1] INFO  org.hibernate.cfg.Environment  - HHH000021: Bytecode provider name : javassist
+2017-10-18 13:22:04,624 56   [http-nio-8080-exec-1] INFO  org.hibernate.cfg.Configuration  - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2017-10-18 13:22:04,626 58   [http-nio-8080-exec-1] INFO  org.hibernate.cfg.Configuration  - HHH000040: Configuration resource: /hibernate.cfg.xml
+2017-10-18 13:22:04,700 132  [http-nio-8080-exec-1] INFO  org.hibernate.cfg.Configuration  - HHH000041: Configured SessionFactory: null
+2017-10-18 13:22:04,867 299  [http-nio-8080-exec-1] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-10-18 13:22:04,870 302  [http-nio-8080-exec-1] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/snaglog]
+2017-10-18 13:22:04,870 302  [http-nio-8080-exec-1] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000046: Connection properties: {user=abriggs3, password=****}
+2017-10-18 13:22:04,870 302  [http-nio-8080-exec-1] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000006: Autocommit mode: false
+2017-10-18 13:22:04,871 303  [http-nio-8080-exec-1] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-10-18 13:22:05,122 554  [http-nio-8080-exec-1] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2017-10-18 13:22:05,139 571  [http-nio-8080-exec-1] INFO  org.hibernate.engine.jdbc.internal.LobCreatorBuilder  - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+2017-10-18 13:22:05,397 829  [http-nio-8080-exec-1] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator  - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-10-18 13:22:05,402 834  [http-nio-8080-exec-1] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory
+2017-10-18 13:22:05,740 1172 [http-nio-8080-exec-1] INFO  edu.matc.entity.UserGenericDAO  - STARTED - query
+2017-10-18 13:22:06,095 1527 [http-nio-8080-exec-1] INFO  edu.matc.entity.UserGenericDAO  - FINISHED - query. Result size=4
+2017-10-18 13:22:10,453 5885 [http-nio-8080-exec-3] INFO  edu.matc.entity.UserGenericDAO  - STARTED - get
+2017-10-18 13:22:10,484 5916 [http-nio-8080-exec-3] INFO  edu.matc.entity.UserGenericDAO  - FINISHED - get
+2017-10-18 13:22:10,485 5917 [http-nio-8080-exec-3] INFO  edu.matc.entity.UserGenericDAO  - STARTED - get
+2017-10-18 13:22:10,490 5922 [http-nio-8080-exec-3] INFO  edu.matc.entity.UserGenericDAO  - FINISHED - get
+2017-10-18 13:22:10,490 5922 [http-nio-8080-exec-3] INFO  edu.matc.entity.UserGenericDAO  - STARTED - delete
+2017-10-18 13:22:10,523 5955 [http-nio-8080-exec-3] INFO  edu.matc.entity.UserGenericDAO  - FINISHED - delete
+2017-10-18 13:22:16,889 12321 [http-nio-8080-exec-4] INFO  edu.matc.entity.UserGenericDAO  - STARTED - query
+2017-10-18 13:22:16,896 12328 [http-nio-8080-exec-4] INFO  edu.matc.entity.UserGenericDAO  - FINISHED - query. Result size=3

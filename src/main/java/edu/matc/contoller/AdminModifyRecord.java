@@ -13,6 +13,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+import static javafx.scene.input.KeyCode.T;
+
 @WebServlet(
         urlPatterns = {"/adminModifyRecord"}
 )
@@ -26,14 +28,14 @@ public class AdminModifyRecord extends HttpServlet {
         String IdOfRecord = request.getParameter("userCheck");
         Integer IdOfRecordAsInteger = Integer.parseInt(IdOfRecord);
 
+
         IGenericService<User> userService = new GenericServiceImpl<User>(
                 User.class, HibernateUtil.getSessionFactory());
 
         if (changeAction.equalsIgnoreCase("delete")) {
             request.setAttribute("changeAction", changeAction);
-            request.setAttribute("IdOfRecord", IdOfRecord);
-            request.setAttribute("user", userService.get(Class<User>, IdOfRecordAsInteger));
-            User userToDelete = userService.get();
+            request.setAttribute("IdOfRecord", IdOfRecord);request.setAttribute("user", userService.get(User.class, IdOfRecordAsInteger));
+            User userToDelete = userService.get(User.class, IdOfRecordAsInteger);
             userService.delete(userToDelete);
 
         }
