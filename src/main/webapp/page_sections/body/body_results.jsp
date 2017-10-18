@@ -2,7 +2,7 @@
 <div class="col-sm-8 text-left">
 
     <h2>Search Results: </h2>
-    <form method="POST" action="genericDelete">
+    <form method="POST" action="adminModifyRecord">
         <table class="table table-striped">
             <thead>
             <tr>
@@ -37,8 +37,8 @@
 
             </tbody>
         </table>
-        <input type="submit"class = "btn btn-default" value="delete">
-
+        <input type="submit" class="btn btn-default" name="submitButton" value="delete">
+        <input type="submit" class="btn btn-default" name="submitButton" value="update">
     </form>
 
 </div>
