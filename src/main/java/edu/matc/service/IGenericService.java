@@ -5,5 +5,4 @@ import edu.matc.persistence.IGenericDAO;
 
 public interface IGenericService<T> extends IGenericDAO<T> {
     List<T> getAll();
-    void deleteAll();
 }

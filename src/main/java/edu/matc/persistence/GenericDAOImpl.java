@@ -69,6 +69,7 @@ public class GenericDAOImpl<T> implements IGenericDAO<T> {
         Session session = sessionFactory.getCurrentSession();
         session.beginTransaction();
         Query query = session.createQuery(hsql);
+
         if (params != null) {
             for (String i : params.keySet()) {
                 query.setParameter(i, params.get(i));
@@ -80,6 +81,7 @@ public class GenericDAOImpl<T> implements IGenericDAO<T> {
                 && (hsql.toUpperCase().indexOf("UPDATE") == -1)
                 && (hsql.toUpperCase().indexOf("INSERT") == -1)) {
             result = query.list();
+            LOGGER.info("This is the hsql " + hsql);
             LOGGER.info("FINISHED - query. Result size=" + result.size());
         } else {
             LOGGER.info("FINISHED - query. ");

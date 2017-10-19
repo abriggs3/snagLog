@@ -15,13 +15,12 @@ public class GenericServiceImpl<T> implements IGenericService<T> {
 
 
     public GenericServiceImpl(Class<T> cl, SessionFactory sessionFactory) {
-        this.cl=cl;
-        dao=new GenericDAOImpl<T>(cl, sessionFactory);
+        this.cl = cl;
+        dao = new GenericDAOImpl<T>(cl, sessionFactory);
     }
 
     @Override
     public T get(Class<T> cl, Integer id) {
-        //LOGGER.trace("STARTED - get");
         return (T) dao.get(cl, id);
     }
 
@@ -48,12 +47,6 @@ public class GenericServiceImpl<T> implements IGenericService<T> {
     @Override
     public List<T> getAll() {
         return query("from "+cl.getName(), null);
-    }
-
-    @Override
-    public void deleteAll() {
-        query("delete from "+cl.getName(),null);
-
     }
 
 }

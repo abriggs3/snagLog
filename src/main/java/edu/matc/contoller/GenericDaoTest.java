@@ -35,7 +35,7 @@ public class GenericDaoTest extends HttpServlet {
                 User.class, HibernateUtil.getSessionFactory());
         IGenericService<UserRoles> userRolesService = new GenericServiceImpl<UserRoles>(
                 UserRoles.class, HibernateUtil.getSessionFactory());
-        userService.deleteAll();
+
 
         user = new User();
         user.setFirstName("Mulberry");
