@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/snaglog_custom.css">
     <link rel="stylesheet" href="css/snaglog_modal.css">
     <link rel="stylesheet" href="css/decisionMaker.css">
+    <script src="js/validate.js"></script>
 
     <!-- for bootstrap toggles -->
     <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">

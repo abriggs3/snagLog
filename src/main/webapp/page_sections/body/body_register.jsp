@@ -9,24 +9,26 @@
                         <h3 class="panel-title">Join the SnagLog reporting team</h3>
                     </div>
                     <div class="panel-body">
-                        <form role="form" action="validateRegistration">
+                        <form role="form" action="validateRegistration" >
                             <div class="row">
                                 <div class="col-xs-6 col-sm-6 col-md-6">
                                     <div class="form-group">
-                                        <input type="text" name="firstName" id="firstName" class="form-control input-sm" placeholder="First Name">
+                                        <input type="text" name="firstName" id="firstName" class="form-control input-sm" placeholder="First Name" value="${userEnteredFirstName}" >
                                     </div>
                                 </div>
                                 <div class="col-xs-6 col-sm-6 col-md-6">
                                     <div class="form-group">
-                                        <input type="text" name="lastName" id="lastName" class="form-control input-sm" placeholder="Last Name">
+                                        <input type="text" name="lastName" id="lastName" class="form-control input-sm" placeholder="Last Name" value="${userEnteredLastName}">
                                     </div>
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <input type="text" name="userName" id="userName" class="form-control input-sm" placeholder="UserName">
+                                <input type="text" name="userName" id="userName" class="form-control input-sm" placeholder="UserName" value="${userEnteredUserName}">
                             </div>
-
+                            <div>
+                                <p>${userNameAvailabilityError}</p>
+                            </div>
                             <div class="row">
                                 <div class="col-xs-6 col-sm-6 col-md-6">
                                     <div class="form-group">
@@ -38,6 +40,9 @@
                                         <input type="password" name="password_confirmation" id="password_confirmation" class="form-control input-sm" placeholder="Confirm Password">
                                     </div>
                                 </div>
+                            </div>
+                            <div>
+                                <p>${passwordMatchError}</p>
                             </div>
 
                             <input type="submit" value="Register" class="btn btn-info btn-block">
@@ -51,3 +56,4 @@
 
 
 </div>
+

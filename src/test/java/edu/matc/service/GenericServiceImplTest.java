@@ -68,9 +68,7 @@ public class GenericServiceImplTest {
     @Test
     public void testQueryTest() {
         Map<String, Object> params = new HashMap<>();
-
         List<User> users = userService.query("FROM User where usersId = 1", params);
-        System.out.print("this is users " + users);
         assertEquals("list of users returned do not match expected size", 1, users.size());
     }
 

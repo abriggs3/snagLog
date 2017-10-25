@@ -22,11 +22,11 @@
                     </div>
                     <hr>
                     <div class="row">
-                        <input checked data-toggle="toggle" data-onstyle="default" data-on="decisive filter<br>ON" data-offstyle="warning" data-off="decisive filter<br>OFF" type="checkbox">
+                        <input checked data-toggle="toggle" data-onstyle="default" data-on="indecisive filter<br>ON" data-offstyle="warning" data-off="indecisive filter<br>OFF" type="checkbox">
                     </div>
                     <hr>
                     <div class="row">
-                        <input checked data-toggle="toggle" data-onstyle="default" data-on="happy filter<br>ON" data-offstyle="warning" data-off="happy filter<br>OFF" type="checkbox">
+                        <input checked data-toggle="toggle" data-onstyle="default" data-on="irritated filter<br>ON" data-offstyle="warning" data-off="irritated filter<br>OFF" type="checkbox">
                     </div>
                     <hr>
 
@@ -37,7 +37,5 @@
                 </form>
             </div>
         </div>
-
-
     </div>
 </div>

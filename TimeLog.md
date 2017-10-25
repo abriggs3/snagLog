@@ -11,9 +11,9 @@
 |Week 4| ProfDev presentation, hibernate, AWS deploy, JSP creation | 17  |   | 
 |Week 5| Hibernate entity generate, fixed AWS deploy, finished basic db | 10  |   | 
 |Week 6| Fixed errors created by hibernate generate, changed auth db tables to use auto id and fixed problems created by that change, SOAP| 12 1  |   | 
-|Week 7| TODO | 1  |   | 
-|Week 8| TODO | 1  |   | 
-|Week 9| TODO | 1  |   | 
+|Week 7| SOAP, Generic Doa and Tests, transferring pages from old doa to generic | 14  |   | 
+|Week 8| JSP directors, new user validation, REST group app  | 15  |   | 
+|Week 9| CRUD for admin | 4 |   | 
 |Week 10| TODO | 1  |   | 
 |Week 11| TODO | 1  |   | 
 |Week 12| TODO | 1  |   | 

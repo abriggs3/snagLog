@@ -19,8 +19,8 @@ public class RequestDirector extends HttpServlet {
 
         response.setContentType("text/html");
 
-        if (request.getParameter("destination").equalsIgnoreCase("adminMain")) {
-            RequestDispatcher dispatcher = request.getRequestDispatcher("pages/admin_main.jsp");
+        if (request.getParameter("destination").equalsIgnoreCase("register_new_user")) {
+            RequestDispatcher dispatcher = request.getRequestDispatcher("pages/register.jsp");
             dispatcher.forward(request, response);
         }
     }

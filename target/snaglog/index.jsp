@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <c:set var="title" value="SnagLog Home" scope="session" />
 <c:import url="page_sections/head/head.jsp" />
-<c:import url="http://fonts.googleapis.com/css?family=Roboto" />
+
 <body>
 
     <c:import url="page_sections/topNavBar/topNavBar_standard.jsp" />
