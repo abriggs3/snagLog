@@ -33,11 +33,44 @@
 
     <div id="map"></div>
     <div class="eventtext">
-        <div>Lattitude: <span id="latspan"></span></div>
-        <div>Longitude: <span id="lngspan"></span></div>
-        <div>Lat Lng: <span id="latlong"></span></div>
-        <div>Lat Lng on click:
-            <input type="text" id="latlongclicked" style="border:1px inset gray;"></div>
+        <form class="form-group" method="post" action="markSnag">
+            <div>Latitude: <span id="latspan"></span></div>
+            <div>Longitude: <span id="lngspan"></span></div>
+            <div><lable>Selected Coordinates:</lable><br>
+                <input class="input-lg" type="text" id="latitudeClicked"  name="latitudeClicked"> latitude<br>
+                <input class="input-lg" type="text" id="longitudeClicked"  name="longitudeClicked"> longitude
+            </div>
+            <div>
+                <lable for="blockageType">Blockage Type</lable><br>
+                <select class="form-control">
+                    <option name="blockageType" value="noSelection">click to select</option>
+                    <option name="blockageType" value="rocks">low water exposed rocks</option>
+                    <option name="blockageType" value="mud">low water mud</option>
+                    <option name="blockageType" value="treeFall">tree fall</option>
+                    <option name="blockageType" value="other">other</option>
+                </select>
+            </div>
+            <div>
+                <lable for="hazardOrNot">Snag is </lable><br>
+                <select class="form-control">
+                    <option name="hazardOrNot" value="noSelection">click to select</option>
+                    <option name="hazardOrNot" value="annoying">annoying</option>
+                    <option name="hazardOrNot" value="slight">slight hazard</option>
+                    <option name="hazardOrNot" value="major">major hazard</option>
+                </select>
+            </div>
+            <div>
+                <lable for="time delayed">Time required to navigate blockage in minutes</lable><br>
+                <input type="text" class="input-small" name="timeDelay">
+            </div>
+            <div>
+                <lable for="additionalBlockageInformation">Additional description or information</lable><br>
+                <input class="input-lg" type="text" name="additionalBlockageInformation">
+            </div>
+            <div>
+                <input type="submit" value="mark the snag">
+            </div>
+        </form>
     </div>
 </div>
 <script>
@@ -75,8 +108,8 @@
         });
 
         google.maps.event.addListener(map, "click", function (event) {
-            document.getElementById('latlongclicked').value =  event.latLng.lat().toFixed(4)
-                + ', ' + event.latLng.lng().toFixed(4);
+            document.getElementById("latitudeClicked").value =  event.latLng.lat().toFixed(6);
+            document.getElementById("longitudeClicked").value = event.latLng.lng().toFixed(6);
         });
     }
 
@@ -90,13 +123,12 @@
 
     function displayCoordinates(point) {
         var lat = point.lat();
-        lat = lat.toFixed(4);
+        lat = lat.toFixed(6);
         var lng = point.lng();
-        lng = lng.toFixed(4);
+        lng = lng.toFixed(6);
         console.log("Latitude: " + lat + "  Longitude: " + lng);
         document.getElementById('latspan').innerHTML = point.lat();
         document.getElementById('lngspan').innerHTML = point.lng();
-        document.getElementById('latlong').innerHTML = point.lat() + ', ' + point.lng();
     }
 
 

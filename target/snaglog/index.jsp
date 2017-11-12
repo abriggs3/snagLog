@@ -37,7 +37,7 @@
 
   <!-- Main Stylesheet File -->
   <link href="css/style.css" rel="stylesheet">
-
+  <link href="css/style_for_maps.css" rel="stylesheet">
 </head>
 
 <body>
@@ -54,10 +54,10 @@
         </div>
 
         <h1>Welcome to Snag Log</h1>
-        <h2>The paddlers source for <span class="rotating">paddle times, flow conditions, blockage locations, community </span></h2>
+        <h2>The paddler's source for <span class="rotating">paddle times, flow conditions, blockage locations, community </span></h2>
         <div class="actions">
-          <a href="#instructions" class="btn-get-started">Instructions</a>
-          <a href="#logIn" class="btn-services">Services</a>
+          <a href="#instructions" class="btn-get-started">Get Started</a>
+          <a href="#services" class="btn-services">Mark a Snag</a>
         </div>
       </div>
     </div>
@@ -78,8 +78,8 @@
       <nav id="nav-menu-container">
         <ul class="nav-menu">
           <li class="menu-active"><a href="#hero">Home</a></li>
-          <li><a href="#instructions">Instructions</a></li>
-          <li><a href="#logIn">Services</a></li>
+          <li><a href="#instructions">Get Started</a></li>
+          <li><a href="#services">Mark a Snag</a></li>
           <li><a href="#portfolio">Portfolio</a></li>
           <li><a href="#testimonials">Testimonials</a></li>
           <li><a href="#team">Team</a></li>
@@ -124,24 +124,38 @@
     <div class="container about-container wow fadeInUp">
       <div class="row">
         <div class="col-md-6 col-md-push-6 about-content">
-          <h2 class="about-title">We provide great services and ideas</h2>
+          <h2 class="about-title">Your source for paddling information</h2>
           <p class="about-text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-            in reprehenderit in voluptate
+            Before you go, check the master map of snags along your route.
+            <br>
+            <br>
+            <br>
+            <br>
+
           </p>
           <p class="about-text">
-            Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim
-            id est laborum
+            En route, mark new found snags with just a phone and a few clicks.
+            <br>
+            <br>
+            <br>
+            <br>
           </p>
           <p class="about-text">
-            Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim
-            id est laborum
+            On return, chronicle your adventures in a snag log.
+            <br>
+            <br>
+            <br>
+            <br>
+
           </p>
         </div>
       </div>
     </div>
   </section>
 
+
+
+  <div id="map"></div>
   <!--==========================
   Services Section
   ============================-->
@@ -149,45 +163,66 @@
     <div class="container wow fadeInUp">
       <div class="row">
         <div class="col-md-12">
-          <h3 class="section-title">Our Services</h3>
+          <h3 class="section-title">Mark a Snag</h3>
           <div class="section-title-divider"></div>
-          <p class="section-description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium</p>
+          <p class="section-description">Click map above to add snag coordinates to form</p>
+        </div>
+      </div>
+     <div class="row">
+       <div class="col-md-12">
+         <!-- Map Section -->
+
+             <div class="eventtext">
+               <form class="form-group" method="post" action="markSnag">
+                 <div>Latitude: <span id="latspan"></span></div>
+                 <div>Longitude: <span id="lngspan"></span></div>
+                 <div><lable>Selected Coordinates:</lable><br>
+                   <input class="input-sm" type="text" id="latitudeClicked"  name="latitudeClicked"> latitude<br>
+                   <input class="input-sm" type="text" id="longitudeClicked"  name="longitudeClicked"> longitude
+                 </div>
+                 <div>
+                   <lable for="blockageType">Blockage Type</lable><br>
+                   <select class="form-control">
+                     <option name="blockageType" value="noSelection">click to select</option>
+                     <option name="blockageType" value="rocks">low water exposed rocks</option>
+                     <option name="blockageType" value="mud">low water mud</option>
+                     <option name="blockageType" value="treeFall">tree fall</option>
+                     <option name="blockageType" value="other">other</option>
+                   </select>
+                 </div>
+                 <div>
+                   <lable for="hazardOrNot">Snag is </lable><br>
+                   <select class="form-control">
+                     <option name="hazardOrNot" value="noSelection">click to select</option>
+                     <option name="hazardOrNot" value="annoying">annoying</option>
+                     <option name="hazardOrNot" value="slight">slight hazard</option>
+                     <option name="hazardOrNot" value="major">major hazard</option>
+                   </select>
+                 </div>
+                 <div>
+                   <lable for="time delayed">Time required to navigate blockage in minutes</lable><br>
+                   <input type="text" class="input-small" name="timeDelay">
+                 </div>
+                 <div>
+                   <lable for="additionalBlockageInformation">Additional description or information</lable><br>
+                   <input class="input-sm" type="text" name="additionalBlockageInformation">
+                 </div>
+                 <div>
+                   <input type="submit" value="mark the snag">
+                 </div>
+               </form>
+             </div>
+           </div>
+         <script>
+
+           </script>
+           <script async defer
+                   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABhJ9Hbp5gF8WEyv4agisgqh-k4pVZSs0&callback=initMap">
+           </script>
+          </div>
         </div>
       </div>
 
-      <div class="row">
-        <div class="col-md-4 service-item">
-          <div class="service-icon"><i class="fa fa-desktop"></i></div>
-          <h4 class="service-title"><a href="">Lorem Ipsum</a></h4>
-          <p class="service-description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
-        </div>
-        <div class="col-md-4 service-item">
-          <div class="service-icon"><i class="fa fa-bar-chart"></i></div>
-          <h4 class="service-title"><a href="">Dolor Sitema</a></h4>
-          <p class="service-description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
-        </div>
-        <div class="col-md-4 service-item">
-          <div class="service-icon"><i class="fa fa-paper-plane"></i></div>
-          <h4 class="service-title"><a href="">Sed ut perspiciatis</a></h4>
-          <p class="service-description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
-        </div>
-        <div class="col-md-4 service-item">
-          <div class="service-icon"><i class="fa fa-photo"></i></div>
-          <h4 class="service-title"><a href="">Magni Dolores</a></h4>
-          <p class="service-description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-        </div>
-        <div class="col-md-4 service-item">
-          <div class="service-icon"><i class="fa fa-road"></i></div>
-          <h4 class="service-title"><a href="">Nemo Enim</a></h4>
-          <p class="service-description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
-        </div>
-        <div class="col-md-4 service-item">
-          <div class="service-icon"><i class="fa fa-shopping-bag"></i></div>
-          <h4 class="service-title"><a href="">Eiusmod Tempor</a></h4>
-          <p class="service-description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi</p>
-        </div>
-      </div>
-    </div>
   </section>
 
   <!--==========================
@@ -480,7 +515,6 @@
       </div>
     </div>
   </section>
-
   <!--==========================
   Footer
 ============================-->
@@ -489,15 +523,9 @@
       <div class="row">
         <div class="col-md-12">
           <div class="copyright">
-            &copy; Copyright <strong>Imperial Theme</strong>. All Rights Reserved
+            &copy; Copyright <strong>SnagLog</strong>. All Rights Reserved
           </div>
           <div class="credits">
-            <!--
-              All the links in the footer should remain intact.
-              You can delete the links only if you purchased the pro version.
-              Licensing information: https://bootstrapmade.com/license/
-              Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Imperial
-            -->
             Bootstrap Templates by <a href="https://bootstrapmade.com/">BootstrapMade</a>
           </div>
         </div>
@@ -522,6 +550,9 @@
   <script src="js/custom.js"></script>
 
   <script src="contactform/contactform.js"></script>
+
+  <!-- for maps -->
+  <script src="js/maps.js"></script>
 
 
 </body>

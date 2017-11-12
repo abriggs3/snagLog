@@ -11,7 +11,7 @@
   <login-config>
     <auth-method>FORM</auth-method>
     <form-login-config>
-      <form-login-page>/pages/login_form.jsp</form-login-page>
+      <form-login-page>/login_form/login_form.jsp</form-login-page>
       <form-error-page>/pages/login_error.jsp</form-error-page>
     </form-login-config>
   </login-config>
@@ -26,6 +26,17 @@
         <role-name>contributor</role-name>
       </auth-constraint>
     </security-constraint>
+
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>markSnag</web-resource-name>
+      <url-pattern>/markSnag</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>administrator</role-name>
+      <role-name>contributor</role-name>
+    </auth-constraint>
+  </security-constraint>
 
     <security-constraint>
       <web-resource-collection>
