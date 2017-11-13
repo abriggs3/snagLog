@@ -200,7 +200,7 @@
                    </select>
                  </div>
                  <div>
-                   <lable for="time delayed">Time required to navigate blockage in minutes</lable><br>
+                   <lable for="timeDelay">Time required to navigate blockage in minutes</lable><br>
                    <input type="text" class="input-small" name="timeDelay">
                  </div>
                  <div>
