@@ -82,7 +82,7 @@ CREATE TABLE Snag (
   estimated_delay int NOT NULL,
   additional_desc TEXT NOT NULL,
   date TIMESTAMP NOT NULL,
-  cleared VARCHAR(5) NOT NULL DEFAULT 'FALSE',
+  cleared TINYINT NOT NULL DEFAULT 0,
   PRIMARY KEY (snag_id),
   FOREIGN KEY (users_id) REFERENCES Users(users_id)
 );

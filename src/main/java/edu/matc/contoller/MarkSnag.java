@@ -6,6 +6,7 @@ import edu.matc.entity.User;
 import edu.matc.service.GenericServiceImpl;
 import edu.matc.service.IGenericService;
 import org.apache.log4j.Logger;
+import org.hibernate.HibernateException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -14,6 +15,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -38,19 +40,20 @@ public class MarkSnag extends HttpServlet {
         Map<String, Object> params = new HashMap<>();
         List<User> users = userService.query("FROM User where userName = '" + userNameOfCurrentUser + "'", params);
         User user = users.get(0);
-System.out.println("this is the user info " + user);
 
-        Double latitudeClicked = Double.parseDouble(request.getParameter("latitudeClicked"));
-        Double longitudeClicked = Double.parseDouble(request.getParameter("longitudeClicked"));
+        Double locationLat = Double.parseDouble(request.getParameter("latitudeClicked"));
+        Double locationLon = Double.parseDouble(request.getParameter("longitudeClicked"));
         String blockageType = request.getParameter("blockageType");
-        String hazardOrNot = request.getParameter("hazardOrNot");
-        Integer timeDelay = Integer.parseInt(request.getParameter("timeDelay"));
-        String additionalBlockageInformation = request.getParameter("additionalBlockageInformation");
+        String hazard = request.getParameter("hazardOrNot");
+        Integer estimatedDelay = Integer.parseInt(request.getParameter("timeDelay"));
+        String additionalInformation = request.getParameter("additionalBlockageInformation");
+
+        Snag snag = new Snag(locationLat, locationLon, blockageType, hazard, estimatedDelay, additionalInformation, user);
 
 
+            snagService.save(snag);
+            request.setAttribute("snagMarked", snag);
 
-
-        //Snag snag = new Snag(latitudeClicked, longitudeClicked, blockageType, hazardOrNot, timeDelay, additionalBlockageInformation);
 
         RequestDispatcher dispatcher = request.getRequestDispatcher("pages/markSnagConfirmation.jsp");
         dispatcher.forward(request, response);

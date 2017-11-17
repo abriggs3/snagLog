@@ -29,7 +29,7 @@ public class ValidateRegistration extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         IGenericService<User> userService = new GenericServiceImpl<User>(User.class, HibernateUtil.getSessionFactory());
         IGenericService<UserRoles> userRolesService = new GenericServiceImpl<>(UserRoles.class, HibernateUtil.getSessionFactory());
-        boolean isRegistrationValid = false;
+        boolean registrationValid = false;
 
         response.setContentType("text/html");
         User userToRegister = new User();
@@ -46,12 +46,12 @@ public class ValidateRegistration extends HttpServlet {
         switch (userNameTest(userService, userToRegister)) {
             case "username unavailable" :
                 request.setAttribute("userNameAvailabilityError", "username in use, please try again");
-                isRegistrationValid = false;
+                registrationValid = false;
                 break;
 
             case "username available" :
                 request.setAttribute("userEnteredUserName", userToRegister.getUserName());
-                isRegistrationValid = true;
+                registrationValid = true;
                 break;
             default:
                 logger.error("failure in username availability check");
@@ -61,17 +61,17 @@ public class ValidateRegistration extends HttpServlet {
         // if the user entered no password, reject it
         if (request.getParameter("password").equals("")) {
             request.setAttribute("passwordMatchError", "please enter a password");
-            isRegistrationValid = false;
+            registrationValid = false;
         }
 
         // if the passwords don't match, reject form
         if (!request.getParameter("password").equals(request.getParameter("password_confirmation"))) {
               request.setAttribute("passwordMatchError", "passwords must match");
-            isRegistrationValid = false;
+            registrationValid = false;
         }
 
         // if the info in form is valid, add the user to db and go to confirmation page, else show registration page again
-        if (isRegistrationValid) {
+        if (registrationValid) {
             //add the new user to the Users table
             userService.save(userToRegister);
             //add the new user to the User_roles table

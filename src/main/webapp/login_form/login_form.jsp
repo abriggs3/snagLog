@@ -28,7 +28,7 @@
 					</section>
 					<div class="form-outer">
 						<input type="checkbox" name="remember" value="1" /> Remember me<br />
-						<a href="register">Create account</a> or <a href="#">reset password</a>
+						<a href="requestDirector?destination=register_new_user">create account</a> or <a href="#">reset password</a>
 					</div>
 				</form>
 			</section>

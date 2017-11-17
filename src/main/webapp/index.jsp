@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<%@include file="tagLibrary.jsp"%>
 <html lang="en">
 
 <head>
@@ -38,6 +39,21 @@
   <!-- Main Stylesheet File -->
   <link href="css/style.css" rel="stylesheet">
   <link href="css/style_for_maps.css" rel="stylesheet">
+
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="css/snaglog_custom.css">
+  <link rel="stylesheet" href="css/snaglog_modal.css">
+
+  <script src="js/validate.js"></script>
+
+  <!-- for bootstrap toggles and DecisionMaker widget -->
+  <script src="js/decisionMaker.js"></script>
+  <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+  <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+  <link rel="stylesheet" href="css/decisionMaker.css">
 </head>
 
 <body>
@@ -82,10 +98,10 @@
           <li><a href="#services">Mark a Snag</a></li>
           <li><a href="#portfolio">Portfolio</a></li>
           <li><a href="#testimonials">Testimonials</a></li>
-          <li><a href="#team">Team</a></li>
+
           <li class="menu-has-children"><a href="">Drop Down</a>
             <ul>
-              <li><a href="practice.jsp">practice page</a></li>
+              <li><a href="practice.jsp">practice page</a></li>DecisionMaker
               <li class="menu-has-children"><a href="#">Drop Down 2</a>
                 <ul>
                   <li><a href="#">Deep Drop Down 1</a></li>
@@ -100,7 +116,16 @@
               <li><a href="#">Drop Down 5</a></li>
             </ul>
           </li>
-          <li><a href="#contact">Contact Us</a></li>
+          <li><a href="logout"><span class="glyphicon glyphicon-log-out"></span> Logout, ${loggedInUsersName}</a></li>
+          <c:choose>
+            <c:when test="${not empty loggedInUsersName}">
+              <li><a href="logout"><span class="glyphicon glyphicon-log-out"></span> Logout, ${loggedInUsersName}</a></li>
+            </c:when>
+            <c:otherwise>
+              <li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Login ${loggedInUsersName}</a></li>
+            </c:otherwise>
+          </c:choose>
+          <li><a href="#DecisionMaker">Decision Maker</a></li>
         </ul>
       </nav>
       <!-- #nav-menu-container -->
@@ -182,21 +207,21 @@
                  </div>
                  <div>
                    <lable for="blockageType">Blockage Type</lable><br>
-                   <select class="form-control">
-                     <option name="blockageType" value="noSelection">click to select</option>
-                     <option name="blockageType" value="rocks">low water exposed rocks</option>
-                     <option name="blockageType" value="mud">low water mud</option>
-                     <option name="blockageType" value="treeFall">tree fall</option>
-                     <option name="blockageType" value="other">other</option>
+                   <select class="form-control" name="blockageType">
+                     <option value="noSelection">click to select</option>
+                     <option value="rocks">low water exposed rocks</option>
+                     <option value="mud">low water mud</option>
+                     <option value="treeFall">tree fall</option>
+                     <option value="other">other</option>
                    </select>
                  </div>
                  <div>
                    <lable for="hazardOrNot">Snag is </lable><br>
-                   <select class="form-control">
-                     <option name="hazardOrNot" value="noSelection">click to select</option>
-                     <option name="hazardOrNot" value="annoying">annoying</option>
-                     <option name="hazardOrNot" value="slight">slight hazard</option>
-                     <option name="hazardOrNot" value="major">major hazard</option>
+                   <select class="form-control" name="hazardOrNot">
+                     <option value="noSelection">click to select</option>
+                     <option value="annoying">annoying</option>
+                     <option value="slight">slight hazard</option>
+                     <option value="major">major hazard</option>
                    </select>
                  </div>
                  <div>
@@ -515,6 +540,70 @@
       </div>
     </div>
   </section>
+
+  <!--==========================
+  Decision Maker Section
+  ============================-->
+  <section id="DecisionMaker" style="padding-top: 5em;">
+    <div class="container wow fadeInUp">
+      <div class="row">
+        <div class="col-md-12">
+          <h3 class="section-title">The Decision Maker</h3>
+          <div class="section-title-divider"></div>
+          <p class="section-description">An implementation of the world famous and highly acclaimed Decision Maker API</p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="member">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4">
+          <div class="member">
+          </div>
+          <div id="decisionMakerWell" class="well well-lg">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title" style="text-align: center">The Decision Maker</h3>
+              </div>
+              <div class="panel-body">
+                <div class="form-group">
+                  <input type="text" id="userProblem" class="form-control input-sm" placeholder="state your problem">
+                </div>
+                <div class="row" style="margin: auto; width: 50%;">
+                  <input checked name="isCrude" id="isCrude" data-toggle="toggle" data-onstyle="default" data-on="crudeness filter<br>ON" data-offstyle="danger" data-off="crudeness filter<br>OFF" type="checkbox">
+                </div>
+                <hr>
+                <div class="row" style="margin: auto; width: 50%;">
+                  <input checked name="isIndecisive" id="isIndecisive" data-toggle="toggle" data-onstyle="default" data-on="indecisive filter<br>ON" data-offstyle="warning" data-off="indecisive filter<br>OFF" type="checkbox">
+                </div>
+                <hr>
+                <div class="row" style="margin: auto; width: 50%;">
+                  <input checked name="isIrritated" id="isIrritated" data-toggle="toggle" data-onstyle="default" data-on="irritated filter<br>ON" data-offstyle="warning" data-off="irritated filter<br>OFF" type="checkbox">
+                </div>
+                <hr>
+                <input type="button" id="btnSubmit" value="Get Your Answer" class="btn btn-info btn-block">
+                <div id="answerContainer" style="text-align: center"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="member">
+          </div>
+        </div>
+    </div>
+  </section>
+
+
+
+
+
+
   <!--==========================
   Footer
 ============================-->

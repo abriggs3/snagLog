@@ -22,19 +22,20 @@ public class Snag implements Storable {
     public Snag() {
     }
 
-    public Snag(int snagId, float locationLat, float locationLon, String blockageType, String hazard, Integer estimatedDelay, User userByUserId) {
+    public Snag(int snagId, double locationLat, double locationLon, String blockageType, String hazard, Integer estimatedDelay, String additionalInformation, User userByUserId, LocalDate dateMarked, boolean cleared) {
         this.snagId = snagId;
         this.locationLat = locationLat;
         this.locationLon = locationLon;
         this.blockageType = blockageType;
         this.hazard = hazard;
         this.estimatedDelay = estimatedDelay;
+        this.additionalInformation = additionalInformation;
         this.userByUserId = userByUserId;
+        this.dateMarked = dateMarked;
+        this.cleared = cleared;
     }
 
-    // partial constructor used when retrieving data from form and then adding a snag to the db
-
-
+    // partial constructor for use with inserts of Snags into db
     public Snag(double locationLat, double locationLon, String blockageType, String hazard, Integer estimatedDelay, String additionalInformation, User userByUserId) {
         this.locationLat = locationLat;
         this.locationLon = locationLon;
