@@ -5,7 +5,11 @@
             <hr>
             <hr>
 
-            <h5><a href="adminMain">admin page</a></h5>
+            <h5><a href="requestDirectorAdmin?destination=adminMain">admin page</a></h5>
             <h5><a href="login">admin authentication test page</a></h5>
             <h5><a href="login">contributor authentication test page</a></h5>
+            <h5><a href="test">test generic DAO add</a></h5>
+            <h5><a href="genericListAll">test generic DAO list all user</a></h5>
+            <h5><a href="requestDirector?destination=register_new_user">register a new user</a></h5>
+
         </div>

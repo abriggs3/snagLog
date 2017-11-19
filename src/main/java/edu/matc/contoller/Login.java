@@ -17,7 +17,9 @@ public class Login extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         response.setContentType("text/html");
-        System.out.println("type = " + request.getUserPrincipal().getClass());
+
+        request.setAttribute("loggedInUsersName", request.getRemoteUser());
+       // System.out.println("this is in log in. WHat is userPrincipal!!! " + request.getUserPrincipal().toString());
 
 
         RequestDispatcher dispatcher = request.getRequestDispatcher("pages/login_success.jsp");

@@ -1,13 +1,36 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <div class="col-sm-8 text-left">
 
-    <h2>login required </h2>
-    <FORM ACTION="j_security_check" METHOD="POST">
-        <TABLE>
-            <TR><TD>User name: <INPUT TYPE="TEXT" NAME="j_username">
-            <TR><TD>Password: <INPUT TYPE="PASSWORD" NAME="j_password">
-            <TR><TH><INPUT TYPE="SUBMIT" VALUE="Log In">
-        </TABLE>
-    </FORM>
+    <div class="container">
+        <div class="row centered-form">
+            <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Login Required</h3>
+                    </div>
+                    <div class="panel-body">
+                        <form role="form" action="j_security_check">
+                            <div class="row">
+                                <div class="col-xs-6 col-sm-6 col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" name="j_username" class="form-control input-sm" placeholder="username">
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-sm-6 col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" name="j_password" class="form-control input-sm" placeholder="password">
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <input type="submit" value="Log In" class="btn btn-info btn-block">
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </div>

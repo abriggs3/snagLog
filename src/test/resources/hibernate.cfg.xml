@@ -9,17 +9,18 @@
     <session-factory>
 
         <!-- Database connection settings -->
-        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-        <property name="connection.url">jdbc:mysql://localhost:3306/snaglog_test</property>
-        <property name="connection.username">abriggs3</property>
-        <property name="connection.password">sqlPassword</property>
-        <!-- SQL dialect -->
-        <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/snaglog_test</property>
+        <property name="hibernate.connection.username">abriggs3</property>
+        <property name="hibernate.connection.password">sqlPassword</property>
 
+        <!-- SQL dialect -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+        <property name="hibernate.current_session_context_class">thread</property>
         <!-- Echo all executed SQL to stdout -->
         <property name="show_sql">true</property>
 
-        <!-- instruction to rebuild the database after each test -->
+        <!-- instruction to rebuild the database after each test-->
         <property name="hbm2ddl.auto">create-drop</property>
 
         <!-- List the annotated entity class/es -->
@@ -28,6 +29,9 @@
         <mapping class="edu.matc.entity.Snag"/>
         <mapping class="edu.matc.entity.UserRoles"/>
 
+
     </session-factory>
 
 </hibernate-configuration>
+
+

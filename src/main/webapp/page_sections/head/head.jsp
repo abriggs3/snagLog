@@ -8,4 +8,12 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="css/snaglog_custom.css">
     <link rel="stylesheet" href="css/snaglog_modal.css">
+
+    <script src="js/validate.js"></script>
+
+    <!-- for bootstrap toggles and DecisionMaker widget -->
+    <script src="js/decisionMaker.js"></script>
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+    <link rel="stylesheet" href="css/decisionMaker.css">
 </head>

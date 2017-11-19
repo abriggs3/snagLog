@@ -2,10 +2,8 @@
 
 <div class="col-sm-8 text-left">
 
-    <%@ page session="true"%>
 
-    <h1>User '<%=request.getRemoteUser()%>' has been logged out.</h1>
 
-    <% session.invalidate(); %>
+    <h2>${userLoggedOut}</h2>
 
 </div>

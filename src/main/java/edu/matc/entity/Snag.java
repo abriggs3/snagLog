@@ -3,26 +3,47 @@ package edu.matc.entity;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "Snag")
 public class Snag implements Storable {
     private int snagId;
-    private String location;
-    private String type;
-    private String blockageAmount;
+    private double locationLat;
+    private double locationLon;
+    private String blockageType;
+    private String hazard;
     private Integer estimatedDelay;
-    private Log logByLogId;
+    private String additionalInformation;
+    private User userByUserId;
+    private LocalDate dateMarked;
+    private boolean cleared;
 
     public Snag() {
     }
 
-    public Snag(int snagId, String location, String type, String blockageAmount, Integer estimatedDelay, Log logByLogId) {
+    public Snag(int snagId, double locationLat, double locationLon, String blockageType, String hazard, Integer estimatedDelay, String additionalInformation, User userByUserId, LocalDate dateMarked, boolean cleared) {
         this.snagId = snagId;
-        this.location = location;
-        this.type = type;
-        this.blockageAmount = blockageAmount;
+        this.locationLat = locationLat;
+        this.locationLon = locationLon;
+        this.blockageType = blockageType;
+        this.hazard = hazard;
         this.estimatedDelay = estimatedDelay;
+        this.additionalInformation = additionalInformation;
+        this.userByUserId = userByUserId;
+        this.dateMarked = dateMarked;
+        this.cleared = cleared;
+    }
+
+    // partial constructor for use with inserts of Snags into db
+    public Snag(double locationLat, double locationLon, String blockageType, String hazard, Integer estimatedDelay, String additionalInformation, User userByUserId) {
+        this.locationLat = locationLat;
+        this.locationLon = locationLon;
+        this.blockageType = blockageType;
+        this.hazard = hazard;
+        this.estimatedDelay = estimatedDelay;
+        this.additionalInformation = additionalInformation;
+        this.userByUserId = userByUserId;
     }
 
     @Id
@@ -38,33 +59,44 @@ public class Snag implements Storable {
     }
 
     @Basic
-    @Column(name = "location", nullable = true, length = 30)
-    public String getLocation() {
-        return location;
+    @Column(name = "locationLat", nullable = true, length = 30)
+    public double getLocationLat() {
+        return locationLat;
     }
 
-    public void setLocation(String location) {
-        this.location = location;
-    }
-
-    @Basic
-    @Column(name = "type", nullable = true, length = 30)
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
+    public void setLocationLat(double locationLat) {
+        this.locationLat = locationLat;
     }
 
     @Basic
-    @Column(name = "blockage_amount", nullable = true, length = 20)
-    public String getBlockageAmount() {
-        return blockageAmount;
+    @Column(name = "locationLon", nullable = true, length = 30)
+    public double getLocationLon() {
+        return locationLon;
     }
 
-    public void setBlockageAmount(String blockageAmount) {
-        this.blockageAmount = blockageAmount;
+    public void setLocationLon(double locationLon) {
+        this.locationLon = locationLon;
+    }
+
+    @Basic
+    @Column(name = "blockage_type", nullable = true, length = 30)
+    public String getBlockageType() {
+        return blockageType;
+    }
+
+    public void setBlockageType(String blockageType) {
+        this.blockageType = blockageType;
+    }
+
+
+    @Basic
+    @Column(name = "hazard", nullable = true, length = 20)
+    public String getHazard() {
+        return hazard;
+    }
+
+    public void setHazard(String hazard) {
+        this.hazard = hazard;
     }
 
     @Basic
@@ -77,53 +109,72 @@ public class Snag implements Storable {
         this.estimatedDelay = estimatedDelay;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+    @Basic
+    @Column(name = "date", nullable = true)
+    public LocalDate getDateMarked() {
+        return dateMarked;
+    }
 
-        Snag snag = (Snag) o;
+    public void setDateMarked(LocalDate dateMarked) {
+        this.dateMarked = dateMarked;
+    }
 
-        if (snagId != snag.snagId) return false;
-        if (location != null ? !location.equals(snag.location) : snag.location != null) return false;
-        if (type != null ? !type.equals(snag.type) : snag.type != null) return false;
-        if (blockageAmount != null ? !blockageAmount.equals(snag.blockageAmount) : snag.blockageAmount != null)
-            return false;
-        if (estimatedDelay != null ? !estimatedDelay.equals(snag.estimatedDelay) : snag.estimatedDelay != null)
-            return false;
+    @Basic
+    @Column(name = "cleared", nullable = true)
+    public boolean isCleared() {
+        return cleared;
+    }
 
-        return true;
+    public void setCleared(boolean cleared) {
+        this.cleared = cleared;
+    }
+
+    @Basic
+    @Column(name = "additional_desc", nullable = true)
+    public String getAdditionalInformation() {
+        return additionalInformation;
+    }
+
+    public void setAdditionalInformation(String additionalInformation) {
+        this.additionalInformation = additionalInformation;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "users_id", referencedColumnName = "users_id", nullable = false)
+    public User getUserByUserId() {
+        return userByUserId;
+    }
+
+    public void setUserByUserId(User userByUserId) {
+        this.userByUserId = userByUserId;
     }
 
     @Override
     public int hashCode() {
-        int result = snagId;
-        result = 31 * result + (location != null ? location.hashCode() : 0);
-        result = 31 * result + (type != null ? type.hashCode() : 0);
-        result = 31 * result + (blockageAmount != null ? blockageAmount.hashCode() : 0);
-        result = 31 * result + (estimatedDelay != null ? estimatedDelay.hashCode() : 0);
+        int result;
+        long temp;
+        result = snagId;
+        temp = Double.doubleToLongBits(locationLat);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        temp = Double.doubleToLongBits(locationLon);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        result = 31 * result + blockageType.hashCode();
+        result = 31 * result + hazard.hashCode();
+        result = 31 * result + estimatedDelay.hashCode();
+        result = 31 * result + userByUserId.hashCode();
         return result;
-    }
-
-    @ManyToOne
-    @JoinColumn(name = "log_id", referencedColumnName = "log_id", nullable = false)
-    public Log getLogByLogId() {
-        return logByLogId;
-    }
-
-    public void setLogByLogId(Log logByLogId) {
-        this.logByLogId = logByLogId;
     }
 
     @Override
     public String toString() {
         return "Snag{" +
                 "snagId=" + snagId +
-                ", location='" + location + '\'' +
-                ", type='" + type + '\'' +
-                ", blockageAmount='" + blockageAmount + '\'' +
+                ", locationLat=" + locationLat +
+                ", locationLon=" + locationLon +
+                ", blockageType='" + blockageType + '\'' +
+                ", hazard='" + hazard + '\'' +
                 ", estimatedDelay=" + estimatedDelay +
-                ", logByLogId=" + logByLogId +
+                ", userByUserId=" + userByUserId +
                 '}';
     }
 }
