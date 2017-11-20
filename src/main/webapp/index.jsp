@@ -116,7 +116,6 @@
               <li><a href="#">Drop Down 5</a></li>
             </ul>
           </li>
-          <li><a href="logout"><span class="glyphicon glyphicon-log-out"></span> Logout, ${loggedInUsersName}</a></li>
           <c:choose>
             <c:when test="${not empty loggedInUsersName}">
               <li><a href="logout"><span class="glyphicon glyphicon-log-out"></span> Logout, ${loggedInUsersName}</a></li>
@@ -267,8 +266,9 @@
     </div>
   </section>
 
+  <div id="map_snag_overview"></div>
   <!--==========================
-  Porfolio Section
+  Portfolio Section
   ============================-->
   <section id="portfolio">
     <div class="container wow fadeInUp">

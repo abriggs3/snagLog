@@ -6,6 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 @WebServlet(
@@ -18,9 +19,10 @@ public class Login extends HttpServlet {
 
         response.setContentType("text/html");
 
-        request.setAttribute("loggedInUsersName", request.getRemoteUser());
-       // System.out.println("this is in log in. WHat is userPrincipal!!! " + request.getUserPrincipal().toString());
-
+        // get access to the current HTTP session
+        HttpSession session = request.getSession();
+        // add an attribute to the session so that JSTL can be used to toggle the login and out menu bar
+        session.setAttribute("loggedInUsersName", request.getRemoteUser());
 
         RequestDispatcher dispatcher = request.getRequestDispatcher("pages/login_success.jsp");
         dispatcher.forward(request, response);

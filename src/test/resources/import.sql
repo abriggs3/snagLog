@@ -1,3 +1,4 @@
+SET foreign_key_checks = 0;
 DROP TABLE IF EXISTS Snag;
 DROP TABLE IF EXISTS Log;
 DROP TABLE IF EXISTS User_roles;
@@ -21,7 +22,7 @@ CREATE TABLE Log (log_id int NOT NULL AUTO_INCREMENT, users_id int NOT NULL, riv
 INSERT INTO Log (log_id, users_id, river_name, state, county, nearest_city, put_in_location, takeout_location) VALUES (NULL, '2', 'Yahara', 'WI', 'Dane', 'DeForest', 'Veterans Park, Deforest', 'Windsor Park, Windsor');
 INSERT INTO Log (log_id, users_id, river_name, state, county, nearest_city, put_in_location, takeout_location) VALUES (NULL, '3', 'Crayfish', 'WI', 'Jefferson', 'Lake Mills', 'County A Bridge, Milford, Wisconsin', 'Riverview Drive, Jefferson, Wisconsin');
 
-CREATE TABLE Snag (snag_id int NOT NULL AUTO_INCREMENT, log_id int NOT NULL, location CHAR(30), type CHAR(30), blockage_amount CHAR(20), estimated_delay int, PRIMARY KEY (snag_id), FOREIGN KEY (log_id) REFERENCES Log(log_id));
+CREATE TABLE Snag (snag_id int NOT NULL AUTO_INCREMENT, users_id int NOT NULL, locationLat DECIMAL(10, 8) NOT NULL, locationLon DECIMAL(11, 8) NOT NULL, blockage_type VARCHAR(30) NOT NULL, hazard VARCHAR(20) NOT NULL, estimated_delay int NOT NULL, additional_desc TEXT NOT NULL, date TIMESTAMP NOT NULL, cleared TINYINT NOT NULL DEFAULT 0, PRIMARY KEY (snag_id), FOREIGN KEY (users_id) REFERENCES Users(users_id));
 
-INSERT INTO Snag (snag_id, log_id, location, type, blockage_amount, estimated_delay) VALUES (NULL, '1', 'gps coordinates', 'low water', 'total', '5');
-INSERT INTO Snag (snag_id, log_id, location, type, blockage_amount, estimated_delay) VALUES (NULL, '2', 'gps coordinates', 'tree fall', 'half', '1');
+INSERT INTO Snag (snag_id, users_id, locationLat, locationLon, blockage_type, hazard, estimated_delay, additional_desc, date, cleared) VALUES (NULL, '1', 43.206177, -89.840698, 'low water', 'annoying', 5, 'Wisconsin River near Baraboo, low water', NULL, DEFAULT);
+INSERT INTO Snag (snag_id, users_id, locationLat, locationLon, blockage_type, hazard, estimated_delay, additional_desc, date, cleared) VALUES (NULL, '1', 44.806177, -88.740698, 'tree fall', 'mild', 15, 'Yahara River near Deforest, total block, must portage', NULL, DEFAULT);

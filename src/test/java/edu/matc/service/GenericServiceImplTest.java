@@ -1,6 +1,7 @@
 package edu.matc.service;
 
 import edu.matc.HibernateUtil;
+import edu.matc.entity.Snag;
 import edu.matc.entity.User;
 import org.junit.Before;
 import org.junit.Test;
@@ -15,8 +16,8 @@ import static org.junit.Assert.*;
 public class GenericServiceImplTest {
     User user = new User();
     IGenericService<User> userService = new GenericServiceImpl<User>(User.class, HibernateUtil.getSessionFactory());
+    IGenericService<Snag> snagService = new GenericServiceImpl<Snag>(Snag.class, HibernateUtil.getSessionFactory());
     User newUserToSave;
-
 
     @Before
     public void setUp() throws Exception {
@@ -76,6 +77,12 @@ public class GenericServiceImplTest {
     public void getAllTest() throws Exception {
         List<User> userList = userService.getAll();
         assertEquals("incorrect first name returned", "Admin", userList.get(0).getFirstName());
+    }
+
+    @Test
+    public void getAllSnagTest() throws Exception {
+        List<Snag> snagList = snagService.getAll();
+        assertEquals("incorrect description returned", "Wisconsin River near Baraboo, low water", snagList.get(0).getAdditionalInformation());
     }
 
 
