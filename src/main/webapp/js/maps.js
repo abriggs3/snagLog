@@ -1,4 +1,6 @@
-var map, mapSnagOverview, infoWindow;
+var map, infoWindow;
+var bounds = new google.maps.LatLngBounds();
+
 function initMap() {
     var mapOptions = {
         zoom: 10,
@@ -8,8 +10,8 @@ function initMap() {
     map = new google.maps.Map(document.getElementById("map"), mapOptions);
 
 
-    var myLatLng = {lat: 43.118027, lng: -89.202118};
-    var markers;
+
+
     /*
        // Display multiple markers on a map
        infoWindow = new google.maps.InfoWindow(), marker, i;
@@ -37,12 +39,34 @@ function initMap() {
         url: "serveUpMapMarkers",
         datatype: "json",
         success: function (markersReturned) {
+            var parsedMarkers = JSON.parse(markersReturned);
 
+            $.each(parsedMarkers, function (index, value) {
 
-            $.each(markersReturned, function(idx, obj) {
-                console.log(obj.tagName);
-                console.log("test");
+                console.log("this should be a description " + parsedMarkers[index].additionalInformation)
+                console.log("this should be the lat " + parsedMarkers[index].locationLat)
+                console.log("this should be the lon" +parsedMarkers[index].locationLon)
+                console.log("")
+                /*
+                var position = new google.maps.LatLng(parsedMarkers[index].locationLat, parsedMarkers[index].locationLon);
+                bounds.extend(position);
+                marker = new google.maps.Marker({
+                    position: position,
+                    map: map,
+                    title: markersReturned[index].additionalInformation
+                });
+                */
+                var markerLatLng = {lat: parsedMarkers[index].locationLat, lng: parsedMarkers[index].locationLon};
+                var marker = new google.maps.Marker({
+                    position: markerLatLng,
+                    map: map,
+                    title: "delay " + parsedMarkers[index].estimatedDelay + " min, " + parsedMarkers[index].additionalInformation
+                });
+
             });
+
+
+
         },
         error: function (xhr, textStatus, errorThrown) {
             console.log("the call to retrieve the list of snags failed");
