@@ -2,10 +2,12 @@
 USE snaglog;
 
 /* remove the table if it exists */
+SET foreign_key_checks = 0;
 DROP TABLE IF EXISTS Snag;
 DROP TABLE IF EXISTS Log;
 DROP TABLE IF EXISTS User_roles;
 DROP TABLE IF EXISTS Users;
+SET foreign_key_checks = 1;
 
 /* create the new table 'users' */
 CREATE TABLE Users (

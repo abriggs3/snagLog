@@ -14,10 +14,10 @@
 |Week 7| SOAP, Generic Doa and Tests, transferring pages from old doa to generic | 14  |   | 
 |Week 8| JSP directors, new user validation, REST group app  | 15  |   | 
 |Week 9| CRUD for admin | 4 |   | 
-|Week 10| TODO | 1  |   | 
-|Week 11| TODO | 1  |   | 
-|Week 12| TODO | 1  |   | 
-|Week 13| TODO | 1  |   | 
+|Week 10| Change of ui design | 10 |   | 
+|Week 11| Google maps integration | 8  |   | 
+|Week 12| ability add snags, changing of Snag class, dealing with database corruption | 15  |   | 
+|Week 13| Adding Log capacity, still dealing with db corruption on AWS | 10  |   | 
 |Week 14| TODO | 1  |   | 
 |Week 15| TODO | 1  |   | 
 |Week 16| TODO | 1 | |

@@ -3,6 +3,7 @@ DROP TABLE IF EXISTS Snag;
 DROP TABLE IF EXISTS Log;
 DROP TABLE IF EXISTS User_roles;
 DROP TABLE IF EXISTS Users;
+SET foreign_key_checks = 1;
 
 CREATE TABLE Users (users_id int NOT NULL AUTO_INCREMENT, first_name CHAR(30) NOT NULL, last_name CHAR(30) NOT NULL, user_name CHAR(30) NOT NULL, user_pass CHAR(30) NOT NULL, PRIMARY KEY (users_id), UNIQUE (user_name));
 

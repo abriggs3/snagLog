@@ -9,31 +9,6 @@ function initMap() {
 
     map = new google.maps.Map(document.getElementById("map"), mapOptions);
 
-
-
-
-    /*
-       // Display multiple markers on a map
-       infoWindow = new google.maps.InfoWindow(), marker, i;
-
-       var marker = new google.maps.Marker({
-           position: myLatLng,
-           map: map,
-           title: 'Hello World!'
-       });
-
-
-                       var position = new google.maps.LatLng(markersReturned.locationLat[i][1], markersReturned.locationLon[i][2]);
-                   bounds.extend(position);
-                   marker = new google.maps.Marker({
-                       position: position,
-                       map: map,
-                       title: markersReturned.additionalInformation[i][0]
-                   });
-
-   */
-
-        // request the map points and place on map
     $.ajax({
         type: "get",
         url: "serveUpMapMarkers",
@@ -43,19 +18,6 @@ function initMap() {
 
             $.each(parsedMarkers, function (index, value) {
 
-                console.log("this should be a description " + parsedMarkers[index].additionalInformation)
-                console.log("this should be the lat " + parsedMarkers[index].locationLat)
-                console.log("this should be the lon" +parsedMarkers[index].locationLon)
-                console.log("")
-                /*
-                var position = new google.maps.LatLng(parsedMarkers[index].locationLat, parsedMarkers[index].locationLon);
-                bounds.extend(position);
-                marker = new google.maps.Marker({
-                    position: position,
-                    map: map,
-                    title: markersReturned[index].additionalInformation
-                });
-                */
                 var markerLatLng = {lat: parsedMarkers[index].locationLat, lng: parsedMarkers[index].locationLon};
                 var marker = new google.maps.Marker({
                     position: markerLatLng,

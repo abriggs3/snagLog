@@ -87,8 +87,6 @@
 
       <div id="logo" class="pull-left">
         <a href="#hero"><img src="img/logo.png" alt="Snag Log" title="Snag Log" /></a>
-        <!-- Uncomment below if you prefer to use a text image -->
-        <!--<h1><a href="#hero">Header 1</a></h1>-->
       </div>
 
       <nav id="nav-menu-container">
@@ -96,12 +94,13 @@
           <li class="menu-active"><a href="#hero">Home</a></li>
           <li><a href="#instructions">Get Started</a></li>
           <li><a href="#services">Mark a Snag</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#portfolio">Recent Logs</a></li>
           <li><a href="#testimonials">Testimonials</a></li>
 
-          <li class="menu-has-children"><a href="">Drop Down</a>
+          <li class="menu-has-children"><a href="#subscribe">Log Your Trip</a>
             <ul>
-              <li><a href="practice.jsp">practice page</a></li>DecisionMaker
+              <li><a href="requestDirector?destination=log">log your trip</a></li>
+              <li><a href="practice.jsp">practice page</a></li>
               <li class="menu-has-children"><a href="#">Drop Down 2</a>
                 <ul>
                   <li><a href="#">Deep Drop Down 1</a></li>
@@ -121,7 +120,7 @@
               <li><a href="logout"><span class="glyphicon glyphicon-log-out"></span> Logout, ${loggedInUsersName}</a></li>
             </c:when>
             <c:otherwise>
-              <li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Login ${loggedInUsersName}</a></li>
+              <li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Login </a></li>
             </c:otherwise>
           </c:choose>
           <li><a href="#DecisionMaker">Decision Maker</a></li>
@@ -150,27 +149,27 @@
         <div class="col-md-6 col-md-push-6 about-content">
           <h2 class="about-title">Your source for paddling information</h2>
           <p class="about-text">
+            SnagLog provides near point and click marking of tree falls, low water areas, and
+            general obstructions with use of a smart phone. Additionally, SnagLog gives paddlers
+            access to quick tools to document the paddling adventures in a community atmosphere.
+            <br>
+            <br>
+          </p>
+          <p class="about-text">
+            Paddling blockages can range from mere annoyances to outright dangers.
             Before you go, check the master map of snags along your route.
-            <br>
-            <br>
-            <br>
-            <br>
-
-          </p>
-          <p class="about-text">
-            En route, mark new found snags with just a phone and a few clicks.
-            <br>
-            <br>
-            <br>
+            Join the SnagLog community to mark new found snags with just a phone and a few clicks.
+            <br><a href="#map">View the snag map.</a>
             <br>
           </p>
           <p class="about-text">
+            Need ideas for your next adventure, check the list of user added trips.
             On return, chronicle your adventures in a snag log.
+            Rate your trip, add recommendations, and give updated conditions and travel times.
+            Be part of the community.
+            <br><a href="#portfolio">View recent logs.</a>
+            <br><a href="#">See the log map</a>
             <br>
-            <br>
-            <br>
-            <br>
-
           </p>
         </div>
       </div>
@@ -189,7 +188,16 @@
         <div class="col-md-12">
           <h3 class="section-title">Mark a Snag</h3>
           <div class="section-title-divider"></div>
-          <p class="section-description">Click map above to add snag coordinates to form</p>
+          <p class="section-description">Click map above to add snag coordinates to form
+            <c:choose>
+              <c:when test="${not empty loggedInUsersName}">
+                <!-- don't do anything if user is logged in -->
+              </c:when>
+              <c:otherwise>
+                <br><h4><a href="login">Login to Mark Snag</a></h4>
+              </c:otherwise>
+            </c:choose>
+          </p>
         </div>
       </div>
      <div class="row">
@@ -232,14 +240,19 @@
                    <input class="input-sm" type="text" name="additionalBlockageInformation">
                  </div>
                  <div>
-                   <input type="submit" value="mark the snag">
+                   <c:choose>
+                     <c:when test="${not empty loggedInUsersName}">
+                       <input type="submit" value="mark the snag">
+                     </c:when>
+                     <c:otherwise>
+                       <h4><a href="login">Login to Mark Snag</a></h4>
+                     </c:otherwise>
+                   </c:choose>
                  </div>
                </form>
              </div>
            </div>
-         <script>
 
-           </script>
            <script async defer
                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABhJ9Hbp5gF8WEyv4agisgqh-k4pVZSs0&callback=initMap">
            </script>
@@ -250,33 +263,32 @@
   </section>
 
   <!--==========================
-  Subscrbe Section
+  Log intro Section
   ============================-->
   <section id="subscribe">
     <div class="container wow fadeInUp">
       <div class="row">
         <div class="col-md-8">
-          <h3 class="subscribe-title">Subscribe For Updates</h3>
-          <p class="subscribe-text">Join our 1000+ subscribers and get access to the latest tools, freebies, product announcements and much more!</p>
+          <h3 class="subscribe-title">Create a Snag Log</h3>
+          <p class="subscribe-text">Document your trips. Mark put in and take out locations. Share your experiences.</p>
         </div>
         <div class="col-md-4 subscribe-btn-container">
-          <a class="subscribe-btn" href="#">Subscribe Now</a>
+          <a class="subscribe-btn" href="requestDirector?destination=log">Log it Now!</a>
         </div>
       </div>
     </div>
   </section>
 
-  <div id="map_snag_overview"></div>
-  <!--==========================
-  Portfolio Section
+    <!--==========================
+  Current log Section
   ============================-->
   <section id="portfolio">
     <div class="container wow fadeInUp">
       <div class="row">
         <div class="col-md-12">
-          <h3 class="section-title">Portfolio</h3>
+          <h3 class="section-title">Log Summary</h3>
           <div class="section-title-divider"></div>
-          <p class="section-description">Si stante, hoc natura videlicet vult, salvam esse se, quod concedimus ses haec dicturum fuisse</p>
+          <p class="section-description">Newest Snag Logs</p>
         </div>
       </div>
 

@@ -46,42 +46,48 @@
 - [x] Time log entries
 
 ### Week 6
-- [ ] Integration with google maps api 
+- [x] Integration with google maps api 
 - [ ] Add web service for current weather
-- [ ] Create DOAs for remaining tables
+- [x] Create DOAs for remaining tables
 - [ ] Create add summary page for new snag reports
 - [x] Time log entries
 
 ### Week 7
-- [ ] Add Admin section with GUI for CRUD on all tables
-- [ ] Add search functionality
+- [x] Add Admin section with GUI for CRUD on all tables
+- [x] Add search functionality
 - [ ] Determine how to add paging of search results
-- [ ] Integration with weather service (maybe rainfall data)
+- [ ] Integration with weather service or stream flow
 - [x] Time log entries
 
 ### Week 8
 - [ ] Implement paging of search results
-- [ ] Code review
+- [x] Code review
 - [x] Time log entries
+- [x] Change UI to something not aweful
 
 ### Week 9
 
 - [ ] Add password reset/reminder function
-- [ ] Time log entries
+- [ ] get the logs working
+- [x] Time log entries
 
 ### Week 10
-- [ ] Time log entries
+- [ ] Show a summary of the logs
+- [x] Time log entries
 
 ### Week 11
-- [ ] Time log entries
+- [x] Fix the login logout button
+- [x] Time log entries
 
 ### Week 12
-- [ ] Time log entries
+- [ ] Figure out site HTTPS so geolocation works
+- [x] Time log entries
 
 ### Week 13
-- [ ] Time log entries
+- [x] Time log entries
 
 ### Week 14
+- [ ] clean up code
 - [ ] Create final presentation
 - [ ] Time log entries
 
