@@ -148,7 +148,7 @@ Services Section
             <div class="col-md-12">
                 <h3 class="section-title">Your Log</h3>
                 <div class="section-title-divider"></div>
-                <p class="section-description">Click map above to mark starting and ending coordinates</p>
+                <p class="section-description">Click map above to mark to add starting and ending coordinates to form</p>
             </div>
         </div>
         <div class="row">
@@ -159,7 +159,7 @@ Services Section
                     <form class="form-group" method="post" action="markSnag">
                         <div>Latitude: <span id="latspan"></span></div>
                         <div>Longitude: <span id="lngspan"></span></div>
-                        <div><lable>Selected Coordinates:</lable><br>
+                        <div><label>Selected Coordinates:</label><br>
                             <input class="input-sm" type="text" id="latitudeClicked"  name="latitudeClicked"> latitude<br>
                             <input class="input-sm" type="text" id="longitudeClicked"  name="longitudeClicked"> longitude<br>
                             <label>Use coordinates for</label>
@@ -168,22 +168,27 @@ Services Section
                         </div>
                         <div>
                             <label>Start Point</label>
-                            <input class="input-sm" type="text" id="startPointLat" value="" placeholder="populate">
-                            <input class="input-sm" type="text" id="startPointLon" value="" placeholder="with map"><br>
+                            <input class="input-sm" type="text" id="startPointLat" name="startPointLat" placeholder="populate">
+                            <input class="input-sm" type="text" id="startPointLon" name="startPointLon" placeholder="with map"><br>
                             <label>End Point</label>
-                            <input class="input-sm" type="text" id="endPointLat" value="" placeholder="populate">
-                            <input class="input-sm" type="text" id="endPointLon" value="" placeholder="with map"><br>
+                            <input class="input-sm" type="text" id="endPointLat" name="endPointLat" placeholder="populate">
+                            <input class="input-sm" type="text" id="endPointLon" name="endPointLon" placeholder="with map"><br>
                         </div>
                         <div>
-                            <lable for="blockageType">Blockage Type</lable><br>
-                            <select class="form-control" name="blockageType">
+                            <label>Name of primary water body</label><br>
+                            <input class="input-sm" type="text" id="waterBodyName" placeholder="for example, Namkagon"><br>
+                        </div>
+                        <div>
+                        <label>Type of water</label>
+                            <select class="form-control" id="waterBodyType" name="waterBodyType">
                                 <option value="noSelection">click to select</option>
-                                <option value="rocks">low water exposed rocks</option>
-                                <option value="mud">low water mud</option>
-                                <option value="treeFall">tree fall</option>
-                                <option value="other">other</option>
+                                <option value="flatWater">flat-water - out and back paddle possible</option>
+                                <option value="whiteWater">white-water - current prevents out and back paddle</option>
                             </select>
                         </div>
+                        <div id="waterTypeSubSelect"></div>
+
+                        <!--
                         <div>
                             <lable for="hazardOrNot">Snag is </lable><br>
                             <select class="form-control" name="hazardOrNot">
@@ -201,8 +206,9 @@ Services Section
                             <lable for="additionalBlockageInformation">Additional description or information</lable><br>
                             <input class="input-sm" type="text" name="additionalBlockageInformation">
                         </div>
+                        -->
                         <div>
-                            <input type="submit" value="mark the snag">
+                            <input type="submit" value="publish your SnagLog">
                         </div>
                     </form>
                 </div>
