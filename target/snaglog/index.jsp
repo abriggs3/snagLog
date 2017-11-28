@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <%@include file="tagLibrary.jsp"%>
+<!-- disables forms when user is not logged in -->
+<c:set var="disabledByDefault" value="${(empty disabledByDefault) ? 'disabled' : ''}" />
 <html lang="en">
 
 <head>
@@ -8,20 +10,6 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="" name="keywords">
   <meta content="" name="description">
-
-  <!-- Facebook Opengraph integration: https://developers.facebook.com/docs/sharing/opengraph -->
-  <meta property="og:title" content="">
-  <meta property="og:image" content="">
-  <meta property="og:url" content="">
-  <meta property="og:site_name" content="">
-  <meta property="og:description" content="">
-
-  <!-- Twitter Cards integration: https://dev.twitter.com/cards/  -->
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:site" content="">
-  <meta name="twitter:title" content="">
-  <meta name="twitter:description" content="">
-  <meta name="twitter:image" content="">
 
   <!-- Place your favicon.ico and apple-touch-icon.png in the template root directory -->
   <link href="favicon.ico" rel="shortcut icon">
@@ -52,7 +40,7 @@
   <!-- for bootstrap toggles and DecisionMaker widget -->
   <script src="js/decisionMaker.js"></script>
   <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
-  <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+
   <link rel="stylesheet" href="css/decisionMaker.css">
 </head>
 
@@ -209,12 +197,12 @@
                  <div>Latitude: <span id="latspan"></span></div>
                  <div>Longitude: <span id="lngspan"></span></div>
                  <div><lable>Selected Coordinates:</lable><br>
-                   <input class="input-sm" type="text" id="latitudeClicked"  name="latitudeClicked"> latitude<br>
-                   <input class="input-sm" type="text" id="longitudeClicked"  name="longitudeClicked"> longitude
+                   <input class="input-sm" type="text" id="latitudeClicked"  name="latitudeClicked" ${disabledByDefault}> latitude<br>
+                   <input class="input-sm" type="text" id="longitudeClicked"  name="longitudeClicked" ${disabledByDefault}> longitude
                  </div>
                  <div>
                    <lable for="blockageType">Blockage Type</lable><br>
-                   <select class="form-control" name="blockageType">
+                   <select class="form-control" name="blockageType" ${disabledByDefault}>
                      <option value="noSelection">click to select</option>
                      <option value="rocks">low water exposed rocks</option>
                      <option value="mud">low water mud</option>
@@ -224,7 +212,7 @@
                  </div>
                  <div>
                    <lable for="hazardOrNot">Snag is </lable><br>
-                   <select class="form-control" name="hazardOrNot">
+                   <select class="form-control" name="hazardOrNot" ${disabledByDefault}>
                      <option value="noSelection">click to select</option>
                      <option value="annoying">annoying</option>
                      <option value="slight">slight hazard</option>
@@ -233,11 +221,11 @@
                  </div>
                  <div>
                    <lable for="timeDelay">Time required to navigate blockage in minutes</lable><br>
-                   <input type="text" class="input-small" name="timeDelay">
+                   <input type="text" class="input-small" name="timeDelay" ${disabledByDefault}>
                  </div>
                  <div>
                    <lable for="additionalBlockageInformation">Additional description or information</lable><br>
-                   <input class="input-sm" type="text" name="additionalBlockageInformation">
+                   <input class="input-sm" type="text" name="additionalBlockageInformation" ${disabledByDefault}>
                  </div>
                  <div>
                    <c:choose>
@@ -654,6 +642,9 @@
 
   <!-- for maps -->
   <script src="js/maps.js"></script>
+
+  <!-- for decision maker -->
+  <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 
 
 </body>

@@ -25,6 +25,12 @@ function initMap() {
     $("#waterBodyType").on("click", function () {
         giveSubSelectForWaterType($("#waterBodyType option:selected").val());
     })
+
+
+    $( function() {
+        $( "#datepicker" ).datepicker();
+        $( "#datepicker" ).datepicker("show");
+    } );
 }
 
 function displayCoordinates(point) {
@@ -48,16 +54,13 @@ function populateCoordInForm(btnId) {
 }
 
 function giveSubSelectForWaterType(waterTypeSelected) {
-    console.log("this is waterType" + waterTypeSelected)
     if (waterTypeSelected == "flatWater") {
-        console.log("in flatwater");
-
         $("#waterTypeSubSelect").empty().append("<label for='flatWaterSubChoice'>flat-water type </label><br>" +
             "                            <select class='form-control' id='flatWaterSubChoice' name='flatWaterSubChoice'>" +
             "                                <option value='noSelection'>click to select</option>" +
             "                                <option value='lake'>small lake - i.e. wind sheltered</option>" +
             "                                <option value='large lake'>large lake - i.e open to high wind and waves</option>" +
-            "                                <option value='small river'>large river - less than 200 ft across</option>" +
+            "                                <option value='small river'>small river - less than 100 ft across</option>" +
             "                                <option value='large river'>large river - more than 200 ft across, includes flowages</option>" +
             "                                <option value='Ocean'>Ocean, bay, or Sound</option>" +
             "                            </select>");
@@ -65,8 +68,6 @@ function giveSubSelectForWaterType(waterTypeSelected) {
     }
 
     if (waterTypeSelected == "whiteWater") {
-        console.log("in whitewater");
-
         $("#waterTypeSubSelect").empty().append("<label for='whiteWaterSubChoice'>whitewater type -- highest class on route </label><br>" +
             "                            <select class='form-control' id='whiteWaterSubChoice' name='whiteWaterSubChoice'>" +
             "                                <option value='noSelection'>click to select</option>" +

@@ -9,20 +9,6 @@
     <meta content="" name="keywords">
     <meta content="" name="description">
 
-    <!-- Facebook Opengraph integration: https://developers.facebook.com/docs/sharing/opengraph -->
-    <meta property="og:title" content="">
-    <meta property="og:image" content="">
-    <meta property="og:url" content="">
-    <meta property="og:site_name" content="">
-    <meta property="og:description" content="">
-
-    <!-- Twitter Cards integration: https://dev.twitter.com/cards/  -->
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="">
-    <meta name="twitter:title" content="">
-    <meta name="twitter:description" content="">
-    <meta name="twitter:image" content="">
-
     <!-- Place your favicon.ico and apple-touch-icon.png in the template root directory -->
     <link href="favicon.ico" rel="shortcut icon">
 
@@ -41,22 +27,28 @@
     <link href="css/style_for_maps.css" rel="stylesheet">
 
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+
     <link rel="stylesheet" href="css/snaglog_custom.css">
     <link rel="stylesheet" href="css/snaglog_modal.css">
 
-    <script src="js/validate.js"></script>
+
 
     <!-- for bootstrap toggles and DecisionMaker widget -->
     <script src="js/decisionMaker.js"></script>
     <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
-    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+
     <link rel="stylesheet" href="css/decisionMaker.css">
+
+    <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
+          rel = "stylesheet">
+  
+
 </head>
 
 <body>
+<!-- disables forms when user is not logged in -->
+<c:set var="disabledByDefault" value="${(empty disabledByDefault) ? 'disabled' : ''}" />
 <div id="preloader"></div>
 
 <!--==========================
@@ -94,7 +86,7 @@ Header Section
 
         <nav id="nav-menu-container">
             <ul class="nav-menu">
-                <li class="menu-active"><a href="#hero">Home</a></li>
+                <li class="menu-active"><a href="index">Home</a></li>
                 <li><a href="#instructions">Get Started</a></li>
                 <li><a href="#services">Mark a Snag</a></li>
                 <li><a href="#portfolio">Recent Logs</a></li>
@@ -160,33 +152,36 @@ Services Section
                         <div>Latitude: <span id="latspan"></span></div>
                         <div>Longitude: <span id="lngspan"></span></div>
                         <div><label>Selected Coordinates:</label><br>
-                            <input class="input-sm" type="text" id="latitudeClicked"  name="latitudeClicked"> latitude<br>
-                            <input class="input-sm" type="text" id="longitudeClicked"  name="longitudeClicked"> longitude<br>
+                            <input class="input-sm" type="text" id="latitudeClicked"  name="latitudeClicked" ${disabledByDefault}> latitude<br>
+                            <input class="input-sm" type="text" id="longitudeClicked"  name="longitudeClicked" ${disabledByDefault}> longitude<br>
                             <label>Use coordinates for</label>
-                            <input class="btn-select-start-end-point" type="button" id="btnStartCoordinates" value="start point">
-                            <input class="btn-select-start-end-point" type="button" id="btnEndCoordinates" value="end point"><br>
+                            <input class="btn-select-start-end-point" type="button" id="btnStartCoordinates" value="start point" ${disabledByDefault}>
+                            <input class="btn-select-start-end-point" type="button" id="btnEndCoordinates" value="end point" ${disabledByDefault}><br>
                         </div>
                         <div>
                             <label>Start Point</label>
-                            <input class="input-sm" type="text" id="startPointLat" name="startPointLat" placeholder="populate">
-                            <input class="input-sm" type="text" id="startPointLon" name="startPointLon" placeholder="with map"><br>
+                            <input class="input-sm" type="text" id="startPointLat" name="startPointLat" placeholder="populate" ${disabledByDefault}>
+                            <input class="input-sm" type="text" id="startPointLon" name="startPointLon" placeholder="with map" ${disabledByDefault}><br>
                             <label>End Point</label>
-                            <input class="input-sm" type="text" id="endPointLat" name="endPointLat" placeholder="populate">
-                            <input class="input-sm" type="text" id="endPointLon" name="endPointLon" placeholder="with map"><br>
+                            <input class="input-sm" type="text" id="endPointLat" name="endPointLat" placeholder="populate" ${disabledByDefault}>
+                            <input class="input-sm" type="text" id="endPointLon" name="endPointLon" placeholder="with map" ${disabledByDefault}><br>
                         </div>
                         <div>
                             <label>Name of primary water body</label><br>
-                            <input class="input-sm" type="text" id="waterBodyName" placeholder="for example, Namkagon"><br>
+                            <input class="input-sm" type="text" id="waterBodyName" placeholder="for example, Namkagon" ${disabledByDefault}><br>
                         </div>
                         <div>
                         <label>Type of water</label>
-                            <select class="form-control" id="waterBodyType" name="waterBodyType">
+                            <select class="form-control" id="waterBodyType" name="waterBodyType" ${disabledByDefault}>
                                 <option value="noSelection">click to select</option>
                                 <option value="flatWater">flat-water - out and back paddle possible</option>
                                 <option value="whiteWater">white-water - current prevents out and back paddle</option>
                             </select>
                         </div>
                         <div id="waterTypeSubSelect"></div>
+                        <div>
+                            <input type="text" id="datepicker">
+                        </div>
 
                         <!--
                         <div>
@@ -208,7 +203,16 @@ Services Section
                         </div>
                         -->
                         <div>
-                            <input type="submit" value="publish your SnagLog">
+                        <c:choose>
+                            <c:when test="${not empty loggedInUsersName}">
+                                <input type="submit" value="publish">
+                            </c:when>
+                            <c:otherwise>
+                                <h4><a href="login">In order to create your log, sign in now.</a></h4>
+                            </c:otherwise>
+                        </c:choose>
+
+
                         </div>
                     </form>
                 </div>
@@ -617,6 +621,9 @@ Footer
 
 <!-- for maps -->
 <script src="js/log.js"></script>
+<!-- for decision maker -->
+<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+<script src="js/validate.js"></script>
 
 
 </body>

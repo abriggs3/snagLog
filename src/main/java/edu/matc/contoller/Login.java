@@ -23,6 +23,8 @@ public class Login extends HttpServlet {
         HttpSession session = request.getSession();
         // add an attribute to the session so that JSTL can be used to toggle the login and out menu bar
         session.setAttribute("loggedInUsersName", request.getRemoteUser());
+        // remove disabled form fields for logged in users
+        session.setAttribute("disabledByDefault", "stopDisablingTheForm");
 
         RequestDispatcher dispatcher = request.getRequestDispatcher("pages/login_success.jsp");
         dispatcher.forward(request, response);
