@@ -13547,3 +13547,339 @@ Caused by: java.sql.SQLException: Lock wait timeout exceeded; try restarting tra
 2017-11-28 14:20:42,889 19992 [http-nio-8080-exec-8] INFO  edu.matc.entity.SnagGenericDAO  - STARTED - query
 2017-11-28 14:20:42,942 20045 [http-nio-8080-exec-8] INFO  edu.matc.entity.SnagGenericDAO  - This is the hsql from edu.matc.entity.Snag
 2017-11-28 14:20:42,944 20047 [http-nio-8080-exec-8] INFO  edu.matc.entity.SnagGenericDAO  - FINISHED - query. Result size=11
+2017-11-28 14:26:25,781 362884 [http-nio-8080-exec-8] INFO  edu.matc.entity.SnagGenericDAO  - STARTED - query
+2017-11-28 14:26:25,807 362910 [http-nio-8080-exec-8] INFO  edu.matc.entity.SnagGenericDAO  - This is the hsql from edu.matc.entity.Snag
+2017-11-28 14:26:25,807 362910 [http-nio-8080-exec-8] INFO  edu.matc.entity.SnagGenericDAO  - FINISHED - query. Result size=11
+2017-11-29 11:45:16,498 0    [main] INFO  org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2017-11-29 11:45:16,508 10   [main] INFO  org.hibernate.Version  - HHH000412: Hibernate Core {4.3.11.Final}
+2017-11-29 11:45:16,512 14   [main] INFO  org.hibernate.cfg.Environment  - HHH000206: hibernate.properties not found
+2017-11-29 11:45:16,514 16   [main] INFO  org.hibernate.cfg.Environment  - HHH000021: Bytecode provider name : javassist
+2017-11-29 11:45:16,538 40   [main] INFO  org.hibernate.cfg.Configuration  - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2017-11-29 11:45:16,539 41   [main] INFO  org.hibernate.cfg.Configuration  - HHH000040: Configuration resource: /hibernate.cfg.xml
+2017-11-29 11:45:16,657 159  [main] INFO  org.hibernate.cfg.Configuration  - HHH000041: Configured SessionFactory: null
+2017-11-29 11:45:16,837 339  [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-11-29 11:45:16,847 349  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/snaglog_test]
+2017-11-29 11:45:16,848 350  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000046: Connection properties: {user=abriggs3, password=****}
+2017-11-29 11:45:16,848 350  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000006: Autocommit mode: false
+2017-11-29 11:45:16,850 352  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-11-29 11:45:17,220 722  [main] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2017-11-29 11:45:17,227 729  [main] INFO  org.hibernate.engine.jdbc.internal.LobCreatorBuilder  - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+2017-11-29 11:45:17,454 956  [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator  - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-11-29 11:45:17,459 961  [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory
+2017-11-29 11:45:17,964 1466 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000227: Running hbm2ddl schema export
+2017-11-29 11:45:18,007 1509 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000389: Unsuccessful: alter table Log drop foreign key FK_f132q3b5wga9iq22o7pci4cjv
+2017-11-29 11:45:18,007 1509 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - Can't DROP 'FK_f132q3b5wga9iq22o7pci4cjv'; check that column/key exists
+2017-11-29 11:45:18,018 1520 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000389: Unsuccessful: alter table Snag drop foreign key FK_pqy8mp70rys8ehcjtdq213kgt
+2017-11-29 11:45:18,019 1521 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - Can't DROP 'FK_pqy8mp70rys8ehcjtdq213kgt'; check that column/key exists
+2017-11-29 11:45:18,021 1523 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000389: Unsuccessful: alter table User_roles drop foreign key FK_l2p3xdjif1s8jt03iwwthvliw
+2017-11-29 11:45:18,023 1525 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - Can't DROP 'FK_l2p3xdjif1s8jt03iwwthvliw'; check that column/key exists
+2017-11-29 11:45:18,059 1561 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000389: Unsuccessful: create table Snag (snag_id integer not null, additional_desc varchar(-1) not null, blockage_type varchar(30) not null, cleared bit not null, date datetime not null, estimated_delay integer not null, hazard varchar(20) not null, locationLat double precision not null, locationLon double precision not null, users_id integer not null, primary key (snag_id))
+2017-11-29 11:45:18,059 1561 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-1) not null, blockage_type varchar(30) not null, cleared bit not null, date dat' at line 1
+2017-11-29 11:45:18,085 1587 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000389: Unsuccessful: alter table Snag add constraint FK_pqy8mp70rys8ehcjtdq213kgt foreign key (users_id) references Users (users_id)
+2017-11-29 11:45:18,085 1587 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - Table 'snaglog_test.Snag' doesn't exist
+2017-11-29 11:45:18,169 1671 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000230: Schema export complete
+2017-11-29 11:45:18,241 1743 [main] INFO  edu.matc.entity.UserGenericDAO  - STARTED - save
+2017-11-29 11:45:18,444 1946 [main] INFO  edu.matc.entity.UserGenericDAO  - FINISHED - save
+2017-11-29 11:45:18,444 1946 [main] INFO  edu.matc.entity.UserGenericDAO  - STARTED - query
+2017-11-29 11:45:18,565 2067 [main] INFO  edu.matc.entity.UserGenericDAO  - This is the hsql from edu.matc.entity.User
+2017-11-29 11:45:18,566 2068 [main] INFO  edu.matc.entity.UserGenericDAO  - FINISHED - query. Result size=5
+2017-11-29 11:45:18,567 2069 [main] INFO  edu.matc.entity.UserGenericDAO  - STARTED - get
+2017-11-29 11:45:18,578 2080 [main] INFO  edu.matc.entity.UserGenericDAO  - FINISHED - get
+2017-11-29 11:45:18,581 2083 [main] INFO  edu.matc.entity.UserGenericDAO  - STARTED - delete
+2017-11-29 11:45:18,588 2090 [main] INFO  edu.matc.entity.UserGenericDAO  - FINISHED - delete
+2017-11-29 11:45:18,595 2097 [main] INFO  edu.matc.entity.UserGenericDAO  - STARTED - query
+2017-11-29 11:45:18,611 2113 [main] INFO  edu.matc.entity.UserGenericDAO  - This is the hsql FROM User where usersId = 1
+2017-11-29 11:45:18,611 2113 [main] INFO  edu.matc.entity.UserGenericDAO  - FINISHED - query. Result size=1
+2017-11-29 11:45:18,613 2115 [main] INFO  edu.matc.entity.UserGenericDAO  - STARTED - get
+2017-11-29 11:45:18,616 2118 [main] INFO  edu.matc.entity.UserGenericDAO  - FINISHED - get
+2017-11-29 11:45:18,616 2118 [main] INFO  edu.matc.entity.UserGenericDAO  - STARTED - update
+2017-11-29 11:45:18,658 2160 [main] INFO  edu.matc.entity.UserGenericDAO  - FINISHED - update
+2017-11-29 11:45:18,658 2160 [main] INFO  edu.matc.entity.UserGenericDAO  - STARTED - get
+2017-11-29 11:45:18,670 2172 [main] INFO  edu.matc.entity.UserGenericDAO  - FINISHED - get
+2017-11-29 11:45:18,676 2178 [main] INFO  edu.matc.entity.SnagGenericDAO  - STARTED - query
+2017-11-29 11:45:18,728 2230 [main] INFO  edu.matc.entity.SnagGenericDAO  - This is the hsql from edu.matc.entity.Snag
+2017-11-29 11:45:18,729 2231 [main] INFO  edu.matc.entity.SnagGenericDAO  - FINISHED - query. Result size=2
+2017-11-29 11:45:18,733 2235 [main] INFO  edu.matc.entity.UserGenericDAO  - STARTED - get
+2017-11-29 11:45:18,749 2251 [main] INFO  edu.matc.entity.UserGenericDAO  - FINISHED - get
+2017-11-29 11:45:18,749 2251 [main] INFO  edu.matc.entity.UserGenericDAO  - STARTED - query
+2017-11-29 11:45:18,752 2254 [main] INFO  edu.matc.entity.UserGenericDAO  - This is the hsql from edu.matc.entity.User
+2017-11-29 11:45:18,752 2254 [main] INFO  edu.matc.entity.UserGenericDAO  - FINISHED - query. Result size=4
+2017-11-29 11:45:18,755 2257 [main] INFO  edu.matc.entity.UserGenericDAO  - STARTED - query
+2017-11-29 11:45:18,759 2261 [main] INFO  edu.matc.entity.UserGenericDAO  - This is the hsql from edu.matc.entity.User
+2017-11-29 11:45:18,759 2261 [main] INFO  edu.matc.entity.UserGenericDAO  - FINISHED - query. Result size=4
+2017-11-29 11:45:18,760 2262 [main] INFO  edu.matc.entity.UserGenericDAO  - STARTED - get
+2017-11-29 11:45:18,763 2265 [main] INFO  edu.matc.entity.UserGenericDAO  - FINISHED - get
+2017-11-29 11:45:18,763 2265 [main] INFO  edu.matc.entity.UserGenericDAO  - STARTED - delete
+2017-11-29 11:45:18,766 2268 [main] INFO  edu.matc.entity.UserGenericDAO  - FINISHED - delete
+2017-11-29 11:45:18,767 2269 [main] INFO  edu.matc.entity.UserGenericDAO  - STARTED - query
+2017-11-29 11:45:18,776 2278 [main] INFO  edu.matc.entity.UserGenericDAO  - This is the hsql from edu.matc.entity.User
+2017-11-29 11:45:18,776 2278 [main] INFO  edu.matc.entity.UserGenericDAO  - FINISHED - query. Result size=3
+2017-11-29 11:45:18,777 2279 [main] INFO  edu.matc.entity.UserGenericDAO  - STARTED - save
+2017-11-29 11:45:18,781 2283 [main] INFO  edu.matc.entity.UserGenericDAO  - FINISHED - save
+2017-11-29 11:45:18,798 2300 [main] INFO  org.hibernate.cfg.Configuration  - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2017-11-29 11:45:18,799 2301 [main] INFO  org.hibernate.cfg.Configuration  - HHH000040: Configuration resource: /hibernate.cfg.xml
+2017-11-29 11:45:18,813 2315 [main] INFO  org.hibernate.cfg.Configuration  - HHH000041: Configured SessionFactory: null
+2017-11-29 11:45:18,816 2318 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-11-29 11:45:18,821 2323 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/snaglog_test]
+2017-11-29 11:45:18,825 2327 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000046: Connection properties: {user=abriggs3, password=****}
+2017-11-29 11:45:18,825 2327 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000006: Autocommit mode: false
+2017-11-29 11:45:18,825 2327 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-11-29 11:45:18,876 2378 [main] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2017-11-29 11:45:18,876 2378 [main] INFO  org.hibernate.engine.jdbc.internal.LobCreatorBuilder  - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+2017-11-29 11:45:18,924 2426 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator  - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-11-29 11:45:18,924 2426 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory
+2017-11-29 11:45:18,994 2496 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000227: Running hbm2ddl schema export
+2017-11-29 11:45:19,001 2503 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000389: Unsuccessful: alter table Log drop foreign key FK_f132q3b5wga9iq22o7pci4cjv
+2017-11-29 11:45:19,002 2504 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - Can't DROP 'FK_f132q3b5wga9iq22o7pci4cjv'; check that column/key exists
+2017-11-29 11:45:19,003 2505 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000389: Unsuccessful: alter table Snag drop foreign key FK_pqy8mp70rys8ehcjtdq213kgt
+2017-11-29 11:45:19,003 2505 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - Can't DROP 'FK_pqy8mp70rys8ehcjtdq213kgt'; check that column/key exists
+2017-11-29 11:45:19,004 2506 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000389: Unsuccessful: alter table User_roles drop foreign key FK_l2p3xdjif1s8jt03iwwthvliw
+2017-11-29 11:45:19,004 2506 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - Can't DROP 'FK_l2p3xdjif1s8jt03iwwthvliw'; check that column/key exists
+2017-11-29 11:45:19,031 2533 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000389: Unsuccessful: create table Snag (snag_id integer not null, additional_desc varchar(-1) not null, blockage_type varchar(30) not null, cleared bit not null, date datetime not null, estimated_delay integer not null, hazard varchar(20) not null, locationLat double precision not null, locationLon double precision not null, users_id integer not null, primary key (snag_id))
+2017-11-29 11:45:19,031 2533 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-1) not null, blockage_type varchar(30) not null, cleared bit not null, date dat' at line 1
+2017-11-29 11:45:19,059 2561 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000389: Unsuccessful: alter table Snag add constraint FK_pqy8mp70rys8ehcjtdq213kgt foreign key (users_id) references Users (users_id)
+2017-11-29 11:45:19,059 2561 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - Table 'snaglog_test.Snag' doesn't exist
+2017-11-29 11:45:19,145 2647 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000230: Schema export complete
+2017-11-29 11:45:45,374 0    [http-nio-8080-exec-10] INFO  org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2017-11-29 11:45:45,399 25   [http-nio-8080-exec-10] INFO  org.hibernate.Version  - HHH000412: Hibernate Core {4.3.11.Final}
+2017-11-29 11:45:45,407 33   [http-nio-8080-exec-10] INFO  org.hibernate.cfg.Environment  - HHH000206: hibernate.properties not found
+2017-11-29 11:45:45,417 43   [http-nio-8080-exec-10] INFO  org.hibernate.cfg.Environment  - HHH000021: Bytecode provider name : javassist
+2017-11-29 11:45:45,525 151  [http-nio-8080-exec-10] INFO  org.hibernate.cfg.Configuration  - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2017-11-29 11:45:45,527 153  [http-nio-8080-exec-10] INFO  org.hibernate.cfg.Configuration  - HHH000040: Configuration resource: /hibernate.cfg.xml
+2017-11-29 11:45:45,733 359  [http-nio-8080-exec-10] INFO  org.hibernate.cfg.Configuration  - HHH000041: Configured SessionFactory: null
+2017-11-29 11:45:46,042 668  [http-nio-8080-exec-10] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-11-29 11:45:46,047 673  [http-nio-8080-exec-10] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/snaglog]
+2017-11-29 11:45:46,047 673  [http-nio-8080-exec-10] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000046: Connection properties: {user=abriggs3, password=****}
+2017-11-29 11:45:46,054 680  [http-nio-8080-exec-10] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000006: Autocommit mode: false
+2017-11-29 11:45:46,056 682  [http-nio-8080-exec-10] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-11-29 11:45:46,647 1273 [http-nio-8080-exec-10] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2017-11-29 11:45:46,679 1305 [http-nio-8080-exec-10] INFO  org.hibernate.engine.jdbc.internal.LobCreatorBuilder  - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+2017-11-29 11:45:47,184 1810 [http-nio-8080-exec-10] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator  - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-11-29 11:45:47,198 1824 [http-nio-8080-exec-10] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory
+2017-11-29 11:45:48,677 3303 [http-nio-8080-exec-10] INFO  edu.matc.entity.SnagGenericDAO  - STARTED - query
+2017-11-29 11:45:49,370 3996 [http-nio-8080-exec-10] INFO  edu.matc.entity.SnagGenericDAO  - This is the hsql from edu.matc.entity.Snag
+2017-11-29 11:45:49,370 3996 [http-nio-8080-exec-10] INFO  edu.matc.entity.SnagGenericDAO  - FINISHED - query. Result size=11
+2017-11-29 11:48:15,053 1    [main] INFO  org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2017-11-29 11:48:15,062 10   [main] INFO  org.hibernate.Version  - HHH000412: Hibernate Core {4.3.11.Final}
+2017-11-29 11:48:15,064 12   [main] INFO  org.hibernate.cfg.Environment  - HHH000206: hibernate.properties not found
+2017-11-29 11:48:15,066 14   [main] INFO  org.hibernate.cfg.Environment  - HHH000021: Bytecode provider name : javassist
+2017-11-29 11:48:15,118 66   [main] INFO  org.hibernate.cfg.Configuration  - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2017-11-29 11:48:15,120 68   [main] INFO  org.hibernate.cfg.Configuration  - HHH000040: Configuration resource: /hibernate.cfg.xml
+2017-11-29 11:48:15,239 187  [main] INFO  org.hibernate.cfg.Configuration  - HHH000041: Configured SessionFactory: null
+2017-11-29 11:48:15,518 466  [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-11-29 11:48:15,535 483  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/snaglog_test]
+2017-11-29 11:48:15,536 484  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000046: Connection properties: {user=abriggs3, password=****}
+2017-11-29 11:48:15,536 484  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000006: Autocommit mode: false
+2017-11-29 11:48:15,540 488  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-11-29 11:48:15,929 877  [main] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2017-11-29 11:48:15,935 883  [main] INFO  org.hibernate.engine.jdbc.internal.LobCreatorBuilder  - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+2017-11-29 11:48:16,161 1109 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator  - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-11-29 11:48:16,167 1115 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory
+2017-11-29 11:48:16,638 1586 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000227: Running hbm2ddl schema export
+2017-11-29 11:48:16,659 1607 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000389: Unsuccessful: alter table Log drop foreign key FK_f132q3b5wga9iq22o7pci4cjv
+2017-11-29 11:48:16,661 1609 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - Can't DROP 'FK_f132q3b5wga9iq22o7pci4cjv'; check that column/key exists
+2017-11-29 11:48:16,664 1612 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000389: Unsuccessful: alter table Snag drop foreign key FK_pqy8mp70rys8ehcjtdq213kgt
+2017-11-29 11:48:16,664 1612 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - Can't DROP 'FK_pqy8mp70rys8ehcjtdq213kgt'; check that column/key exists
+2017-11-29 11:48:16,668 1616 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000389: Unsuccessful: alter table User_roles drop foreign key FK_l2p3xdjif1s8jt03iwwthvliw
+2017-11-29 11:48:16,670 1618 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - Can't DROP 'FK_l2p3xdjif1s8jt03iwwthvliw'; check that column/key exists
+2017-11-29 11:48:16,713 1661 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000389: Unsuccessful: create table Snag (snag_id integer not null, additional_desc varchar(-1) not null, blockage_type varchar(30) not null, cleared bit not null, date datetime not null, estimated_delay integer not null, hazard varchar(20) not null, locationLat double precision not null, locationLon double precision not null, users_id integer not null, primary key (snag_id))
+2017-11-29 11:48:16,713 1661 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-1) not null, blockage_type varchar(30) not null, cleared bit not null, date dat' at line 1
+2017-11-29 11:48:16,740 1688 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000389: Unsuccessful: alter table Snag add constraint FK_pqy8mp70rys8ehcjtdq213kgt foreign key (users_id) references Users (users_id)
+2017-11-29 11:48:16,741 1689 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - Table 'snaglog_test.Snag' doesn't exist
+2017-11-29 11:48:16,806 1754 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000230: Schema export complete
+2017-11-29 11:48:16,821 1769 [main] INFO  edu.matc.entity.UserGenericDAO  - STARTED - save
+2017-11-29 11:48:17,061 2009 [main] INFO  edu.matc.entity.UserGenericDAO  - FINISHED - save
+2017-11-29 11:48:17,061 2009 [main] INFO  edu.matc.entity.UserGenericDAO  - STARTED - query
+2017-11-29 11:48:17,201 2149 [main] INFO  edu.matc.entity.UserGenericDAO  - This is the hsql from edu.matc.entity.User
+2017-11-29 11:48:17,202 2150 [main] INFO  edu.matc.entity.UserGenericDAO  - FINISHED - query. Result size=5
+2017-11-29 11:48:17,207 2155 [main] INFO  edu.matc.entity.UserGenericDAO  - STARTED - get
+2017-11-29 11:48:17,220 2168 [main] INFO  edu.matc.entity.UserGenericDAO  - FINISHED - get
+2017-11-29 11:48:17,220 2168 [main] INFO  edu.matc.entity.UserGenericDAO  - STARTED - delete
+2017-11-29 11:48:17,232 2180 [main] INFO  edu.matc.entity.UserGenericDAO  - FINISHED - delete
+2017-11-29 11:48:17,240 2188 [main] INFO  edu.matc.entity.UserGenericDAO  - STARTED - query
+2017-11-29 11:48:17,283 2231 [main] INFO  edu.matc.entity.UserGenericDAO  - This is the hsql FROM User where usersId = 1
+2017-11-29 11:48:17,283 2231 [main] INFO  edu.matc.entity.UserGenericDAO  - FINISHED - query. Result size=1
+2017-11-29 11:48:17,296 2244 [main] INFO  edu.matc.entity.UserGenericDAO  - STARTED - get
+2017-11-29 11:48:17,316 2264 [main] INFO  edu.matc.entity.UserGenericDAO  - FINISHED - get
+2017-11-29 11:48:17,319 2267 [main] INFO  edu.matc.entity.UserGenericDAO  - STARTED - update
+2017-11-29 11:48:17,345 2293 [main] INFO  edu.matc.entity.UserGenericDAO  - FINISHED - update
+2017-11-29 11:48:17,347 2295 [main] INFO  edu.matc.entity.UserGenericDAO  - STARTED - get
+2017-11-29 11:48:17,359 2307 [main] INFO  edu.matc.entity.UserGenericDAO  - FINISHED - get
+2017-11-29 11:48:17,364 2312 [main] INFO  edu.matc.entity.SnagGenericDAO  - STARTED - query
+2017-11-29 11:48:17,417 2365 [main] INFO  edu.matc.entity.SnagGenericDAO  - This is the hsql from edu.matc.entity.Snag
+2017-11-29 11:48:17,418 2366 [main] INFO  edu.matc.entity.SnagGenericDAO  - FINISHED - query. Result size=2
+2017-11-29 11:48:17,422 2370 [main] INFO  edu.matc.entity.UserGenericDAO  - STARTED - get
+2017-11-29 11:48:17,433 2381 [main] INFO  edu.matc.entity.UserGenericDAO  - FINISHED - get
+2017-11-29 11:48:17,435 2383 [main] INFO  edu.matc.entity.UserGenericDAO  - STARTED - query
+2017-11-29 11:48:17,457 2405 [main] INFO  edu.matc.entity.UserGenericDAO  - This is the hsql from edu.matc.entity.User
+2017-11-29 11:48:17,457 2405 [main] INFO  edu.matc.entity.UserGenericDAO  - FINISHED - query. Result size=4
+2017-11-29 11:48:17,463 2411 [main] INFO  edu.matc.entity.UserGenericDAO  - STARTED - query
+2017-11-29 11:48:17,477 2425 [main] INFO  edu.matc.entity.UserGenericDAO  - This is the hsql from edu.matc.entity.User
+2017-11-29 11:48:17,478 2426 [main] INFO  edu.matc.entity.UserGenericDAO  - FINISHED - query. Result size=4
+2017-11-29 11:48:17,482 2430 [main] INFO  edu.matc.entity.UserGenericDAO  - STARTED - get
+2017-11-29 11:48:17,491 2439 [main] INFO  edu.matc.entity.UserGenericDAO  - FINISHED - get
+2017-11-29 11:48:17,497 2445 [main] INFO  edu.matc.entity.UserGenericDAO  - STARTED - delete
+2017-11-29 11:48:17,506 2454 [main] INFO  edu.matc.entity.UserGenericDAO  - FINISHED - delete
+2017-11-29 11:48:17,506 2454 [main] INFO  edu.matc.entity.UserGenericDAO  - STARTED - query
+2017-11-29 11:48:17,513 2461 [main] INFO  edu.matc.entity.UserGenericDAO  - This is the hsql from edu.matc.entity.User
+2017-11-29 11:48:17,517 2465 [main] INFO  edu.matc.entity.UserGenericDAO  - FINISHED - query. Result size=3
+2017-11-29 11:48:17,520 2468 [main] INFO  edu.matc.entity.UserGenericDAO  - STARTED - save
+2017-11-29 11:48:17,539 2487 [main] INFO  edu.matc.entity.UserGenericDAO  - FINISHED - save
+2017-11-29 11:48:17,559 2507 [main] INFO  org.hibernate.cfg.Configuration  - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2017-11-29 11:48:17,565 2513 [main] INFO  org.hibernate.cfg.Configuration  - HHH000040: Configuration resource: /hibernate.cfg.xml
+2017-11-29 11:48:17,578 2526 [main] INFO  org.hibernate.cfg.Configuration  - HHH000041: Configured SessionFactory: null
+2017-11-29 11:48:17,597 2545 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-11-29 11:48:17,597 2545 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/snaglog_test]
+2017-11-29 11:48:17,600 2548 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000046: Connection properties: {user=abriggs3, password=****}
+2017-11-29 11:48:17,600 2548 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000006: Autocommit mode: false
+2017-11-29 11:48:17,600 2548 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-11-29 11:48:17,617 2565 [main] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2017-11-29 11:48:17,618 2566 [main] INFO  org.hibernate.engine.jdbc.internal.LobCreatorBuilder  - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+2017-11-29 11:48:17,642 2590 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator  - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-11-29 11:48:17,666 2614 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory
+2017-11-29 11:48:17,788 2736 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000227: Running hbm2ddl schema export
+2017-11-29 11:48:17,794 2742 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000389: Unsuccessful: alter table Log drop foreign key FK_f132q3b5wga9iq22o7pci4cjv
+2017-11-29 11:48:17,794 2742 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - Can't DROP 'FK_f132q3b5wga9iq22o7pci4cjv'; check that column/key exists
+2017-11-29 11:48:17,796 2744 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000389: Unsuccessful: alter table Snag drop foreign key FK_pqy8mp70rys8ehcjtdq213kgt
+2017-11-29 11:48:17,796 2744 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - Can't DROP 'FK_pqy8mp70rys8ehcjtdq213kgt'; check that column/key exists
+2017-11-29 11:48:17,799 2747 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000389: Unsuccessful: alter table User_roles drop foreign key FK_l2p3xdjif1s8jt03iwwthvliw
+2017-11-29 11:48:17,799 2747 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - Can't DROP 'FK_l2p3xdjif1s8jt03iwwthvliw'; check that column/key exists
+2017-11-29 11:48:17,827 2775 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000389: Unsuccessful: create table Snag (snag_id integer not null, additional_desc varchar(-1) not null, blockage_type varchar(30) not null, cleared bit not null, date datetime not null, estimated_delay integer not null, hazard varchar(20) not null, locationLat double precision not null, locationLon double precision not null, users_id integer not null, primary key (snag_id))
+2017-11-29 11:48:17,827 2775 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-1) not null, blockage_type varchar(30) not null, cleared bit not null, date dat' at line 1
+2017-11-29 11:48:17,853 2801 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000389: Unsuccessful: alter table Snag add constraint FK_pqy8mp70rys8ehcjtdq213kgt foreign key (users_id) references Users (users_id)
+2017-11-29 11:48:17,853 2801 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - Table 'snaglog_test.Snag' doesn't exist
+2017-11-29 11:48:17,937 2885 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000230: Schema export complete
+2017-11-29 11:48:45,379 0    [http-nio-8080-exec-9] INFO  org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2017-11-29 11:48:45,399 20   [http-nio-8080-exec-9] INFO  org.hibernate.Version  - HHH000412: Hibernate Core {4.3.11.Final}
+2017-11-29 11:48:45,407 28   [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Environment  - HHH000206: hibernate.properties not found
+2017-11-29 11:48:45,410 31   [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Environment  - HHH000021: Bytecode provider name : javassist
+2017-11-29 11:48:45,508 129  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Configuration  - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2017-11-29 11:48:45,509 130  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Configuration  - HHH000040: Configuration resource: /hibernate.cfg.xml
+2017-11-29 11:48:45,667 288  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Configuration  - HHH000041: Configured SessionFactory: null
+2017-11-29 11:48:46,004 625  [http-nio-8080-exec-9] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-11-29 11:48:46,017 638  [http-nio-8080-exec-9] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/snaglog]
+2017-11-29 11:48:46,020 641  [http-nio-8080-exec-9] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000046: Connection properties: {user=abriggs3, password=****}
+2017-11-29 11:48:46,021 642  [http-nio-8080-exec-9] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000006: Autocommit mode: false
+2017-11-29 11:48:46,027 648  [http-nio-8080-exec-9] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-11-29 11:48:46,791 1412 [http-nio-8080-exec-9] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2017-11-29 11:48:46,843 1464 [http-nio-8080-exec-9] INFO  org.hibernate.engine.jdbc.internal.LobCreatorBuilder  - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+2017-11-29 11:48:47,444 2065 [http-nio-8080-exec-9] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator  - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-11-29 11:48:47,468 2089 [http-nio-8080-exec-9] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory
+2017-11-29 11:48:49,230 3851 [http-nio-8080-exec-9] INFO  edu.matc.entity.SnagGenericDAO  - STARTED - query
+2017-11-29 11:48:50,042 4663 [http-nio-8080-exec-9] INFO  edu.matc.entity.SnagGenericDAO  - This is the hsql from edu.matc.entity.Snag
+2017-11-29 11:48:50,042 4663 [http-nio-8080-exec-9] INFO  edu.matc.entity.SnagGenericDAO  - FINISHED - query. Result size=11
+2017-11-29 11:48:52,602 7223 [http-nio-8080-exec-3] INFO  edu.matc.entity.UserGenericDAO  - STARTED - query
+2017-11-29 11:48:52,623 7244 [http-nio-8080-exec-3] INFO  edu.matc.entity.UserGenericDAO  - This is the hsql from edu.matc.entity.User
+2017-11-29 11:48:52,623 7244 [http-nio-8080-exec-3] INFO  edu.matc.entity.UserGenericDAO  - FINISHED - query. Result size=4
+2017-11-29 11:52:05,186 0    [main] INFO  org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2017-11-29 11:52:05,195 9    [main] INFO  org.hibernate.Version  - HHH000412: Hibernate Core {4.3.11.Final}
+2017-11-29 11:52:05,196 10   [main] INFO  org.hibernate.cfg.Environment  - HHH000206: hibernate.properties not found
+2017-11-29 11:52:05,198 12   [main] INFO  org.hibernate.cfg.Environment  - HHH000021: Bytecode provider name : javassist
+2017-11-29 11:52:05,219 33   [main] INFO  org.hibernate.cfg.Configuration  - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2017-11-29 11:52:05,219 33   [main] INFO  org.hibernate.cfg.Configuration  - HHH000040: Configuration resource: /hibernate.cfg.xml
+2017-11-29 11:52:05,342 156  [main] INFO  org.hibernate.cfg.Configuration  - HHH000041: Configured SessionFactory: null
+2017-11-29 11:52:05,534 348  [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-11-29 11:52:05,543 357  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/snaglog_test]
+2017-11-29 11:52:05,545 359  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000046: Connection properties: {user=abriggs3, password=****}
+2017-11-29 11:52:05,547 361  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000006: Autocommit mode: false
+2017-11-29 11:52:05,548 362  [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-11-29 11:52:05,946 760  [main] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2017-11-29 11:52:05,953 767  [main] INFO  org.hibernate.engine.jdbc.internal.LobCreatorBuilder  - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+2017-11-29 11:52:06,127 941  [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator  - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-11-29 11:52:06,133 947  [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory
+2017-11-29 11:52:06,643 1457 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000227: Running hbm2ddl schema export
+2017-11-29 11:52:06,653 1467 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000389: Unsuccessful: alter table Log drop foreign key FK_f132q3b5wga9iq22o7pci4cjv
+2017-11-29 11:52:06,653 1467 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - Can't DROP 'FK_f132q3b5wga9iq22o7pci4cjv'; check that column/key exists
+2017-11-29 11:52:06,656 1470 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000389: Unsuccessful: alter table Snag drop foreign key FK_pqy8mp70rys8ehcjtdq213kgt
+2017-11-29 11:52:06,656 1470 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - Can't DROP 'FK_pqy8mp70rys8ehcjtdq213kgt'; check that column/key exists
+2017-11-29 11:52:06,659 1473 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000389: Unsuccessful: alter table User_roles drop foreign key FK_l2p3xdjif1s8jt03iwwthvliw
+2017-11-29 11:52:06,661 1475 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - Can't DROP 'FK_l2p3xdjif1s8jt03iwwthvliw'; check that column/key exists
+2017-11-29 11:52:06,682 1496 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000389: Unsuccessful: create table Snag (snag_id integer not null, additional_desc varchar(-1) not null, blockage_type varchar(30) not null, cleared bit not null, date datetime not null, estimated_delay integer not null, hazard varchar(20) not null, locationLat double precision not null, locationLon double precision not null, users_id integer not null, primary key (snag_id))
+2017-11-29 11:52:06,682 1496 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-1) not null, blockage_type varchar(30) not null, cleared bit not null, date dat' at line 1
+2017-11-29 11:52:06,708 1522 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000389: Unsuccessful: alter table Snag add constraint FK_pqy8mp70rys8ehcjtdq213kgt foreign key (users_id) references Users (users_id)
+2017-11-29 11:52:06,709 1523 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - Table 'snaglog_test.Snag' doesn't exist
+2017-11-29 11:52:06,778 1592 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000230: Schema export complete
+2017-11-29 11:52:06,792 1606 [main] INFO  edu.matc.entity.UserGenericDAO  - STARTED - save
+2017-11-29 11:52:07,021 1835 [main] INFO  edu.matc.entity.UserGenericDAO  - FINISHED - save
+2017-11-29 11:52:07,021 1835 [main] INFO  edu.matc.entity.UserGenericDAO  - STARTED - query
+2017-11-29 11:52:07,153 1967 [main] INFO  edu.matc.entity.UserGenericDAO  - This is the hsql from edu.matc.entity.User
+2017-11-29 11:52:07,155 1969 [main] INFO  edu.matc.entity.UserGenericDAO  - FINISHED - query. Result size=5
+2017-11-29 11:52:07,159 1973 [main] INFO  edu.matc.entity.UserGenericDAO  - STARTED - get
+2017-11-29 11:52:07,172 1986 [main] INFO  edu.matc.entity.UserGenericDAO  - FINISHED - get
+2017-11-29 11:52:07,173 1987 [main] INFO  edu.matc.entity.UserGenericDAO  - STARTED - delete
+2017-11-29 11:52:07,182 1996 [main] INFO  edu.matc.entity.UserGenericDAO  - FINISHED - delete
+2017-11-29 11:52:07,187 2001 [main] INFO  edu.matc.entity.UserGenericDAO  - STARTED - query
+2017-11-29 11:52:07,199 2013 [main] INFO  edu.matc.entity.UserGenericDAO  - This is the hsql FROM User where usersId = 1
+2017-11-29 11:52:07,210 2024 [main] INFO  edu.matc.entity.UserGenericDAO  - FINISHED - query. Result size=1
+2017-11-29 11:52:07,223 2037 [main] INFO  edu.matc.entity.UserGenericDAO  - STARTED - get
+2017-11-29 11:52:07,230 2044 [main] INFO  edu.matc.entity.UserGenericDAO  - FINISHED - get
+2017-11-29 11:52:07,232 2046 [main] INFO  edu.matc.entity.UserGenericDAO  - STARTED - update
+2017-11-29 11:52:07,257 2071 [main] INFO  edu.matc.entity.UserGenericDAO  - FINISHED - update
+2017-11-29 11:52:07,257 2071 [main] INFO  edu.matc.entity.UserGenericDAO  - STARTED - get
+2017-11-29 11:52:07,268 2082 [main] INFO  edu.matc.entity.UserGenericDAO  - FINISHED - get
+2017-11-29 11:52:07,282 2096 [main] INFO  edu.matc.entity.SnagGenericDAO  - STARTED - query
+2017-11-29 11:52:07,312 2126 [main] INFO  edu.matc.entity.SnagGenericDAO  - This is the hsql from edu.matc.entity.Snag
+2017-11-29 11:52:07,313 2127 [main] INFO  edu.matc.entity.SnagGenericDAO  - FINISHED - query. Result size=2
+2017-11-29 11:52:07,317 2131 [main] INFO  edu.matc.entity.UserGenericDAO  - STARTED - get
+2017-11-29 11:52:07,326 2140 [main] INFO  edu.matc.entity.UserGenericDAO  - FINISHED - get
+2017-11-29 11:52:07,329 2143 [main] INFO  edu.matc.entity.UserGenericDAO  - STARTED - query
+2017-11-29 11:52:07,333 2147 [main] INFO  edu.matc.entity.UserGenericDAO  - This is the hsql from edu.matc.entity.User
+2017-11-29 11:52:07,334 2148 [main] INFO  edu.matc.entity.UserGenericDAO  - FINISHED - query. Result size=4
+2017-11-29 11:52:07,338 2152 [main] INFO  edu.matc.entity.UserGenericDAO  - STARTED - query
+2017-11-29 11:52:07,342 2156 [main] INFO  edu.matc.entity.UserGenericDAO  - This is the hsql from edu.matc.entity.User
+2017-11-29 11:52:07,342 2156 [main] INFO  edu.matc.entity.UserGenericDAO  - FINISHED - query. Result size=4
+2017-11-29 11:52:07,343 2157 [main] INFO  edu.matc.entity.UserGenericDAO  - STARTED - get
+2017-11-29 11:52:07,345 2159 [main] INFO  edu.matc.entity.UserGenericDAO  - FINISHED - get
+2017-11-29 11:52:07,345 2159 [main] INFO  edu.matc.entity.UserGenericDAO  - STARTED - delete
+2017-11-29 11:52:07,350 2164 [main] INFO  edu.matc.entity.UserGenericDAO  - FINISHED - delete
+2017-11-29 11:52:07,351 2165 [main] INFO  edu.matc.entity.UserGenericDAO  - STARTED - query
+2017-11-29 11:52:07,354 2168 [main] INFO  edu.matc.entity.UserGenericDAO  - This is the hsql from edu.matc.entity.User
+2017-11-29 11:52:07,355 2169 [main] INFO  edu.matc.entity.UserGenericDAO  - FINISHED - query. Result size=3
+2017-11-29 11:52:07,355 2169 [main] INFO  edu.matc.entity.UserGenericDAO  - STARTED - save
+2017-11-29 11:52:07,362 2176 [main] INFO  edu.matc.entity.UserGenericDAO  - FINISHED - save
+2017-11-29 11:52:07,380 2194 [main] INFO  org.hibernate.cfg.Configuration  - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2017-11-29 11:52:07,381 2195 [main] INFO  org.hibernate.cfg.Configuration  - HHH000040: Configuration resource: /hibernate.cfg.xml
+2017-11-29 11:52:07,393 2207 [main] INFO  org.hibernate.cfg.Configuration  - HHH000041: Configured SessionFactory: null
+2017-11-29 11:52:07,424 2238 [main] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-11-29 11:52:07,429 2243 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/snaglog_test]
+2017-11-29 11:52:07,433 2247 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000046: Connection properties: {user=abriggs3, password=****}
+2017-11-29 11:52:07,435 2249 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000006: Autocommit mode: false
+2017-11-29 11:52:07,437 2251 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-11-29 11:52:07,463 2277 [main] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2017-11-29 11:52:07,464 2278 [main] INFO  org.hibernate.engine.jdbc.internal.LobCreatorBuilder  - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+2017-11-29 11:52:07,486 2300 [main] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator  - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-11-29 11:52:07,490 2304 [main] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory
+2017-11-29 11:52:07,542 2356 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000227: Running hbm2ddl schema export
+2017-11-29 11:52:07,548 2362 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000389: Unsuccessful: alter table Log drop foreign key FK_f132q3b5wga9iq22o7pci4cjv
+2017-11-29 11:52:07,548 2362 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - Can't DROP 'FK_f132q3b5wga9iq22o7pci4cjv'; check that column/key exists
+2017-11-29 11:52:07,550 2364 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000389: Unsuccessful: alter table Snag drop foreign key FK_pqy8mp70rys8ehcjtdq213kgt
+2017-11-29 11:52:07,550 2364 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - Can't DROP 'FK_pqy8mp70rys8ehcjtdq213kgt'; check that column/key exists
+2017-11-29 11:52:07,551 2365 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000389: Unsuccessful: alter table User_roles drop foreign key FK_l2p3xdjif1s8jt03iwwthvliw
+2017-11-29 11:52:07,551 2365 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - Can't DROP 'FK_l2p3xdjif1s8jt03iwwthvliw'; check that column/key exists
+2017-11-29 11:52:07,585 2399 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000389: Unsuccessful: create table Snag (snag_id integer not null, additional_desc varchar(-1) not null, blockage_type varchar(30) not null, cleared bit not null, date datetime not null, estimated_delay integer not null, hazard varchar(20) not null, locationLat double precision not null, locationLon double precision not null, users_id integer not null, primary key (snag_id))
+2017-11-29 11:52:07,585 2399 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-1) not null, blockage_type varchar(30) not null, cleared bit not null, date dat' at line 1
+2017-11-29 11:52:07,613 2427 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000389: Unsuccessful: alter table Snag add constraint FK_pqy8mp70rys8ehcjtdq213kgt foreign key (users_id) references Users (users_id)
+2017-11-29 11:52:07,614 2428 [main] ERROR org.hibernate.tool.hbm2ddl.SchemaExport  - Table 'snaglog_test.Snag' doesn't exist
+2017-11-29 11:52:07,692 2506 [main] INFO  org.hibernate.tool.hbm2ddl.SchemaExport  - HHH000230: Schema export complete
+2017-11-29 11:52:28,445 0    [http-nio-8080-exec-9] INFO  org.hibernate.annotations.common.Version  - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2017-11-29 11:52:28,527 82   [http-nio-8080-exec-9] INFO  org.hibernate.Version  - HHH000412: Hibernate Core {4.3.11.Final}
+2017-11-29 11:52:28,529 84   [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Environment  - HHH000206: hibernate.properties not found
+2017-11-29 11:52:28,548 103  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Environment  - HHH000021: Bytecode provider name : javassist
+2017-11-29 11:52:28,650 205  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Configuration  - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2017-11-29 11:52:28,650 205  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Configuration  - HHH000040: Configuration resource: /hibernate.cfg.xml
+2017-11-29 11:52:28,864 419  [http-nio-8080-exec-9] INFO  org.hibernate.cfg.Configuration  - HHH000041: Configured SessionFactory: null
+2017-11-29 11:52:29,184 739  [http-nio-8080-exec-9] WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-11-29 11:52:29,191 746  [http-nio-8080-exec-9] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/snaglog]
+2017-11-29 11:52:29,192 747  [http-nio-8080-exec-9] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000046: Connection properties: {user=abriggs3, password=****}
+2017-11-29 11:52:29,197 752  [http-nio-8080-exec-9] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000006: Autocommit mode: false
+2017-11-29 11:52:29,200 755  [http-nio-8080-exec-9] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl  - HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-11-29 11:52:29,810 1365 [http-nio-8080-exec-9] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2017-11-29 11:52:29,867 1422 [http-nio-8080-exec-9] INFO  org.hibernate.engine.jdbc.internal.LobCreatorBuilder  - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+2017-11-29 11:52:30,606 2161 [http-nio-8080-exec-9] INFO  org.hibernate.engine.transaction.internal.TransactionFactoryInitiator  - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-11-29 11:52:30,618 2173 [http-nio-8080-exec-9] INFO  org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory  - HHH000397: Using ASTQueryTranslatorFactory
+2017-11-29 11:52:31,641 3196 [http-nio-8080-exec-9] INFO  edu.matc.entity.SnagGenericDAO  - STARTED - query
+2017-11-29 11:52:32,231 3786 [http-nio-8080-exec-9] INFO  edu.matc.entity.SnagGenericDAO  - This is the hsql from edu.matc.entity.Snag
+2017-11-29 11:52:32,234 3789 [http-nio-8080-exec-9] INFO  edu.matc.entity.SnagGenericDAO  - FINISHED - query. Result size=11
+2017-11-29 11:52:50,026 21581 [http-nio-8080-exec-3] INFO  edu.matc.entity.UserGenericDAO  - STARTED - query
+2017-11-29 11:52:50,039 21594 [http-nio-8080-exec-3] INFO  edu.matc.entity.UserGenericDAO  - This is the hsql from edu.matc.entity.User
+2017-11-29 11:52:50,039 21594 [http-nio-8080-exec-3] INFO  edu.matc.entity.UserGenericDAO  - FINISHED - query. Result size=4

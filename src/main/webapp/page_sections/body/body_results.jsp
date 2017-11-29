@@ -38,7 +38,9 @@
             </tbody>
         </table>
         <input type="submit" class="btn btn-default" name="submitButton" value="delete">
-        <input type="submit" class="btn btn-default" name="submitButton" value="update">
+        <input type="submit"  class="btn btn-default" name="submitButton" value="update">
+        <input type="button" id="btnUpdate" class="btn btn-default" name="submitButton" value="JS update">
     </form>
 
 </div>
+<script src="js/updateUser.js"></script>

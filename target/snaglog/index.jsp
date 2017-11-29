@@ -99,7 +99,7 @@
                 </ul>
               </li>
               <li><a href="practice_geolocation.jsp">geolocation practice page</a></li>
-              <li><a href="#">Drop Down 4</a></li>
+              <li><a href="genericListAll">admin</a></li>
               <li><a href="#">Drop Down 5</a></li>
             </ul>
           </li>
