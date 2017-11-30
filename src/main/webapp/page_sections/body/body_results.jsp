@@ -27,11 +27,11 @@
             <c:forEach items="${users}" var="user">
                 <tr>
                     <td><input type="radio" name="userCheck" value="${user.usersId}"/></td>
-                    <td>${user.usersId}</td>
-                    <td>${user.firstName}</td>
-                    <td>${user.lastName}</td>
-                    <td>${user.userName}</td>
-                    <td>${user.userPassword}</td>
+                    <td>${user.usersId}</td><input type="hidden" value="${user.usersId}">
+                    <td>${user.firstName}</td><input type="hidden" value="${user.firstName}">
+                    <td>${user.lastName}</td><input type="hidden" value="${user.lastName}">
+                    <td>${user.userName}</td><input type="hidden" value="${user.userName}">
+                    <td>${user.userPassword}</td><input type="hidden" value="${user.userPassword}">
                 </tr>
             </c:forEach>
 
@@ -41,6 +41,7 @@
         <input type="submit"  class="btn btn-default" name="submitButton" value="update">
         <input type="button" id="btnUpdate" class="btn btn-default" name="submitButton" value="JS update">
     </form>
+    <div id="updateDiv"></div>
 
 </div>
 <script src="js/updateUser.js"></script>
