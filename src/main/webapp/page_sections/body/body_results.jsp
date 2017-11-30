@@ -27,21 +27,20 @@
             <c:forEach items="${users}" var="user">
                 <tr>
                     <td><input type="radio" name="userCheck" value="${user.usersId}"/></td>
-                    <td>${user.usersId}</td><input type="hidden" value="${user.usersId}">
-                    <td>${user.firstName}</td><input type="hidden" value="${user.firstName}">
-                    <td>${user.lastName}</td><input type="hidden" value="${user.lastName}">
-                    <td>${user.userName}</td><input type="hidden" value="${user.userName}">
-                    <td>${user.userPassword}</td><input type="hidden" value="${user.userPassword}">
+                    <td>${user.usersId}</td>
+                    <td><input type="text" value="${user.firstName}" name="firstName${user.usersId}"></td>
+                    <td><input type="text" value="${user.lastName}" name="lastName${user.usersId}"></td>
+                    <td>${user.userName}</td>
+                    <td><input type="text" value="${user.userPassword}" name="password${user.usersId}"></td>
                 </tr>
             </c:forEach>
 
             </tbody>
         </table>
+        <h4 style="color:red">${noUserSelectedError}</h4>
         <input type="submit" class="btn btn-default" name="submitButton" value="delete">
         <input type="submit"  class="btn btn-default" name="submitButton" value="update">
-        <input type="button" id="btnUpdate" class="btn btn-default" name="submitButton" value="JS update">
     </form>
     <div id="updateDiv"></div>
-
 </div>
-<script src="js/updateUser.js"></script>
+

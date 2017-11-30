@@ -14,6 +14,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
 
@@ -24,6 +25,8 @@ import java.util.List;
 public class GenericListAll extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        HttpSession session = request.getSession();
+
         User user = null;
         UserRoles userRoles = null;
         Log log = null;
@@ -44,7 +47,8 @@ public class GenericListAll extends HttpServlet {
 
         List<User> userList = userService.getAll();
         if (userList != null) {
-            request.setAttribute("users", userList);
+         //   request.setAttribute("users", userList);
+            session.setAttribute("users", userList);
         }
 
 
