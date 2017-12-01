@@ -27,7 +27,7 @@ public class AdminModifySnag extends HttpServlet {
 
         response.setContentType("text/html");
         String changeAction = request.getParameter("submitButton");
-        String IdOfRecord = request.getParameter("userCheck");
+        String IdOfRecord = request.getParameter("snagCheck");
         Integer IdOfRecordAsInteger = Integer.parseInt(IdOfRecord);
 
         if(IdOfRecordAsInteger == 0) {
@@ -39,29 +39,17 @@ public class AdminModifySnag extends HttpServlet {
         }
 
 
-        IGenericService<Snag> userService = new GenericServiceImpl<Snag>(
+        IGenericService<Snag> snagService = new GenericServiceImpl<Snag>(
                 Snag.class, HibernateUtil.getSessionFactory());
 
         if (changeAction.equalsIgnoreCase("delete")) {
-            User userToDelete = userService.get(User.class, IdOfRecordAsInteger);
+            Snag snagToDelete = snagService.get(Snag.class, IdOfRecordAsInteger);
             request.setAttribute("changeAction", changeAction);
             request.setAttribute("IdOfRecord", IdOfRecord);
-            request.setAttribute("user", userToDelete);
-            userService.delete(userToDelete);
+            request.setAttribute("snag", snagToDelete);
+            snagService.delete(snagToDelete);
         }
-        if (changeAction.equalsIgnoreCase("update")) {
-            User userToUpdate = userService.get(User.class, IdOfRecordAsInteger);
-            request.setAttribute("changeAction", changeAction);
-            request.setAttribute("IdOfRecord", IdOfRecord);
-            request.setAttribute("user", userToUpdate);
 
-            userToUpdate.setFirstName(request.getParameter("firstName" + IdOfRecord));
-            userToUpdate.setLastName(request.getParameter("lastName" + IdOfRecord));
-            userToUpdate.setUserPassword(request.getParameter("password" + IdOfRecord));
-
-            userService.update(userToUpdate);
-
-        }
 
         RequestDispatcher dispatcher = request.getRequestDispatcher("pages/adminModifyRecord_confirm.jsp");
         dispatcher.forward(request, response);

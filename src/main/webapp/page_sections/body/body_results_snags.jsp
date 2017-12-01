@@ -8,23 +8,33 @@
             <tr>
                 <th>Select</th>
                 <th>ID</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Username</th>
-                <th>Password</th>
+                <th>latitude</th>
+                <th>longitude</th>
+                <th>type</th>
+                <th>hazard</th>
+                <th>delay</th>
+                <th>additional info</th>
+                <th>date marked</th>
+                <th>cleared</th>
+                <th>submitted by</th>
             </tr>
             </thead>
             <tbody>
             <tr>
-                <td><input type="radio" name="userCheck" value="0" checked="checked"/></td>
+                <td><input type="radio" name="snagCheck" value="0" checked="checked"/></td>
                 <td>select</td>
                 <td>none</td>
                 <td></td>
                 <td></td>
                 <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
             </tr>
 
-            <c:forEach items="${snags}" var="user">
+            <c:forEach items="${snags}" var="snag">
                 <tr>
                     <td><input type="radio" name="snagCheck" value="${snag.snagId}"/></td>
                     <td>${snag.snagId}</td>
@@ -36,7 +46,7 @@
                     <td>${snag.additionalInformation}</td>
                     <td>${snag.dateMarked}</td>
                     <td>${snag.cleared}</td>
-                    <td>${snag.userByUserId}</td>
+                    <td>${snag.userByUserId.userName}</td>
                 </tr>
             </c:forEach>
 
