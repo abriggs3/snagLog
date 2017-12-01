@@ -42,6 +42,9 @@
   <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
 
   <link rel="stylesheet" href="css/decisionMaker.css">
+
+
+
 </head>
 
 <body>
@@ -100,7 +103,7 @@
               </li>
               <li><a href="practice_geolocation.jsp">geolocation practice page</a></li>
               <li><a href="requestDirectorAdmin?destination=adminMain">admin</a></li>
-              <li><a href="#">Drop Down 5</a></li>
+              <li><a href="testPage">test page</a></li>
             </ul>
           </li>
           <c:choose>

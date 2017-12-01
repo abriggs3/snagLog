@@ -27,10 +27,15 @@ function initMap() {
     })
 
 
-    $( function() {
-        $( "#datepicker" ).datepicker();
-        $( "#datepicker" ).datepicker("show");
-    } );
+    $(function() {
+        $('input[name="daterange"]').daterangepicker({
+            timePicker: true,
+            timePickerIncrement: 30,
+            locale: {
+                format: 'MM/DD/YYYY h:mm A'
+            }
+        });
+    });
 }
 
 function displayCoordinates(point) {
