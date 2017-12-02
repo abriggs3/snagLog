@@ -26,23 +26,15 @@
     <link href="css/style.css" rel="stylesheet">
     <link href="css/style_for_maps.css" rel="stylesheet">
 
-
-<!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+    <!-- for datepicker -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
     <link rel="stylesheet" href="css/snaglog_custom.css">
     <link rel="stylesheet" href="css/snaglog_modal.css">
 
 
-    <!-- for date range picker -->
-    <!-- Include Required Prerequisites
-    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/1/jquery.min.js"></script>-->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/bootstrap/3/css/bootstrap.css" />
 
-    <!-- Include Date Range Picker -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
-  
+
 
 </head>
 
@@ -147,16 +139,24 @@ Services Section
                 <!-- Map Section -->
 
                 <div class="eventtext">
-                    <form class="form-group" method="post" action="markSnag">
+                    <form class="form-group" method="post" action="markSnag" id="logForm">
                         <div>
                             <c:choose>
                                 <c:when test="${not empty loggedInUsersName}">
-                                    <input type="submit" value="publish">
                                 </c:when>
                                 <c:otherwise>
                                     <h4><a href="login">In order to create your log, sign in now.</a></h4>
                                 </c:otherwise>
                             </c:choose>
+                        </div>
+                        <div>
+                            <input class="input-sm" type="text" id="datepicker" name="datepicker" placeholder="launch date" ${disabledByDefault}>
+                        </div>
+                        <div>
+                            <input class="input-sm" type="text" id="startTime" name="startTime" placeholder="launch date" ${disabledByDefault}>
+                        </div>
+                        <div>
+                            <input class="input-sm" type="text" id="tripLength" name="tripLength" placeholder="trip duration in hours" ${disabledByDefault}>
                         </div>
                         <div>Latitude: <span id="latspan"></span></div>
                         <div>Longitude: <span id="lngspan"></span></div>
@@ -189,9 +189,9 @@ Services Section
                         </div>
                         <div id="waterTypeSubSelect"></div>
                         <div>
-                            <input type="text" id="daterange">
-                        </div>
+                            <textarea class="form-control" rows="10" name="logText" form="logForm" ${disabledByDefault}>Tell about your trip</textarea>
 
+                        </div>
 
                         <div>
                         <c:choose>
@@ -544,12 +544,11 @@ Footer
 
 <script src="contactform/contactform.js"></script>
 
-<!-- for maps -->
-<script src="js/log.js"></script>
-<!-- for decision maker -->
-<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
-<script src="js/validate.js"></script>
 
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="js/log.js"></script>
 
 </body>
 
