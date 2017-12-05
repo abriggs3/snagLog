@@ -54,8 +54,8 @@ function populateCoordInForm(btnId) {
 
 function giveSubSelectForWaterType(waterTypeSelected) {
     if (waterTypeSelected == "flatWater") {
-        $("#waterTypeSubSelect").empty().append("<label for='flatWaterSubChoice'>flat-water type </label><br>" +
-            "                            <select class='form-control' id='flatWaterSubChoice' name='flatWaterSubChoice'>" +
+        $("#waterTypeSubSelect").empty().append("<label for='waterSubChoice'>flat-water type </label><br>" +
+            "                            <select class='form-control' id='waterSubChoice' name='waterSubChoice'>" +
             "                                <option value='noSelection'>click to select</option>" +
             "                                <option value='lake'>small lake - i.e. wind sheltered</option>" +
             "                                <option value='large lake'>large lake - i.e open to high wind and waves</option>" +
@@ -67,8 +67,8 @@ function giveSubSelectForWaterType(waterTypeSelected) {
     }
 
     if (waterTypeSelected == "whiteWater") {
-        $("#waterTypeSubSelect").empty().append("<label for='whiteWaterSubChoice'>whitewater type -- highest class on route </label><br>" +
-            "                            <select class='form-control' id='whiteWaterSubChoice' name='whiteWaterSubChoice'>" +
+        $("#waterTypeSubSelect").empty().append("<label for='waterSubChoice'>whitewater type -- highest class on route </label><br>" +
+            "                            <select class='form-control' id='waterSubChoice' name='waterSubChoice'>" +
             "                                <option value='noSelection'>click to select</option>" +
             "                                <option value='class1'>class 1 - small rough spots - no maneuvering required</option>" +
             "                                <option value='class2'>class 2 - some rocks, small drops - basic maneuvering required</option>" +

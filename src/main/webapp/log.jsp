@@ -153,9 +153,6 @@ Services Section
                             <input class="input-sm" type="text" id="datepicker" name="datepicker" placeholder="launch date" ${disabledByDefault}>
                         </div>
                         <div>
-                            <input class="input-sm" type="text" id="startTime" name="startTime" placeholder="launch date" ${disabledByDefault}>
-                        </div>
-                        <div>
                             <input class="input-sm" type="text" id="tripLength" name="tripLength" placeholder="trip duration in hours" ${disabledByDefault}>
                         </div>
                         <div>Latitude: <span id="latspan"></span></div>
