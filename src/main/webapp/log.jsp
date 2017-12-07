@@ -139,7 +139,7 @@ Services Section
                 <!-- Map Section -->
 
                 <div class="eventtext">
-                    <form class="form-group" method="post" action="markSnag" id="logForm">
+                    <form class="form-group" method="post" action="createSnagLog" id="logForm">
                         <div>
                             <c:choose>
                                 <c:when test="${not empty loggedInUsersName}">

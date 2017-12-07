@@ -1,8 +1,10 @@
 package edu.matc.io.weatherbit;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.annotation.Generated;
 
+@JsonIgnoreProperties(value = { "snow" })
 @Generated("com.robohorse.robopojogenerator")
 public class DataItem{
 

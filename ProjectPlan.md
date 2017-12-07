@@ -42,12 +42,12 @@
 - [x] Deploy to AWS
 - [x] Create DAO for snags (generic)
 - [x] Create DAO for snag report (generic)
-- [ ] Add tests for new functionality
+- [x] Add tests for new functionality
 - [x] Time log entries
 
 ### Week 6
 - [x] Integration with google maps api 
-- [ ] Add web service for current weather
+- [x] Add web service for current weather
 - [x] Create DOAs for remaining tables
 - [ ] Create add summary page for new snag reports
 - [x] Time log entries
@@ -89,11 +89,14 @@
 ### Week 14
 - [ ] clean up code
 - [ ] Create final presentation
-- [ ] Time log entries
+- [x] Time log entries
 
 ### Week 15
-- [ ] Final Presentation
-- [ ] Time log entries
+- [x] Get weather API working
+- [ ] Fix log db table
+- [ ] Fix AWS deploy
+- [x] Time log entries
 
 ### Week 16
+- [ ] Final Presentation
 - [ ] Time log entries

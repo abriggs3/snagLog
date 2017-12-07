@@ -69,7 +69,7 @@ public class ValidateRegistration extends HttpServlet {
 
         // if the passwords don't match, reject form
         if (!request.getParameter("password").equals(request.getParameter("password_confirmation"))) {
-              request.setAttribute("passwordMatchError", "passwords must match");
+            request.setAttribute("passwordMatchError", "passwords must match");
             registrationValid = false;
         }
 

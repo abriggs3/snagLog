@@ -3,6 +3,7 @@ package edu.matc.contoller;
         import edu.matc.HibernateUtil;
         import edu.matc.entity.Log;
         import edu.matc.entity.User;
+        import edu.matc.io.weatherbit.DataItem;
         import edu.matc.service.GenericServiceImpl;
         import edu.matc.service.IGenericService;
         import org.apache.log4j.Logger;
@@ -14,12 +15,16 @@ package edu.matc.contoller;
         import javax.servlet.http.HttpServletRequest;
         import javax.servlet.http.HttpServletResponse;
         import java.io.IOException;
+        import java.text.DateFormat;
+        import java.text.ParseException;
+        import java.text.SimpleDateFormat;
+        import java.util.Date;
         import java.util.HashMap;
         import java.util.List;
         import java.util.Map;
 
 @WebServlet(
-        urlPatterns = {"/markSnag"}
+        urlPatterns = {"/createSnagLog"}
 )
 
 public class CreateSnagLog extends HttpServlet {
@@ -39,6 +44,23 @@ public class CreateSnagLog extends HttpServlet {
         List<User> users = userService.query("FROM User where userName = '" + userNameOfCurrentUser + "'", params);
         User user = users.get(0);
 
+        //get date from form and covert to usable data type
+        String dateFromFormAsString = request.getParameter("datepicker");
+        Date dateFromFormParsed = new Date();
+        try {
+            DateFormat formatter = new SimpleDateFormat("yyyy/MM/dd");
+            dateFromFormParsed = formatter.parse(dateFromFormAsString);
+
+        } catch (ParseException e) {
+            logger.error("date from form was unable to be parsed.");
+            dateFromFormParsed = null;
+        }
+
+        int tripLength = Integer.parseInt(request.getParameter("tripLength"));
+
+
+
+
         Double startLocationLat = Double.parseDouble(request.getParameter("startPointLat"));
         Double startLocationLon = Double.parseDouble(request.getParameter("startPointLon"));
         Double endLocationLat = Double.parseDouble(request.getParameter("endPointLat"));
@@ -47,17 +69,28 @@ public class CreateSnagLog extends HttpServlet {
         String waterBodyType = request.getParameter("waterBodyType");
         String waterSubChoice = request.getParameter("waterSubChoice");
         String logText = request.getParameter("logText");
-        //TODO get weather data
-        //Double weather variables go here
-
-        // TODO fix constructor to match Log-- log = new Log(startLocationLat, startLocationLon, endLocationLat, endLocationLon, waterBodyName, waterBodyType, waterSubChoice, logText);
 
 
-        // need new constructor -- logService.save(log);
-        // need new constructor -- request.setAttribute("snagMarked", log);
+        //call the weather service to get additional info
+
+        WeatherApi weatherApi = new WeatherApi();
+        DataItem dataItem = weatherApi.callWeatherApi(startLocationLat, startLocationLon);
+        System.out.println("this is the dataItem " + dataItem.toString());
 
 
-        RequestDispatcher dispatcher = request.getRequestDispatcher("pages/markSnagConfirmation.jsp");
+        String city = dataItem.getCityName();
+        String state = dataItem.getStateCode();
+        String weatherDescription = dataItem.getWeather().getDescription();
+        Double temperature = dataItem.getTemp();
+
+        Log log = new Log(dateFromFormParsed, tripLength, startLocationLat, startLocationLon, endLocationLat, endLocationLon, waterBodyName, waterBodyType, waterSubChoice, logText, city, state, weatherDescription, temperature, user);
+
+
+        logService.save(log);
+        request.setAttribute("logData", log);
+
+
+        RequestDispatcher dispatcher = request.getRequestDispatcher("pages/makeLogConfirmation.jsp");
         dispatcher.forward(request, response);
 
     }

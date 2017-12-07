@@ -56,20 +56,29 @@ SELECT * FROM User_roles;
 CREATE TABLE Log (
   log_id int NOT NULL AUTO_INCREMENT,
   users_id int NOT NULL,
-  river_name CHAR(30) NOT NULL,
-  state CHAR(2) NOT NULL,
-  county CHAR(30),
-  nearest_city CHAR(30),
-  put_in_location VARCHAR(256),
-  takeout_location VARCHAR(256),
+  launchDate DATE,
+  tripDuration INT,
+  startLocationLat DECIMAL(10, 8),
+  startLocationLon DECIMAL(11, 8),
+  endLocationLat DECIMAL(10, 8),
+  endLocationLon DECIMAL(11, 8),
+  waterBodyName CHAR(30),
+  waterBodyType CHAR(30),
+  waterSubChoice CHAR(30),
+  logText TEXT,
+  city CHAR(30),
+  state CHAR(30),
+  weatherDescription CHAR(255),
+  temperature DECIMAL(5, 3),
   PRIMARY KEY (log_id),
   FOREIGN KEY (users_id) REFERENCES Users(users_id)
 );
 
 DESC Log;
 
-INSERT INTO Log (log_id, users_id, river_name, state, county, nearest_city, put_in_location, takeout_location) VALUES (NULL, '2', 'Yahara', 'WI', 'Dane', 'DeForest', 'Veterans Park, Deforest', 'Windsor Park, Windsor');
-INSERT INTO Log (log_id, users_id, river_name, state, county, nearest_city, put_in_location, takeout_location) VALUES (NULL, '3', 'Crayfish', 'WI', 'Jefferson', 'Lake Mills', 'County A Bridge, Milford, Wisconsin', 'Riverview Drive, Jefferson, Wisconsin');
+INSERT INTO Log (log_id, users_id, launchDate, tripDuration, startLocationLat, startLocationLon, endLocationLat, endLocationLon, waterBodyName, waterBodyType, waterSubChoice, logText, city, state, weatherDescription, temperature) VALUES (NULL, '2', '2017-12-15', '4', '43.12', '-89.32', '43.14', '88.35','Yahara', 'flat water', 'small river', 'Nice in high water, otherwise boat will drag.', 'Deforest', 'WI', 'cloudy', 45);
+INSERT INTO Log (log_id, users_id, launchDate, tripDuration, startLocationLat, startLocationLon, endLocationLat, endLocationLon, waterBodyName, waterBodyType, waterSubChoice, logText, city, state, weatherDescription, temperature) VALUES (NULL, '3', '2017-01-03', '6', '48.12', '-90.33', '47.33', '-88.35', 'Crayfish', 'flat water', 'small river', 'Easy paddle on round for out and back.', 'Jefferson', 'WI', 'sunny', 82);
+
 
 /* use a 'select' to test if it worked */
 SELECT * FROM Log;
