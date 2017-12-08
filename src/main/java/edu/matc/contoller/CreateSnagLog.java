@@ -58,9 +58,6 @@ public class CreateSnagLog extends HttpServlet {
 
         int tripLength = Integer.parseInt(request.getParameter("tripLength"));
 
-
-
-
         Double startLocationLat = Double.parseDouble(request.getParameter("startPointLat"));
         Double startLocationLon = Double.parseDouble(request.getParameter("startPointLon"));
         Double endLocationLat = Double.parseDouble(request.getParameter("endPointLat"));
@@ -72,16 +69,16 @@ public class CreateSnagLog extends HttpServlet {
 
 
         //call the weather service to get additional info
-
         WeatherApi weatherApi = new WeatherApi();
         DataItem dataItem = weatherApi.callWeatherApi(startLocationLat, startLocationLon);
         System.out.println("this is the dataItem " + dataItem.toString());
 
-
+        // use the weather service data
         String city = dataItem.getCityName();
         String state = dataItem.getStateCode();
         String weatherDescription = dataItem.getWeather().getDescription();
-        Double temperature = dataItem.getTemp();
+        // get the temp and convert from C to F
+        Double temperature = ((dataItem.getTemp()) * 1.8) + 32;
 
         Log log = new Log(dateFromFormParsed, tripLength, startLocationLat, startLocationLon, endLocationLat, endLocationLon, waterBodyName, waterBodyType, waterSubChoice, logText, city, state, weatherDescription, temperature, user);
 

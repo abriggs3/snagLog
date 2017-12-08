@@ -174,14 +174,14 @@ Services Section
                         </div>
                         <div>
                             <label>Name of primary water body</label><br>
-                            <input class="input-sm" type="text" id="waterBodyName" placeholder="for example, Namkagon" ${disabledByDefault}><br>
+                            <input class="input-sm" type="text" id="waterBodyName" name="waterBodyName" placeholder="for example, Namkagon" ${disabledByDefault}><br>
                         </div>
                         <div>
                         <label>Type of water</label>
                             <select class="form-control" id="waterBodyType" name="waterBodyType" ${disabledByDefault}>
                                 <option value="noSelection">click to select</option>
-                                <option value="flatWater">flat-water - out and back paddle possible</option>
-                                <option value="whiteWater">white-water - current prevents out and back paddle</option>
+                                <option value="flat water">flat-water - out and back paddle possible</option>
+                                <option value="white water">white-water - current prevents out and back paddle</option>
                             </select>
                         </div>
                         <div id="waterTypeSubSelect"></div>

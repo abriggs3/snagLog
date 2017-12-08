@@ -3,9 +3,9 @@
 
     <h2>Admin Main</h2>
     <h5>
-        <a href="genericListAll">View or Modify User Data</a><br>
-        <a href="genericListSnag">View or Modify Snag Data</a><br>
-        <a href="#">View or Modify SnagLogs</a>
+        <a href="genericListAll">View, Modify, or Delete User Data</a><br>
+        <a href="genericListSnag">View or Delete Snag Data</a><br>
+        <a href="genericListLog">View or Delete SnagLogs</a>
 
     </h5>
 
