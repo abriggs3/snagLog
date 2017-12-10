@@ -27,6 +27,8 @@ DESC Users;
 INSERT INTO Users (users_id, first_name, last_name, user_name, user_pass) VALUES (NULL, 'Admin', 'Person', 'admin', 'admin');
 INSERT INTO Users (users_id, first_name, last_name, user_name, user_pass) VALUES (NULL, 'Contributor', 'Person', 'contributorUser', 'contributor');
 INSERT INTO Users (users_id, first_name, last_name, user_name, user_pass) VALUES (NULL,'John', 'Carter', 'BigJohn', 'contributor');
+INSERT INTO Users (users_id, first_name, last_name, user_name, user_pass) VALUES (NULL, 'Bat', 'Man', 'batman', 'batman');
+INSERT INTO Users (users_id, first_name, last_name, user_name, user_pass) VALUES (NULL,'Super', 'Man', 'superman', 'superman');
 
 /* use a 'select' to test if it worked */
 SELECT * FROM Users;
@@ -48,6 +50,9 @@ DESC User_roles;
 INSERT INTO User_roles (user_roles_id, users_id, user_name, role_name) VALUES (NULL, 1, 'admin', 'administrator');
 INSERT INTO User_roles (user_roles_id, users_id, user_name, role_name) VALUES (NULL, 2, 'contributorUser', 'contributor');
 INSERT INTO User_roles (user_roles_id, users_id, user_name, role_name) VALUES (NULL, 3, 'BigJohn', 'contributor');
+INSERT INTO User_roles (user_roles_id, users_id, user_name, role_name) VALUES (NULL, 2, 'batman', 'contributor');
+INSERT INTO User_roles (user_roles_id, users_id, user_name, role_name) VALUES (NULL, 3, 'superman', 'contributor');
+
 
 
 /* use a 'select' to test if it worked */
