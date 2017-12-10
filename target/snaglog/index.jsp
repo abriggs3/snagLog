@@ -352,7 +352,7 @@
   </section>
 
   <!--==========================
-  Testimonials Section
+  Log Display Section
   ============================-->
   <section id="testimonials">
     <div class="container wow fadeInUp">
