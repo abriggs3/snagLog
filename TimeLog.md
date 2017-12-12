@@ -19,5 +19,5 @@
 |Week 12| ability add snags, changing of Snag class, dealing with database corruption | 15  |   | 
 |Week 13| Adding Log capacity, still dealing with db corruption on AWS | 10  |   | 
 |Week 14| Dealing with jquery conflict, adding user update, adding form for logs | 15  |   | 
-|Week 15| Adding java-side weather api, fixing db for new log version,  | 10  |   | 
-|Week 16| TODO | 1 | |
+|Week 15| Adding java-side weather api, fixing db for new log version, fixing AWS deploy  | 17  |   | 
+|Week 16| Finishing up, making video | 7 | |
