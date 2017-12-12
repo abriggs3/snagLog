@@ -1,13 +1,11 @@
 package edu.matc.entity;
 
-import org.hibernate.annotations.GenericGenerator;
-
 import javax.persistence.*;
+import java.sql.Timestamp;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "Snag")
-public class Snag implements Storable {
+public class Snag {
     private int snagId;
     private double locationLat;
     private double locationLon;
@@ -15,14 +13,14 @@ public class Snag implements Storable {
     private String hazard;
     private Integer estimatedDelay;
     private String additionalInformation;
-    private User userByUserId;
-    private LocalDate dateMarked;
+    private Timestamp dateMarked;
     private boolean cleared;
+    private User userByUserId;
 
     public Snag() {
     }
 
-    public Snag(int snagId, double locationLat, double locationLon, String blockageType, String hazard, Integer estimatedDelay, String additionalInformation, User userByUserId, LocalDate dateMarked, boolean cleared) {
+    public Snag(int snagId, double locationLat, double locationLon, String blockageType, String hazard, Integer estimatedDelay, String additionalInformation, User userByUserId, Timestamp dateMarked, boolean cleared) {
         this.snagId = snagId;
         this.locationLat = locationLat;
         this.locationLon = locationLon;
@@ -46,10 +44,9 @@ public class Snag implements Storable {
         this.userByUserId = userByUserId;
     }
 
+
     @Id
     @Column(name = "snag_id", nullable = false)
-    @GeneratedValue(generator="increment")
-    @GenericGenerator(name="increment", strategy = "increment")
     public int getSnagId() {
         return snagId;
     }
@@ -59,7 +56,7 @@ public class Snag implements Storable {
     }
 
     @Basic
-    @Column(name = "locationLat", nullable = true, length = 30)
+    @Column(name = "locationLat", nullable = false, precision = 8)
     public double getLocationLat() {
         return locationLat;
     }
@@ -69,7 +66,7 @@ public class Snag implements Storable {
     }
 
     @Basic
-    @Column(name = "locationLon", nullable = true, length = 30)
+    @Column(name = "locationLon", nullable = false, precision = 8)
     public double getLocationLon() {
         return locationLon;
     }
@@ -79,7 +76,7 @@ public class Snag implements Storable {
     }
 
     @Basic
-    @Column(name = "blockage_type", nullable = true, length = 30)
+    @Column(name = "blockage_type", nullable = false, length = 30)
     public String getBlockageType() {
         return blockageType;
     }
@@ -88,9 +85,8 @@ public class Snag implements Storable {
         this.blockageType = blockageType;
     }
 
-
     @Basic
-    @Column(name = "hazard", nullable = true, length = 20)
+    @Column(name = "hazard", nullable = false, length = 20)
     public String getHazard() {
         return hazard;
     }
@@ -100,7 +96,7 @@ public class Snag implements Storable {
     }
 
     @Basic
-    @Column(name = "estimated_delay", nullable = true)
+    @Column(name = "estimated_delay", nullable = false)
     public Integer getEstimatedDelay() {
         return estimatedDelay;
     }
@@ -110,33 +106,33 @@ public class Snag implements Storable {
     }
 
     @Basic
-    @Column(name = "date", nullable = true)
-    public LocalDate getDateMarked() {
-        return dateMarked;
+    @Column(name = "additional_desc", nullable = false, length = -1)
+    public String getAdditionalInformation() {
+        return additionalInformation;
     }
 
-    public void setDateMarked(LocalDate dateMarked) {
-        this.dateMarked = dateMarked;
+    public void setAdditionalInformation(String additionalDesc) {
+        this.additionalInformation = additionalDesc;
     }
 
     @Basic
-    @Column(name = "cleared", nullable = true)
-    public boolean isCleared() {
+    @Column(name = "date", nullable = false)
+    public Timestamp getDateMarked() {
+        return dateMarked;
+    }
+
+    public void setDateMarked(Timestamp date) {
+        this.dateMarked = date;
+    }
+
+    @Basic
+    @Column(name = "cleared", nullable = false)
+    public boolean getCleared() {
         return cleared;
     }
 
     public void setCleared(boolean cleared) {
         this.cleared = cleared;
-    }
-
-    @Basic
-    @Column(name = "additional_desc", nullable = true)
-    public String getAdditionalInformation() {
-        return additionalInformation;
-    }
-
-    public void setAdditionalInformation(String additionalInformation) {
-        this.additionalInformation = additionalInformation;
     }
 
     @ManyToOne
@@ -147,6 +143,25 @@ public class Snag implements Storable {
 
     public void setUserByUserId(User userByUserId) {
         this.userByUserId = userByUserId;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Snag)) return false;
+
+        Snag snag = (Snag) o;
+
+        if (getSnagId() != snag.getSnagId()) return false;
+        if (Double.compare(snag.getLocationLat(), getLocationLat()) != 0) return false;
+        if (Double.compare(snag.getLocationLon(), getLocationLon()) != 0) return false;
+        if (getCleared() != snag.getCleared()) return false;
+        if (!getBlockageType().equals(snag.getBlockageType())) return false;
+        if (!getHazard().equals(snag.getHazard())) return false;
+        if (!getEstimatedDelay().equals(snag.getEstimatedDelay())) return false;
+        if (!getAdditionalInformation().equals(snag.getAdditionalInformation())) return false;
+        if (!getDateMarked().equals(snag.getDateMarked())) return false;
+        return getUserByUserId().equals(snag.getUserByUserId());
     }
 
     @Override

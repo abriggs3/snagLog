@@ -24,7 +24,7 @@
 
             if (userProblem != "") {
                 $.ajax({
-                    type: "get", // this should be a post, but the description will only be returned on a get because of line 30 in addTadk.php
+                    type: "get",
                     url: url,
                     datatype: "plaintext",
                     success: function (decisionReturned) {

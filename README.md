@@ -19,32 +19,30 @@ and updated paddling times.
 
     Contributor, login required, create snag updates with admin consent, delete, update, own posts
 
-    User, no login required, view only
-
-**Database (MySQL and Hibernate)**
+ **Database (MySQL and Hibernate)**
 
     Store authentication roles
 
     Store snag related information submitted by users
+    
+    Store user submitted logs
 
  **Web Services or APIs**
 
-    Not certain yet, hopefully Google GIS will be usable to map snag locations
+    Google Maps API -- data processed with JavaScript
+    weatherbit API -- data processed with Java
 
- **Logging Log4J**
+ **Unit Testing** Log4j used. Tests cover 100% of entity classes, no tests were made on the controller classes
 
- **Site Hosted by AWS**
-
- **Unit Testing** Junit to cover (hopefully) 80% of code
+ **Site Hosted by AWS** [AWS Link](http://18.218.9.103:8080/snaglog/)
+  
 
 **Design**
 
 [Screen Design](https://github.com/abriggs3/snagLog/tree/master/images)
 
-Application Flow
+[Database Design](https://github.com/abriggs3/snagLog/blob/master/images/database_design.png)
 
-Database Design
+[Project Plan](https://github.com/abriggs3/snagLog/blob/master/ProjectPlan.md)
 
-[**Project Plan**](https://github.com/abriggs3/snagLog/blob/master/ProjectPlan.md)
-
-[**Time Log**](https://github.com/abriggs3/snagLog/blob/master/TimeLog.md)
+[Time Log](https://github.com/abriggs3/snagLog/blob/master/TimeLog.md)

@@ -28,17 +28,19 @@
                 <tr>
                     <td><input type="radio" name="userCheck" value="${user.usersId}"/></td>
                     <td>${user.usersId}</td>
-                    <td>${user.firstName}</td>
-                    <td>${user.lastName}</td>
+                    <td><input type="text" value="${user.firstName}" name="firstName${user.usersId}"></td>
+                    <td><input type="text" value="${user.lastName}" name="lastName${user.usersId}"></td>
                     <td>${user.userName}</td>
-                    <td>${user.userPassword}</td>
+                    <td><input type="text" value="${user.userPassword}" name="password${user.usersId}"></td>
                 </tr>
             </c:forEach>
 
             </tbody>
         </table>
+        <h4 style="color:red">${noUserSelectedError}</h4>
         <input type="submit" class="btn btn-default" name="submitButton" value="delete">
-        <input type="submit" class="btn btn-default" name="submitButton" value="update">
+        <input type="submit"  class="btn btn-default" name="submitButton" value="update">
     </form>
-
+    <div id="updateDiv"></div>
 </div>
+

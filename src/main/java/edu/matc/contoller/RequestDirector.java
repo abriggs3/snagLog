@@ -23,5 +23,9 @@ public class RequestDirector extends HttpServlet {
             RequestDispatcher dispatcher = request.getRequestDispatcher("pages/register.jsp");
             dispatcher.forward(request, response);
         }
+        if (request.getParameter("destination").equalsIgnoreCase("log")) {
+            RequestDispatcher dispatcher = request.getRequestDispatcher("log.jsp");
+            dispatcher.forward(request, response);
+        }
     }
 }

@@ -3,6 +3,7 @@ package edu.matc.entity;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table(name = "Log")
@@ -15,28 +16,60 @@ public class Log implements Storable {
     private int logId;
 
     @Basic
-    @Column(name = "river_name", nullable = false)
-    private String riverName;
+    @Column(name = "launchDate")
+    private Date launchDate;
 
     @Basic
-    @Column(name = "state", nullable = false, length = 2)
+    @Column(name = "tripDuration")
+    private int tripDuration;
+
+    @Basic
+    @Column(name = "startLocationLat")
+    private Double startLocationLat;
+
+    @Basic
+    @Column(name = "startLocationLon")
+    private Double startLocationLon;
+
+    @Basic
+    @Column(name = "endLocationLat")
+    private Double endLocationLat;
+
+    @Basic
+    @Column(name = "endLocationLon")
+    private Double endLocationLon;
+
+    @Basic
+    @Column(name = "waterBodyName")
+    private String waterBodyName;
+
+    @Basic
+    @Column(name = "waterBodyType")
+    private String waterBodyType;
+
+    @Basic
+    @Column(name = "waterSubChoice")
+    private String waterSubChoice;
+
+    @Basic
+    @Column(name = "logText")
+    private String logText;
+
+    @Basic
+    @Column(name = "city")
+    private String city;
+
+    @Basic
+    @Column(name = "state")
     private String state;
 
     @Basic
-    @Column(name = "county", nullable = true, length = 30)
-    private String county;
+    @Column(name = "weatherDescription")
+    private String weatherDescription;
 
     @Basic
-    @Column(name = "nearest_city", nullable = true, length = 30)
-    private String nearestCity;
-
-    @Basic
-    @Column(name = "put_in_location", nullable = true, length = 256)
-    private String putInLocation;
-
-    @Basic
-    @Column(name = "takeout_location", nullable = true, length = 256)
-    private String takeoutLocation;
+    @Column(name = "temperature")
+    private Double temperature;
 
     @ManyToOne
     @JoinColumn(name = "users_id", referencedColumnName = "users_id", nullable = false)
@@ -47,28 +80,118 @@ public class Log implements Storable {
     }
 
     // partial constructor
-    public Log(String riverName, String state, String county, String nearestCity, String putInLocation, String takeoutLocation, User userByUserId) {
-        this.riverName = riverName;
+    public Log(Date launchDate, int tripDuration, Double startLocationLat, Double startLocationLon, Double endLocationLat, Double endLocationLon, String waterBodyName, String waterBodyType, String waterSubChoice, String logText, String city, String state, String weatherDescription, Double temperature, User userByUserId) {
+        this.launchDate = launchDate;
+        this.tripDuration = tripDuration;
+        this.startLocationLat = startLocationLat;
+        this.startLocationLon = startLocationLon;
+        this.endLocationLat = endLocationLat;
+        this.endLocationLon = endLocationLon;
+        this.waterBodyName = waterBodyName;
+        this.waterBodyType = waterBodyType;
+        this.waterSubChoice = waterSubChoice;
+        this.logText = logText;
+        this.city = city;
         this.state = state;
-        this.county = county;
-        this.nearestCity = nearestCity;
-        this.putInLocation = putInLocation;
-        this.takeoutLocation = takeoutLocation;
+        this.weatherDescription = weatherDescription;
+        this.temperature = temperature;
+        this.userByUserId = userByUserId;
     }
 
     public int getLogId() {
         return logId;
     }
+
     public void setLogId(int logId) {
         this.logId = logId;
     }
 
-    public String getRiverName() {
-        return riverName;
+    public Date getLaunchDate() {
+        return launchDate;
     }
 
-    public void setRiverName(String riverName) {
-        this.riverName = riverName;
+    public void setLaunchDate(Date launchDate) {
+        this.launchDate = launchDate;
+    }
+
+    public int getTripDuration() {
+        return tripDuration;
+    }
+
+    public void setTripDuration(int tripDuration) {
+        this.tripDuration = tripDuration;
+    }
+
+    public Double getStartLocationLat() {
+        return startLocationLat;
+    }
+
+    public void setStartLocationLat(Double startLocationLat) {
+        this.startLocationLat = startLocationLat;
+    }
+
+    public Double getStartLocationLon() {
+        return startLocationLon;
+    }
+
+    public void setStartLocationLon(Double startLocationLon) {
+        this.startLocationLon = startLocationLon;
+    }
+
+    public Double getEndLocationLat() {
+        return endLocationLat;
+    }
+
+    public void setEndLocationLat(Double endLocationLat) {
+        this.endLocationLat = endLocationLat;
+    }
+
+    public Double getEndLocationLon() {
+        return endLocationLon;
+    }
+
+    public void setEndLocationLon(Double endLocationLon) {
+        this.endLocationLon = endLocationLon;
+    }
+
+    public String getWaterBodyName() {
+        return waterBodyName;
+    }
+
+    public void setWaterBodyName(String waterBodyName) {
+        this.waterBodyName = waterBodyName;
+    }
+
+    public String getWaterBodyType() {
+        return waterBodyType;
+    }
+
+    public void setWaterBodyType(String waterBodyType) {
+        this.waterBodyType = waterBodyType;
+    }
+
+    public String getWaterSubChoice() {
+        return waterSubChoice;
+    }
+
+    public void setWaterSubChoice(String waterSubChoice) {
+        this.waterSubChoice = waterSubChoice;
+    }
+
+    public String getLogText() {
+        return logText;
+    }
+
+    public void setLogText(String logText) {
+        this.logText = logText;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
     }
 
     public String getState() {
@@ -79,36 +202,20 @@ public class Log implements Storable {
         this.state = state;
     }
 
-    public String getCounty() {
-        return county;
+    public String getWeatherDescription() {
+        return weatherDescription;
     }
 
-    public void setCounty(String county) {
-        this.county = county;
+    public void setWeatherDescription(String weatherDescription) {
+        this.weatherDescription = weatherDescription;
     }
 
-    public String getNearestCity() {
-        return nearestCity;
+    public Double getTemperature() {
+        return temperature;
     }
 
-    public void setNearestCity(String nearestCity) {
-        this.nearestCity = nearestCity;
-    }
-
-    public String getPutInLocation() {
-        return putInLocation;
-    }
-
-    public void setPutInLocation(String putInLocation) {
-        this.putInLocation = putInLocation;
-    }
-
-    public String getTakeoutLocation() {
-        return takeoutLocation;
-    }
-
-    public void setTakeoutLocation(String takeoutLocation) {
-        this.takeoutLocation = takeoutLocation;
+    public void setTemperature(Double temperature) {
+        this.temperature = temperature;
     }
 
     public User getUserByUserId() {
@@ -122,31 +229,56 @@ public class Log implements Storable {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (!(o instanceof Log)) return false;
 
         Log log = (Log) o;
 
-        if (logId != log.logId) return false;
-        if (riverName != null ? !riverName.equals(log.riverName) : log.riverName != null) return false;
-        if (state != null ? !state.equals(log.state) : log.state != null) return false;
-        if (county != null ? !county.equals(log.county) : log.county != null) return false;
-        if (nearestCity != null ? !nearestCity.equals(log.nearestCity) : log.nearestCity != null) return false;
-        if (putInLocation != null ? !putInLocation.equals(log.putInLocation) : log.putInLocation != null) return false;
-        if (takeoutLocation != null ? !takeoutLocation.equals(log.takeoutLocation) : log.takeoutLocation != null)
+        if (getLogId() != log.getLogId()) return false;
+        if (getTripDuration() != log.getTripDuration()) return false;
+        if (getLaunchDate() != null ? !getLaunchDate().equals(log.getLaunchDate()) : log.getLaunchDate() != null)
             return false;
-
-        return true;
+        if (getStartLocationLat() != null ? !getStartLocationLat().equals(log.getStartLocationLat()) : log.getStartLocationLat() != null)
+            return false;
+        if (getStartLocationLon() != null ? !getStartLocationLon().equals(log.getStartLocationLon()) : log.getStartLocationLon() != null)
+            return false;
+        if (getEndLocationLat() != null ? !getEndLocationLat().equals(log.getEndLocationLat()) : log.getEndLocationLat() != null)
+            return false;
+        if (getEndLocationLon() != null ? !getEndLocationLon().equals(log.getEndLocationLon()) : log.getEndLocationLon() != null)
+            return false;
+        if (getWaterBodyName() != null ? !getWaterBodyName().equals(log.getWaterBodyName()) : log.getWaterBodyName() != null)
+            return false;
+        if (getWaterBodyType() != null ? !getWaterBodyType().equals(log.getWaterBodyType()) : log.getWaterBodyType() != null)
+            return false;
+        if (getWaterSubChoice() != null ? !getWaterSubChoice().equals(log.getWaterSubChoice()) : log.getWaterSubChoice() != null)
+            return false;
+        if (getLogText() != null ? !getLogText().equals(log.getLogText()) : log.getLogText() != null) return false;
+        if (getCity() != null ? !getCity().equals(log.getCity()) : log.getCity() != null) return false;
+        if (getState() != null ? !getState().equals(log.getState()) : log.getState() != null) return false;
+        if (getWeatherDescription() != null ? !getWeatherDescription().equals(log.getWeatherDescription()) : log.getWeatherDescription() != null)
+            return false;
+        if (getTemperature() != null ? !getTemperature().equals(log.getTemperature()) : log.getTemperature() != null)
+            return false;
+        return getUserByUserId() != null ? getUserByUserId().equals(log.getUserByUserId()) : log.getUserByUserId() == null;
     }
 
     @Override
     public int hashCode() {
-        int result = logId;
-        result = 31 * result + (riverName != null ? riverName.hashCode() : 0);
-        result = 31 * result + (state != null ? state.hashCode() : 0);
-        result = 31 * result + (county != null ? county.hashCode() : 0);
-        result = 31 * result + (nearestCity != null ? nearestCity.hashCode() : 0);
-        result = 31 * result + (putInLocation != null ? putInLocation.hashCode() : 0);
-        result = 31 * result + (takeoutLocation != null ? takeoutLocation.hashCode() : 0);
+        int result = getLogId();
+        result = 31 * result + (getLaunchDate() != null ? getLaunchDate().hashCode() : 0);
+        result = 31 * result + getTripDuration();
+        result = 31 * result + (getStartLocationLat() != null ? getStartLocationLat().hashCode() : 0);
+        result = 31 * result + (getStartLocationLon() != null ? getStartLocationLon().hashCode() : 0);
+        result = 31 * result + (getEndLocationLat() != null ? getEndLocationLat().hashCode() : 0);
+        result = 31 * result + (getEndLocationLon() != null ? getEndLocationLon().hashCode() : 0);
+        result = 31 * result + (getWaterBodyName() != null ? getWaterBodyName().hashCode() : 0);
+        result = 31 * result + (getWaterBodyType() != null ? getWaterBodyType().hashCode() : 0);
+        result = 31 * result + (getWaterSubChoice() != null ? getWaterSubChoice().hashCode() : 0);
+        result = 31 * result + (getLogText() != null ? getLogText().hashCode() : 0);
+        result = 31 * result + (getCity() != null ? getCity().hashCode() : 0);
+        result = 31 * result + (getState() != null ? getState().hashCode() : 0);
+        result = 31 * result + (getWeatherDescription() != null ? getWeatherDescription().hashCode() : 0);
+        result = 31 * result + (getTemperature() != null ? getTemperature().hashCode() : 0);
+        result = 31 * result + (getUserByUserId() != null ? getUserByUserId().hashCode() : 0);
         return result;
     }
 
@@ -154,12 +286,21 @@ public class Log implements Storable {
     public String toString() {
         return "Log{" +
                 "logId=" + logId +
-                ", riverName='" + riverName + '\'' +
+                ", launchDate=" + launchDate +
+                ", tripDuration=" + tripDuration +
+                ", startLocationLat=" + startLocationLat +
+                ", startLocationLon=" + startLocationLon +
+                ", endLocationLat=" + endLocationLat +
+                ", endLocationLon=" + endLocationLon +
+                ", waterBodyName='" + waterBodyName + '\'' +
+                ", waterBodyType='" + waterBodyType + '\'' +
+                ", waterSubChoice='" + waterSubChoice + '\'' +
+                ", logText='" + logText + '\'' +
+                ", city='" + city + '\'' +
                 ", state='" + state + '\'' +
-                ", county='" + county + '\'' +
-                ", nearestCity='" + nearestCity + '\'' +
-                ", putInLocation='" + putInLocation + '\'' +
-                ", takeoutLocation='" + takeoutLocation + '\'' +
+                ", weatherDescription='" + weatherDescription + '\'' +
+                ", temperature=" + temperature +
+                ", userByUserId=" + userByUserId +
                 '}';
     }
 }

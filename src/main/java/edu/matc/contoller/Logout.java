@@ -22,7 +22,7 @@ public class Logout extends HttpServlet {
         HttpSession session = request.getSession();
 
         session.invalidate();
-
+        request.setAttribute("loggedInUsersName", null);
         request.setAttribute("userLoggedOut", request.getRemoteUser() + " has been logged out.");
 
         RequestDispatcher dispatcher = request.getRequestDispatcher("pages/logout.jsp");
