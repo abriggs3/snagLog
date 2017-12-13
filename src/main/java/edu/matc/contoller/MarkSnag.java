@@ -20,6 +20,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * The type Mark snag.
+ */
 @WebServlet(
         urlPatterns = {"/markSnag"}
 )

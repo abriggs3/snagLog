@@ -5,6 +5,9 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 
+/**
+ * The type Database test.
+ */
 public class DatabaseTest {
  /*
     @Test

@@ -12,6 +12,9 @@ import org.hibernate.criterion.Restrictions;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The type User dao.
+ */
 public class UserDao implements DataCRUDable {
     private final Logger logger = Logger.getLogger(this.getClass());
 

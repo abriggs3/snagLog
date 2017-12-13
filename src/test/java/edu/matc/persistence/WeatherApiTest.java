@@ -11,6 +11,9 @@ import java.io.IOException;
 import static org.junit.Assert.*;
 
 
+/**
+ * The type Weather api test.
+ */
 public class WeatherApiTest {
 /* turned off to avoid over calling the API service
 @Test

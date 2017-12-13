@@ -4,6 +4,9 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.annotation.Generated;
 
+/**
+ * The type Data item.
+ */
 @JsonIgnoreProperties(value = { "snow" })
 @Generated("com.robohorse.robopojogenerator")
 public class DataItem{
@@ -101,251 +104,561 @@ public class DataItem{
 	@JsonProperty("ts")
 	private int ts;
 
-	public void setSunrise(String sunrise){
+    /**
+     * Set sunrise.
+     *
+     * @param sunrise the sunrise
+     */
+    public void setSunrise(String sunrise){
 		this.sunrise = sunrise;
 	}
 
-	public String getSunrise(){
+    /**
+     * Get sunrise string.
+     *
+     * @return the string
+     */
+    public String getSunrise(){
 		return sunrise;
 	}
 
-	public void setPod(String pod){
+    /**
+     * Set pod.
+     *
+     * @param pod the pod
+     */
+    public void setPod(String pod){
 		this.pod = pod;
 	}
 
-	public String getPod(){
+    /**
+     * Get pod string.
+     *
+     * @return the string
+     */
+    public String getPod(){
 		return pod;
 	}
 
-	public void setPres(double pres){
+    /**
+     * Set pres.
+     *
+     * @param pres the pres
+     */
+    public void setPres(double pres){
 		this.pres = pres;
 	}
 
-	public double getPres(){
+    /**
+     * Get pres double.
+     *
+     * @return the double
+     */
+    public double getPres(){
 		return pres;
 	}
 
-	public void setTimezone(String timezone){
+    /**
+     * Set timezone.
+     *
+     * @param timezone the timezone
+     */
+    public void setTimezone(String timezone){
 		this.timezone = timezone;
 	}
 
-	public String getTimezone(){
+    /**
+     * Get timezone string.
+     *
+     * @return the string
+     */
+    public String getTimezone(){
 		return timezone;
 	}
 
-	public void setObTime(String obTime){
+    /**
+     * Set ob time.
+     *
+     * @param obTime the ob time
+     */
+    public void setObTime(String obTime){
 		this.obTime = obTime;
 	}
 
-	public String getObTime(){
+    /**
+     * Get ob time string.
+     *
+     * @return the string
+     */
+    public String getObTime(){
 		return obTime;
 	}
 
-	public void setWindCdir(String windCdir){
+    /**
+     * Set wind cdir.
+     *
+     * @param windCdir the wind cdir
+     */
+    public void setWindCdir(String windCdir){
 		this.windCdir = windCdir;
 	}
 
-	public String getWindCdir(){
+    /**
+     * Get wind cdir string.
+     *
+     * @return the string
+     */
+    public String getWindCdir(){
 		return windCdir;
 	}
 
-	public void setLon(double lon){
+    /**
+     * Set lon.
+     *
+     * @param lon the lon
+     */
+    public void setLon(double lon){
 		this.lon = lon;
 	}
 
-	public double getLon(){
+    /**
+     * Get lon double.
+     *
+     * @return the double
+     */
+    public double getLon(){
 		return lon;
 	}
 
-	public void setClouds(int clouds){
+    /**
+     * Set clouds.
+     *
+     * @param clouds the clouds
+     */
+    public void setClouds(int clouds){
 		this.clouds = clouds;
 	}
 
-	public int getClouds(){
+    /**
+     * Get clouds int.
+     *
+     * @return the int
+     */
+    public int getClouds(){
 		return clouds;
 	}
 
-	public void setWindSpd(double windSpd){
+    /**
+     * Set wind spd.
+     *
+     * @param windSpd the wind spd
+     */
+    public void setWindSpd(double windSpd){
 		this.windSpd = windSpd;
 	}
 
-	public double getWindSpd(){
+    /**
+     * Get wind spd double.
+     *
+     * @return the double
+     */
+    public double getWindSpd(){
 		return windSpd;
 	}
 
-	public void setHAngle(int hAngle){
+    /**
+     * Set h angle.
+     *
+     * @param hAngle the h angle
+     */
+    public void setHAngle(int hAngle){
 		this.hAngle = hAngle;
 	}
 
-	public int getHAngle(){
+    /**
+     * Get h angle int.
+     *
+     * @return the int
+     */
+    public int getHAngle(){
 		return hAngle;
 	}
 
-	public void setCityName(String cityName){
+    /**
+     * Set city name.
+     *
+     * @param cityName the city name
+     */
+    public void setCityName(String cityName){
 		this.cityName = cityName;
 	}
 
-	public String getCityName(){
+    /**
+     * Get city name string.
+     *
+     * @return the string
+     */
+    public String getCityName(){
 		return cityName;
 	}
 
-	public void setDatetime(String datetime){
+    /**
+     * Set datetime.
+     *
+     * @param datetime the datetime
+     */
+    public void setDatetime(String datetime){
 		this.datetime = datetime;
 	}
 
-	public String getDatetime(){
+    /**
+     * Get datetime string.
+     *
+     * @return the string
+     */
+    public String getDatetime(){
 		return datetime;
 	}
 
-	public void setPrecip(Object precip){
+    /**
+     * Set precip.
+     *
+     * @param precip the precip
+     */
+    public void setPrecip(Object precip){
 		this.precip = precip;
 	}
 
-	public Object getPrecip(){
+    /**
+     * Get precip object.
+     *
+     * @return the object
+     */
+    public Object getPrecip(){
 		return precip;
 	}
 
-	public void setWeather(Weather weather){
+    /**
+     * Set weather.
+     *
+     * @param weather the weather
+     */
+    public void setWeather(Weather weather){
 		this.weather = weather;
 	}
 
-	public Weather getWeather(){
+    /**
+     * Get weather weather.
+     *
+     * @return the weather
+     */
+    public Weather getWeather(){
 		return weather;
 	}
 
-	public void setStation(String station){
+    /**
+     * Set station.
+     *
+     * @param station the station
+     */
+    public void setStation(String station){
 		this.station = station;
 	}
 
-	public String getStation(){
+    /**
+     * Get station string.
+     *
+     * @return the string
+     */
+    public String getStation(){
 		return station;
 	}
 
-	public void setElevAngle(int elevAngle){
+    /**
+     * Set elev angle.
+     *
+     * @param elevAngle the elev angle
+     */
+    public void setElevAngle(int elevAngle){
 		this.elevAngle = elevAngle;
 	}
 
-	public int getElevAngle(){
+    /**
+     * Get elev angle int.
+     *
+     * @return the int
+     */
+    public int getElevAngle(){
 		return elevAngle;
 	}
 
-	public void setLat(double lat){
+    /**
+     * Set lat.
+     *
+     * @param lat the lat
+     */
+    public void setLat(double lat){
 		this.lat = lat;
 	}
 
-	public double getLat(){
+    /**
+     * Get lat double.
+     *
+     * @return the double
+     */
+    public double getLat(){
 		return lat;
 	}
 
-	public void setVis(int vis){
+    /**
+     * Set vis.
+     *
+     * @param vis the vis
+     */
+    public void setVis(int vis){
 		this.vis = vis;
 	}
 
-	public int getVis(){
+    /**
+     * Get vis int.
+     *
+     * @return the int
+     */
+    public int getVis(){
 		return vis;
 	}
 
-	public void setUv(int uv){
+    /**
+     * Set uv.
+     *
+     * @param uv the uv
+     */
+    public void setUv(int uv){
 		this.uv = uv;
 	}
 
-	public int getUv(){
+    /**
+     * Get uv int.
+     *
+     * @return the int
+     */
+    public int getUv(){
 		return uv;
 	}
 
-	public void setTemp(double temp){
+    /**
+     * Set temp.
+     *
+     * @param temp the temp
+     */
+    public void setTemp(double temp){
 		this.temp = temp;
 	}
 
-	public double getTemp(){
+    /**
+     * Get temp double.
+     *
+     * @return the double
+     */
+    public double getTemp(){
 		return temp;
 	}
 
-	public void setDhi(double dhi){
+    /**
+     * Set dhi.
+     *
+     * @param dhi the dhi
+     */
+    public void setDhi(double dhi){
 		this.dhi = dhi;
 	}
 
-	public double getDhi(){
+    /**
+     * Get dhi double.
+     *
+     * @return the double
+     */
+    public double getDhi(){
 		return dhi;
 	}
 
-	public void setAppTemp(double appTemp){
+    /**
+     * Set app temp.
+     *
+     * @param appTemp the app temp
+     */
+    public void setAppTemp(double appTemp){
 		this.appTemp = appTemp;
 	}
 
-	public double getAppTemp(){
+    /**
+     * Get app temp double.
+     *
+     * @return the double
+     */
+    public double getAppTemp(){
 		return appTemp;
 	}
 
-	public void setDewpt(double dewpt){
+    /**
+     * Set dewpt.
+     *
+     * @param dewpt the dewpt
+     */
+    public void setDewpt(double dewpt){
 		this.dewpt = dewpt;
 	}
 
-	public double getDewpt(){
+    /**
+     * Get dewpt double.
+     *
+     * @return the double
+     */
+    public double getDewpt(){
 		return dewpt;
 	}
 
-	public void setWindDir(int windDir){
+    /**
+     * Set wind dir.
+     *
+     * @param windDir the wind dir
+     */
+    public void setWindDir(int windDir){
 		this.windDir = windDir;
 	}
 
-	public int getWindDir(){
+    /**
+     * Get wind dir int.
+     *
+     * @return the int
+     */
+    public int getWindDir(){
 		return windDir;
 	}
 
-	public void setCountryCode(String countryCode){
+    /**
+     * Set country code.
+     *
+     * @param countryCode the country code
+     */
+    public void setCountryCode(String countryCode){
 		this.countryCode = countryCode;
 	}
 
-	public String getCountryCode(){
+    /**
+     * Get country code string.
+     *
+     * @return the string
+     */
+    public String getCountryCode(){
 		return countryCode;
 	}
 
-	public void setRh(int rh){
+    /**
+     * Set rh.
+     *
+     * @param rh the rh
+     */
+    public void setRh(int rh){
 		this.rh = rh;
 	}
 
-	public int getRh(){
+    /**
+     * Get rh int.
+     *
+     * @return the int
+     */
+    public int getRh(){
 		return rh;
 	}
 
-	public void setSlp(double slp){
+    /**
+     * Set slp.
+     *
+     * @param slp the slp
+     */
+    public void setSlp(double slp){
 		this.slp = slp;
 	}
 
-	public double getSlp(){
+    /**
+     * Get slp double.
+     *
+     * @return the double
+     */
+    public double getSlp(){
 		return slp;
 	}
 
-	public void setSunset(String sunset){
+    /**
+     * Set sunset.
+     *
+     * @param sunset the sunset
+     */
+    public void setSunset(String sunset){
 		this.sunset = sunset;
 	}
 
-	public String getSunset(){
+    /**
+     * Get sunset string.
+     *
+     * @return the string
+     */
+    public String getSunset(){
 		return sunset;
 	}
 
-	public void setStateCode(String stateCode){
+    /**
+     * Set state code.
+     *
+     * @param stateCode the state code
+     */
+    public void setStateCode(String stateCode){
 		this.stateCode = stateCode;
 	}
 
-	public String getStateCode(){
+    /**
+     * Get state code string.
+     *
+     * @return the string
+     */
+    public String getStateCode(){
 		return stateCode;
 	}
 
-	public void setWindCdirFull(String windCdirFull){
+    /**
+     * Set wind cdir full.
+     *
+     * @param windCdirFull the wind cdir full
+     */
+    public void setWindCdirFull(String windCdirFull){
 		this.windCdirFull = windCdirFull;
 	}
 
-	public String getWindCdirFull(){
+    /**
+     * Get wind cdir full string.
+     *
+     * @return the string
+     */
+    public String getWindCdirFull(){
 		return windCdirFull;
 	}
 
-	public void setTs(int ts){
+    /**
+     * Set ts.
+     *
+     * @param ts the ts
+     */
+    public void setTs(int ts){
 		this.ts = ts;
 	}
 
-	public int getTs(){
+    /**
+     * Get ts int.
+     *
+     * @return the int
+     */
+    public int getTs(){
 		return ts;
 	}
 

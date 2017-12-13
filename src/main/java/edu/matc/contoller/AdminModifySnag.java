@@ -16,6 +16,9 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 
+/**
+ * The type Admin modify snag.
+ */
 @WebServlet(
         urlPatterns = {"/adminModifySnag"}
 )

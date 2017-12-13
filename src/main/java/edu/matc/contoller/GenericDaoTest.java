@@ -19,6 +19,9 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 
 
+/**
+ * The type Generic dao test.
+ */
 @WebServlet(
         urlPatterns = {"/test"}
 )

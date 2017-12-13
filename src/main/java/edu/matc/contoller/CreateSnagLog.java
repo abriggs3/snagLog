@@ -23,6 +23,9 @@ package edu.matc.contoller;
         import java.util.List;
         import java.util.Map;
 
+/**
+ * The type Create snag log.
+ */
 @WebServlet(
         urlPatterns = {"/createSnagLog"}
 )

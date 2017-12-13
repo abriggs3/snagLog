@@ -10,6 +10,9 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 
+/**
+ * The type Test page.
+ */
 @WebServlet(
         urlPatterns = {"/testPage"}
 )

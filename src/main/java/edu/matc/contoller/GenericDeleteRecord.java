@@ -17,6 +17,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ * The type Generic delete record.
+ */
 @WebServlet(
         urlPatterns = {"/genericDelete"}
 )

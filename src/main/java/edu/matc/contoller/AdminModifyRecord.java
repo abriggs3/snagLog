@@ -16,6 +16,9 @@ import java.io.IOException;
 
 import static javafx.scene.input.KeyCode.T;
 
+/**
+ * The type Admin modify record.
+ */
 @WebServlet(
         urlPatterns = {"/adminModifyRecord"}
 )

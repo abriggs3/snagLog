@@ -8,12 +8,23 @@ import java.util.Map;
 import edu.matc.persistence.IGenericDAO;
 import edu.matc.persistence.GenericDAOImpl;
 
+/**
+ * The type Generic service.
+ *
+ * @param <T> the type parameter
+ */
 public class GenericServiceImpl<T> implements IGenericService<T> {
 
     private IGenericDAO<T> dao;
     private Class<T> cl;
 
 
+    /**
+     * Instantiates a new Generic service.
+     *
+     * @param cl             the cl
+     * @param sessionFactory the session factory
+     */
     public GenericServiceImpl(Class<T> cl, SessionFactory sessionFactory) {
         this.cl = cl;
         dao = new GenericDAOImpl<T>(cl, sessionFactory);

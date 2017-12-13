@@ -3,6 +3,9 @@ package edu.matc.io.weatherbit;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.annotation.Generated;
 
+/**
+ * The type Weather.
+ */
 @Generated("com.robohorse.robopojogenerator")
 public class Weather{
 
@@ -15,27 +18,57 @@ public class Weather{
 	@JsonProperty("description")
 	private String description;
 
-	public void setCode(String code){
+    /**
+     * Set code.
+     *
+     * @param code the code
+     */
+    public void setCode(String code){
 		this.code = code;
 	}
 
-	public String getCode(){
+    /**
+     * Get code string.
+     *
+     * @return the string
+     */
+    public String getCode(){
 		return code;
 	}
 
-	public void setIcon(String icon){
+    /**
+     * Set icon.
+     *
+     * @param icon the icon
+     */
+    public void setIcon(String icon){
 		this.icon = icon;
 	}
 
-	public String getIcon(){
+    /**
+     * Get icon string.
+     *
+     * @return the string
+     */
+    public String getIcon(){
 		return icon;
 	}
 
-	public void setDescription(String description){
+    /**
+     * Set description.
+     *
+     * @param description the description
+     */
+    public void setDescription(String description){
 		this.description = description;
 	}
 
-	public String getDescription(){
+    /**
+     * Get description string.
+     *
+     * @return the string
+     */
+    public String getDescription(){
 		return description;
 	}
 

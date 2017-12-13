@@ -13,12 +13,32 @@ import java.util.Map;
 
 import static org.junit.Assert.*;
 
+/**
+ * The type Generic service impl test.
+ */
 public class GenericServiceImplTest {
+    /**
+     * The User.
+     */
     User user = new User();
+    /**
+     * The User service.
+     */
     IGenericService<User> userService = new GenericServiceImpl<User>(User.class, HibernateUtil.getSessionFactory());
+    /**
+     * The Snag service.
+     */
     IGenericService<Snag> snagService = new GenericServiceImpl<Snag>(Snag.class, HibernateUtil.getSessionFactory());
+    /**
+     * The New user to save.
+     */
     User newUserToSave;
 
+    /**
+     * Sets up.
+     *
+     * @throws Exception the exception
+     */
     @Before
     public void setUp() throws Exception {
         userService = new GenericServiceImpl<User>(
@@ -28,12 +48,22 @@ public class GenericServiceImplTest {
     }
 
 
+    /**
+     * Gets test.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void getTest() throws Exception {
         user = userService.get(User.class, 1);
         assertEquals("First name returned is not what was expected ", "Admin", user.getFirstName());
     }
 
+    /**
+     * Save test.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void saveTest() throws Exception {
         // attempts to add user
@@ -45,6 +75,11 @@ public class GenericServiceImplTest {
         userService.delete(user);
     }
 
+    /**
+     * Update test.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void updateTest() throws Exception {
         User userToUpdate = userService.get(User.class, 4);
@@ -54,6 +89,11 @@ public class GenericServiceImplTest {
 
     }
 
+    /**
+     * Delete test.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void deleteTest() throws Exception {
         int currentListSize = userService.getAll().size();
@@ -66,6 +106,9 @@ public class GenericServiceImplTest {
         userService.save(user);
     }
 
+    /**
+     * Test query test.
+     */
     @Test
     public void testQueryTest() {
         Map<String, Object> params = new HashMap<>();
@@ -73,12 +116,22 @@ public class GenericServiceImplTest {
         assertEquals("list of users returned do not match expected size", 1, users.size());
     }
 
+    /**
+     * Gets all test.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void getAllTest() throws Exception {
         List<User> userList = userService.getAll();
         assertEquals("incorrect first name returned", "Admin", userList.get(0).getFirstName());
     }
 
+    /**
+     * Gets all snag test.
+     *
+     * @throws Exception the exception
+     */
     @Test
     public void getAllSnagTest() throws Exception {
         List<Snag> snagList = snagService.getAll();

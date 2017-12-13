@@ -4,6 +4,9 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.annotation.Generated;
 
+/**
+ * The type Data.
+ */
 @Generated("com.robohorse.robopojogenerator")
 public class Data{
 
@@ -13,19 +16,39 @@ public class Data{
 	@JsonProperty("count")
 	private int count;
 
-	public void setData(List<DataItem> data){
+    /**
+     * Set data.
+     *
+     * @param data the data
+     */
+    public void setData(List<DataItem> data){
 		this.data = data;
 	}
 
-	public List<DataItem> getData(){
+    /**
+     * Get data list.
+     *
+     * @return the list
+     */
+    public List<DataItem> getData(){
 		return data;
 	}
 
-	public void setCount(int count){
+    /**
+     * Set count.
+     *
+     * @param count the count
+     */
+    public void setCount(int count){
 		this.count = count;
 	}
 
-	public int getCount(){
+    /**
+     * Get count int.
+     *
+     * @return the int
+     */
+    public int getCount(){
 		return count;
 	}
 

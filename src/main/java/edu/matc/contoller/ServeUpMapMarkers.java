@@ -20,7 +20,9 @@ import java.io.IOException;
 import java.util.List;
 
 
-
+/**
+ * The type Serve up map markers.
+ */
 @WebServlet(
         urlPatterns = {"/serveUpMapMarkers"}
 )

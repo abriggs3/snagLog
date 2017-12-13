@@ -8,6 +8,9 @@ package edu.matc.contoller;
         import javax.servlet.annotation.*;
         import java.io.IOException;
 
+/**
+ * The type Request director secure.
+ */
 @WebServlet(
         urlPatterns = {"/requestDirectorSecure"}
 )

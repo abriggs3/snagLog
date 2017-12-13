@@ -9,6 +9,9 @@ package edu.matc.contoller;
         import java.io.IOException;
 
 
+/**
+ * The type Request director.
+ */
 @WebServlet(
         urlPatterns = {"/requestDirector"}
 )

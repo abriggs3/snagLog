@@ -10,9 +10,20 @@ import javax.servlet.http.HttpSession;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * The type Get log list.
+ */
 public class GetLogList {
+    /**
+     * The Logger.
+     */
     final Logger logger = Logger.getLogger(this.getClass());
 
+    /**
+     * Gets log list.
+     *
+     * @param request the request
+     */
     public void getLogList(HttpServletRequest request) {
         HttpSession session = request.getSession();
 
@@ -43,6 +54,11 @@ public class GetLogList {
         }
         */
 
+    /**
+     * Gets log list reversed.
+     *
+     * @return the log list reversed
+     */
     public String getLogListReversed() {
 
         IGenericService<Log> snagService = new GenericServiceImpl<Log>(

@@ -5,6 +5,9 @@ import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
 import java.util.List;
 
+/**
+ * The type User.
+ */
 @Entity
 @Table(name = "Users")
 public class User implements Storable{
@@ -30,11 +33,22 @@ public class User implements Storable{
     @Column(name = "user_pass", nullable = false, length = 30)
     private String userPassword;
 
-    // required empty constructor
+    /**
+     * Instantiates a new User.
+     */
+// required empty constructor
     public User() {
     }
 
-    // partial constructor
+    /**
+     * Instantiates a new User.
+     *
+     * @param firstName the first name
+     * @param lastName  the last name
+     * @param userName  the user name
+     * @param userPass  the user pass
+     */
+// partial constructor
     public User(String firstName, String lastName, String userName, String userPass) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -42,7 +56,16 @@ public class User implements Storable{
         this.userPassword = userPass;
     }
 
-    // full constructor
+    /**
+     * Instantiates a new User.
+     *
+     * @param usersId   the users id
+     * @param firstName the first name
+     * @param lastName  the last name
+     * @param userName  the user name
+     * @param userPass  the user pass
+     */
+// full constructor
     public User(int usersId, String firstName, String lastName, String userName, String userPass) {
         this.usersId = usersId;
         this.firstName = firstName;
@@ -52,43 +75,92 @@ public class User implements Storable{
     }
 
 
-
+    /**
+     * Gets users id.
+     *
+     * @return the users id
+     */
     public int getUsersId() {
         return usersId;
     }
 
+    /**
+     * Sets users id.
+     *
+     * @param usersId the users id
+     */
     public void setUsersId(int usersId) {
         this.usersId = usersId;
     }
 
+    /**
+     * Gets first name.
+     *
+     * @return the first name
+     */
     public String getFirstName() {
         return firstName;
     }
 
+    /**
+     * Sets first name.
+     *
+     * @param firstName the first name
+     */
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
 
+    /**
+     * Gets last name.
+     *
+     * @return the last name
+     */
     public String getLastName() {
         return lastName;
     }
 
+    /**
+     * Sets last name.
+     *
+     * @param lastName the last name
+     */
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
 
+    /**
+     * Gets user name.
+     *
+     * @return the user name
+     */
     public String getUserName() {
         return userName;
     }
 
+    /**
+     * Sets user name.
+     *
+     * @param userName the user name
+     */
     public void setUserName(String userName) {
         this.userName = userName;
     }
 
+    /**
+     * Gets user password.
+     *
+     * @return the user password
+     */
     public String getUserPassword() {
         return userPassword;
     }
 
+    /**
+     * Sets user password.
+     *
+     * @param userPass the user pass
+     */
     public void setUserPassword(String userPass) {
         this.userPassword = userPass;
     }

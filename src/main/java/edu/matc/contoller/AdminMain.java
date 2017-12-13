@@ -9,6 +9,9 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 
 
+/**
+ * The type Admin main.
+ */
 @WebServlet(
         urlPatterns = {"/adminMain"}
 )

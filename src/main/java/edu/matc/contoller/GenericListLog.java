@@ -13,6 +13,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 
+/**
+ * The type Generic list log.
+ */
 @WebServlet(
         urlPatterns = {"/genericListLog"}
 )

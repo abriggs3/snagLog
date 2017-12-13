@@ -9,8 +9,18 @@ import javax.ws.rs.client.*;
 import javax.ws.rs.core.MediaType;
 import java.io.IOException;
 
+/**
+ * The type Weather api.
+ */
 public class WeatherApi {
 
+    /**
+     * Call weather api data item.
+     *
+     * @param latitude  the latitude
+     * @param longitude the longitude
+     * @return the data item
+     */
     public DataItem callWeatherApi(Double latitude, Double longitude) {
         final Logger logger = Logger.getLogger(this.getClass());
         Client client = ClientBuilder.newClient();

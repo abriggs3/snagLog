@@ -8,10 +8,21 @@ import org.hibernate.SessionFactory;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * The type Generic dao.
+ *
+ * @param <T> the type parameter
+ */
 public class GenericDAOImpl<T> implements IGenericDAO<T> {
     private Logger LOGGER;
     private SessionFactory sessionFactory;
 
+    /**
+     * Instantiates a new Generic dao.
+     *
+     * @param cl             the cl
+     * @param sessionFactory the session factory
+     */
     public GenericDAOImpl(Class<T> cl, SessionFactory sessionFactory) {
         this.LOGGER = Logger.getLogger(cl.getName() + "GenericDAO");
         this.sessionFactory = sessionFactory;
