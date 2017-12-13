@@ -46,3 +46,5 @@ and updated paddling times.
 [Project Plan](https://github.com/abriggs3/snagLog/blob/master/ProjectPlan.md)
 
 [Time Log](https://github.com/abriggs3/snagLog/blob/master/TimeLog.md)
+
+[video demo](https://youtu.be/FCPsJIqlXj4)
